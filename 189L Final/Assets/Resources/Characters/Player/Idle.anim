@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PlayerFullIdle
+  m_Name: Idle
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -24,7 +24,7 @@ AnimationClip:
     - time: 0.125
       value: {fileID: 832473730205764390, guid: e900762fa99332a4f8fde6e00d1c58b9, type: 3}
     - time: 0.25
-      value: {fileID: 1669072077714664420, guid: e900762fa99332a4f8fde6e00d1c58b9, type: 3}
+      value: {fileID: 1133225561774975513, guid: e900762fa99332a4f8fde6e00d1c58b9, type: 3}
     - time: 0.33333334
       value: {fileID: -7051680838474984386, guid: e900762fa99332a4f8fde6e00d1c58b9, type: 3}
     - time: 0.41666666
@@ -64,7 +64,7 @@ AnimationClip:
     pptrCurveMapping:
     - {fileID: 1133225561774975513, guid: e900762fa99332a4f8fde6e00d1c58b9, type: 3}
     - {fileID: 832473730205764390, guid: e900762fa99332a4f8fde6e00d1c58b9, type: 3}
-    - {fileID: 1669072077714664420, guid: e900762fa99332a4f8fde6e00d1c58b9, type: 3}
+    - {fileID: 1133225561774975513, guid: e900762fa99332a4f8fde6e00d1c58b9, type: 3}
     - {fileID: -7051680838474984386, guid: e900762fa99332a4f8fde6e00d1c58b9, type: 3}
     - {fileID: -2025044632192898035, guid: e900762fa99332a4f8fde6e00d1c58b9, type: 3}
     - {fileID: -1840561559277023560, guid: e900762fa99332a4f8fde6e00d1c58b9, type: 3}

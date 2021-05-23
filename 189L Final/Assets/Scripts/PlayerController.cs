@@ -47,6 +47,11 @@ public class PlayerController : MonoBehaviour
         //{
         //    this.Up.Execute(this.gameObject);
         //}
+
+        // Get the animator for the player. 
+        var animator = this.gameObject.GetComponent<Animator>();
+        // Set the speed param in the Animator to the current player speed.
+        animator.SetFloat("Speed", Mathf.Abs(this.gameObject.GetComponent<Rigidbody2D>().velocity.x));
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
