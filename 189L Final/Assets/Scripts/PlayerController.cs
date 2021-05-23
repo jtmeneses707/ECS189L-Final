@@ -50,8 +50,12 @@ public class PlayerController : MonoBehaviour
 
         // Get the animator for the player. 
         var animator = this.gameObject.GetComponent<Animator>();
-        // Set the speed param in the Animator to the current player speed.
-        animator.SetFloat("Speed", Mathf.Abs(this.gameObject.GetComponent<Rigidbody2D>().velocity.x));
+
+        // Set params for animator. 
+        animator.SetFloat("X-Velocity", Mathf.Abs(this.gameObject.GetComponent<Rigidbody2D>().velocity.x));
+        animator.SetFloat("Y-Velocity", Mathf.Abs(this.gameObject.GetComponent<Rigidbody2D>().velocity.y));
+        animator.SetBool("IsGrounded", this.gameObject.GetComponent<MovePlayerUp>().IsGrounded);
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
