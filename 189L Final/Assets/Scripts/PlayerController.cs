@@ -5,7 +5,6 @@ using Player.Command;
 
 public class PlayerController : MonoBehaviour
 {
-
     private IPlayerCommand Right;
     private IPlayerCommand Left;
     private IPlayerCommand Up;
@@ -15,7 +14,6 @@ public class PlayerController : MonoBehaviour
     {
         this.Right = ScriptableObject.CreateInstance<MovePlayerRight>();
         this.Left = ScriptableObject.CreateInstance<MovePlayerLeft>();
-
         this.gameObject.AddComponent<MovePlayerUp>();
         this.Up = this.gameObject.GetComponent<MovePlayerUp>();
     }
