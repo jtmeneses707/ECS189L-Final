@@ -55,6 +55,7 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("X-Velocity", Mathf.Abs(this.gameObject.GetComponent<Rigidbody2D>().velocity.x));
         animator.SetFloat("Y-Velocity", Mathf.Abs(this.gameObject.GetComponent<Rigidbody2D>().velocity.y));
         animator.SetBool("IsGrounded", this.gameObject.GetComponent<MovePlayerUp>().IsGrounded);
+        animator.SetBool("CanDoubleJump", this.gameObject.GetComponent<MovePlayerUp>().CanDoubleJump);
 
     }
 
@@ -64,6 +65,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.tag == "Ground")
         {
             this.gameObject.GetComponent<MovePlayerUp>().IsGrounded = true;
+            this.gameObject.GetComponent<MovePlayerUp>().CanDoubleJump = true;
             //Debug.Log("Works1");
         }
     }

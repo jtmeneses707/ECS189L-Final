@@ -12,13 +12,13 @@ namespace Player.Command
         private GameObject Jumper;
         public bool IsGrounded;
 
-        public bool DoubleJump;
+        public bool CanDoubleJump;
         //public bool this.Active;
 
         void Start()
         {
             this.IsGrounded = false;
-            this.DoubleJump = false;
+            this.CanDoubleJump = false;
         }
 
         public void Execute(GameObject gameObject)
@@ -28,15 +28,15 @@ namespace Player.Command
             if (this.IsGrounded == true)
             {
                 this.Jumper.GetComponent<Rigidbody2D>().velocity = Vector2.up * Speed;
-                this.DoubleJump = true;
+                this.CanDoubleJump = true;
                 //Debug.Log(this.DoubleJump);
             }
-            else if (this.DoubleJump == true && this.IsGrounded == false)
+            else if (this.CanDoubleJump == true && this.IsGrounded == false)
             {
                 //Debug.Log("we are here");
                 //this.Jumper.GetComponent<Rigidbody2D>().velocity = Vector2.up * Speed;
                 this.Jumper.GetComponent<Rigidbody2D>().velocity = new Vector2(rigidBody.velocity.x, this.Speed*2);
-                this.DoubleJump = false;
+                this.CanDoubleJump = false;
             }
 
             
