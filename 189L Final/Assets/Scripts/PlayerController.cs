@@ -13,8 +13,14 @@ public class PlayerController : MonoBehaviour
     private IPlayerCommand Fire2;
 
     private IPlayerCommand SpaceBar;
+    //public float DashCoolDownTime = 2.0f; // 2 second cool down on dash
+    //private float NextDashTime = 0.0f;
 
     private BoxCollider2D Feet;
+
+    // Use later to determine projectile instantiation direction
+    private enum Direction {Left, Right};
+    private Direction CurrentDirection;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +31,10 @@ public class PlayerController : MonoBehaviour
         this.Up = this.gameObject.GetComponent<MovePlayerUp>();
         this.gameObject.AddComponent<PlayerAbilityDash>();
         this.SpaceBar = this.gameObject.GetComponent<PlayerAbilityDash>();
+        this.gameObject.AddComponent<PlayerAbilityShoot>();
+        this.Fire2 = this.gameObject.GetComponent<PlayerAbilityShoot>();
         this.Feet = this.gameObject.transform.Find("Feet").GetComponent<BoxCollider2D>();
+
     }
 
     // Update is called once per frame
@@ -55,7 +64,11 @@ public class PlayerController : MonoBehaviour
             break;
         }
 
+        //if (Input.GetKey("d"))
+        //if (Input.GetKey("a"))
+        //var Firepoint = gameObject.transform.Find("FirePoint");
 
+        // Left and right movement
         if (Input.GetAxis("Horizontal") > 0.01)
         {
             this.Right.Execute(this.gameObject);
@@ -65,18 +78,39 @@ public class PlayerController : MonoBehaviour
             this.Left.Execute(this.gameObject);
         }
 
+
         // Needed to change jump inputs to specific keys
         // Using vertical > 0.01 lead to updates that were too fast
+        // Using .GetKeyDown instead of .GetKey b/c 
+        // it forces the player to have to double click w
+        // -.getkeyDown() is called for that specific frame
         if (Input.GetKeyDown("w") || Input.GetKeyDown(KeyCode.UpArrow))
         {
             this.Up.Execute(this.gameObject);
         }
 
+
+        // Code to be used later: If we want to place cool down on ability
+        //if(Time.time > this.NextDashTime)
+        //{
+        //    if (Input.GetKeyDown("space"))
+        //    {
+        //        this.SpaceBar.Execute(this.gameObject);
+        //        this.NextDashTime = Time.time + this.DashCoolDownTime;
+        //    }
+        //}
+
+        // Dash/ teleport ability
         if (Input.GetKeyDown("space"))
         {
             this.SpaceBar.Execute(this.gameObject);
         }
 
+        // Shoot Projectile
+        if (Input.GetButtonDown("Fire2"))
+        {
+            this.Fire2.Execute(this.gameObject);
+        }
 
 
         // Get the animator for the player. 
