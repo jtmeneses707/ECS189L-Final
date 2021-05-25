@@ -14,7 +14,7 @@ namespace Player.Command
 
         public bool CanDoubleJump;
         //public bool this.Active;
-
+        public bool IsDoubleJump;
         void Start()
         {
             this.IsGrounded = false;
@@ -30,36 +30,19 @@ namespace Player.Command
                 this.Jumper.GetComponent<Rigidbody2D>().velocity = Vector2.up * Speed;
                 this.CanDoubleJump = true;
                 //Debug.Log(this.DoubleJump);
+                //Debug.Log("we are here 1");
             }
             else if (this.CanDoubleJump == true && this.IsGrounded == false)
             {
-                //Debug.Log("we are here");
+                //Debug.Log("we are here 2");
                 //this.Jumper.GetComponent<Rigidbody2D>().velocity = Vector2.up * Speed;
-                this.Jumper.GetComponent<Rigidbody2D>().velocity = new Vector2(rigidBody.velocity.x, this.Speed*2);
+                this.Jumper.GetComponent<Rigidbody2D>().velocity = new Vector2(rigidBody.velocity.x, this.Speed*1.5f);
                 this.CanDoubleJump = false;
             }
 
             
         }
 
-        //void Update()
-        //{
-        //    // Ensure that object is set before animation is performed
-        //    if (this.Active)
-        //    {
-        //        if (this.IsGrounded == false)
-        //        {
-        //            // start animation
-                   
-        //        }
-
-        //        if (this.IsGrounded == true)
-        //        {
-        //            // Stop the animation
-                    
-        //        }
-        //    }
-        //}
 
     }
 }

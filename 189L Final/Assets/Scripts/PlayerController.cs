@@ -9,6 +9,13 @@ public class PlayerController : MonoBehaviour
     private IPlayerCommand Left;
     private IPlayerCommand Up;
 
+    private IPlayerCommand Fire1;
+    private IPlayerCommand Fire2;
+
+    private IPlayerCommand SpaceBar;
+
+    private BoxCollider2D Feet;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,11 +23,39 @@ public class PlayerController : MonoBehaviour
         this.Left = ScriptableObject.CreateInstance<MovePlayerLeft>();
         this.gameObject.AddComponent<MovePlayerUp>();
         this.Up = this.gameObject.GetComponent<MovePlayerUp>();
+        this.gameObject.AddComponent<PlayerAbilityDash>();
+        this.SpaceBar = this.gameObject.GetComponent<PlayerAbilityDash>();
+        this.Feet = this.gameObject.transform.Find("Feet").GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        
+        // To Check for IsGrounded we look through all the contacts that the Player's Feet Box Collider
+        // Is in contact with.
+        // This resolves the issue of being able to spam jump on the sides of the ground
+        var contacts = new Collider2D[32];
+        this.Feet.GetContacts(contacts);
+        foreach (var col in contacts)
+        {
+            
+            // If the feet is in contact with the ground then we can enable single/ doublejump 
+            if (col != null && col.gameObject != null && col.gameObject.tag == "Ground")
+            {
+                //Debug.Log(col.gameObject.tag);
+                //Debug.Log( "Here!");
+                this.gameObject.GetComponent<MovePlayerUp>().IsGrounded = true;
+                this.gameObject.GetComponent<MovePlayerUp>().CanDoubleJump = true;
+            }
+            else
+            {
+                this.gameObject.GetComponent<MovePlayerUp>().IsGrounded = false;
+            }
+            break;
+        }
+
+
         if (Input.GetAxis("Horizontal") > 0.01)
         {
             this.Right.Execute(this.gameObject);
@@ -36,15 +71,13 @@ public class PlayerController : MonoBehaviour
         {
             this.Up.Execute(this.gameObject);
         }
-        //if (Input.GetButtonDown("Jump"))
-        //{
-        //    this.Up.Execute(this.gameObject);
-        //}
 
-        //if (Input.GetKeyDown("space"))
-        //{
-        //    this.Up.Execute(this.gameObject);
-        //}
+        if (Input.GetKeyDown("space"))
+        {
+            this.SpaceBar.Execute(this.gameObject);
+        }
+
+
 
         // Get the animator for the player. 
         var animator = this.gameObject.GetComponent<Animator>();
@@ -57,25 +90,34 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        // Update IsGrounded whenever ground is touched
-        if (collision.gameObject.tag == "Ground")
-        {
-            this.gameObject.GetComponent<MovePlayerUp>().IsGrounded = true;
-            this.gameObject.GetComponent<MovePlayerUp>().CanDoubleJump = true;
-            //Debug.Log("Works1");
-        }
-    }
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+         
+    ////Debug.Log(collision.collider.gameObject);
+    //Debug.Log(collision.gameObject);
+    //    //collision.collider.name == "groundCheck"
 
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        // Update Is Grounded whenever player leaves the ground
-        if (collision.gameObject.tag == "Ground")
-        {
-            this.gameObject.GetComponent<MovePlayerUp>().IsGrounded = false;
-            //Debug.Log("Works2");
-        }
-    }
+    //    //var ground_checker = collision.GetContacts
+    //    // Update IsGrounded whenever ground is touched
+    //    // Added condition to make sure that the player's feet needs to touch the ground,
+    //    // instead of just any part of the body like before
+    //    if (collision.gameObject.tag == "Ground" && this.FeetIsInContactWithGround)
+    //    {
+    //        this.gameObject.GetComponent<MovePlayerUp>().IsGrounded = true;
+    //        this.gameObject.GetComponent<MovePlayerUp>().CanDoubleJump = true;
+    //        Debug.Log("Works1");
+    //    }
+    //}
+
+    //private void OnCollisionExit2D(Collision2D collision)
+    //{
+    //    // Update Is Grounded whenever player leaves the ground
+    //    if (collision.gameObject.tag == "Ground" && this.FeetIsInContactWithGround == false)
+    //    {
+    //        this.gameObject.GetComponent<MovePlayerUp>().IsGrounded = false;
+    //        Debug.Log("Works2");
+    //    }
+    //}
 
 }
+// TO DO: FIX JUMPING CONDITION FOR FEET
