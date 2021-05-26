@@ -44,7 +44,8 @@ namespace Player.Command
                 {
                     //this.Player.GetComponent<Rigidbody2D>().velocity = new Vector2(rigidBody.velocity.x * DashDistance, rigidBody.velocity.y);
                     this.Player.transform.position = new Vector3(this.Player.transform.position.x - DashDistance, this.Player.transform.position.y, 0.0f);
-                }
+                } 
+                Player.GetComponent<Animator>().SetTrigger("IsDashing");
             }
         }
 

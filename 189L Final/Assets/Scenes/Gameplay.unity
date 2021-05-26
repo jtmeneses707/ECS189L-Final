@@ -606,7 +606,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 50
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -652,8 +652,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DrawLogic: 1
   Target: {fileID: 912158783}
-  TopLeft: {x: -1, y: 0.5, z: 5}
-  BottomRight: {x: 1, y: -1, z: 5}
+  TopLeft: {x: 1.5, y: 0.5, z: 5}
+  BottomRight: {x: 2.5, y: -1, z: 5}
 --- !u!120 &963194230
 LineRenderer:
   m_ObjectHideFlags: 0
