@@ -121,8 +121,6 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("Y-Velocity", Mathf.Abs(this.gameObject.GetComponent<Rigidbody2D>().velocity.y));
         animator.SetBool("IsGrounded", this.gameObject.GetComponent<MovePlayerUp>().IsGrounded);
         // animator.SetBool("CanDoubleJump", this.gameObject.GetComponent<MovePlayerUp>().CanDoubleJump);
-        // animator.SetTrigger("IsDashing", this.gameObject.GetComponentInParent<PlayerAbilityDash>())
-
     }
 
     //private void OnCollisionEnter2D(Collision2D collision)

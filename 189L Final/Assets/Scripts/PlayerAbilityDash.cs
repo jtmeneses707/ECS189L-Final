@@ -10,10 +10,8 @@ namespace Player.Command
 {
     public class PlayerAbilityDash : MonoBehaviour, IPlayerCommand
     {
-        [SerializeField]
-        private const float DASH_DISTANCE = 3f;
-        [SerializeField]
-        private const float ACTIVE_TIME = 0.2f;
+        private const float DASH_DISTANCE = 5f;
+        private const float ACTIVE_TIME = 0.3f;
 
         // Total time dash has been active.
         private float ElapsedTime;
@@ -34,20 +32,19 @@ namespace Player.Command
 
         public void Update()
         {
-            // Get animator attached to player.
-            var animator = this.Player.GetComponent<Animator>();
+
             if (this.Active)
             {
+                // Get animator attached to player.
+                var animator = this.Player.GetComponent<Animator>();
                 this.ElapsedTime += Time.deltaTime;
                 if (this.ElapsedTime < ACTIVE_TIME)
                 {
-                    // animator.SetBool("IsDashing", true);
                     Debug.Log("TRUE");
                     this.Player.transform.position = new Vector2(this.Player.transform.position.x + Time.deltaTime * DirectionFacing * DASH_DISTANCE, this.Player.transform.position.y);
                 }
                 else
                 {
-                    // animator.SetBool("IsDashing", false);
                     this.Active = false;
                 }
                 // Update animator to set isDashing param to current state of ability.

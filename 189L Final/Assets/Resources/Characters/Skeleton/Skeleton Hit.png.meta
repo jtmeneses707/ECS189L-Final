@@ -1,40 +1,31 @@
 fileFormatVersion: 2
-guid: b3ff521141e70ad4b8ee16837a1c891f
+guid: 42c697641f1d39f46bc0be0ee4f8c8e4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8020143640844766479
-    second: PlayerProjectileCast
+      213: -273567318796562241
+    second: Skeleton Hit_0
   - first:
-      213: -6251682230944352461
-    second: spritesheet_1
+      213: 4277271011309529139
+    second: Skeleton Hit_1
   - first:
-      213: -1259408508766424310
-    second: spritesheet_2
+      213: -1537884627087384292
+    second: Skeleton Hit_2
   - first:
-      213: -5962389079421231736
-    second: spritesheet_3
+      213: 8452754394787171160
+    second: Skeleton Hit_3
   - first:
-      213: 2788568348960109317
-    second: spritesheet_4
+      213: 6079654374805429708
+    second: Skeleton Hit_4
   - first:
-      213: 226702753830753226
-    second: spritesheet_5
+      213: 3860408454011024614
+    second: Skeleton Hit_5
   - first:
-      213: -7921052967969465774
-    second: spritesheet_6
+      213: -8501204524192146682
+    second: Skeleton Hit_6
   - first:
-      213: -1370661682523340017
-    second: spritesheet_7
-  - first:
-      213: -8276262488406422588
-    second: spritesheet_8
-  - first:
-      213: -5906973516983679737
-    second: spritesheet_9
-  - first:
-      213: 5777552420452043588
-    second: spritesheet_10
+      213: -8738580348800268814
+    second: Skeleton Hit_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -65,7 +56,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: -1
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -98,7 +89,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 4096
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -110,7 +101,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 4096
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -124,13 +115,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PlayerProjectileCast
+      name: Skeleton Hit_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 128
-        height: 128
+        width: 30
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -138,20 +129,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f0d092816264d4f60800000000000000
-      internalID: 8020143640844766479
+      spriteID: fb099f419f7143cf0800000000000000
+      internalID: -273567318796562241
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_1
+      name: Skeleton Hit_1
       rect:
         serializedVersion: 2
-        x: 128
+        x: 30
         y: 0
-        width: 128
-        height: 128
+        width: 30
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -159,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 337b0ff32209d39a0800000000000000
-      internalID: -6251682230944352461
+      spriteID: 3382e25a25beb5b30800000000000000
+      internalID: 4277271011309529139
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_2
+      name: Skeleton Hit_2
       rect:
         serializedVersion: 2
-        x: 256
+        x: 60
         y: 0
-        width: 128
-        height: 128
+        width: 30
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -180,20 +171,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a037fd742aea58ee0800000000000000
-      internalID: -1259408508766424310
+      spriteID: c112ce8641658aae0800000000000000
+      internalID: -1537884627087384292
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_3
+      name: Skeleton Hit_3
       rect:
         serializedVersion: 2
-        x: 384
+        x: 90
         y: 0
-        width: 128
-        height: 128
+        width: 30
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -201,20 +192,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 88ddd6ce8b6514da0800000000000000
-      internalID: -5962389079421231736
+      spriteID: 85b49e266573e4570800000000000000
+      internalID: 8452754394787171160
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_4
+      name: Skeleton Hit_4
       rect:
         serializedVersion: 2
-        x: 512
+        x: 120
         y: 0
-        width: 128
-        height: 128
+        width: 30
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -222,20 +213,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5033aaf832cf2b620800000000000000
-      internalID: 2788568348960109317
+      spriteID: ccd5d6741754f5450800000000000000
+      internalID: 6079654374805429708
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_5
+      name: Skeleton Hit_5
       rect:
         serializedVersion: 2
-        x: 640
+        x: 150
         y: 0
-        width: 128
-        height: 128
+        width: 30
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -243,20 +234,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ac35fa714f8652300800000000000000
-      internalID: 226702753830753226
+      spriteID: 6e4fd3d190de29530800000000000000
+      internalID: 3860408454011024614
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_6
+      name: Skeleton Hit_6
       rect:
         serializedVersion: 2
-        x: 768
+        x: 180
         y: 0
-        width: 128
-        height: 128
+        width: 30
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -264,20 +255,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 25a502d0b44c21290800000000000000
-      internalID: -7921052967969465774
+      spriteID: 60b559cc687a50a80800000000000000
+      internalID: -8501204524192146682
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_7
+      name: Skeleton Hit_7
       rect:
         serializedVersion: 2
-        x: 896
+        x: 210
         y: 0
-        width: 128
-        height: 128
+        width: 30
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -285,71 +276,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f0305f9367e6afce0800000000000000
-      internalID: -1370661682523340017
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spritesheet_8
-      rect:
-        serializedVersion: 2
-        x: 1024
-        y: 0
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4cb05a6cd1fc42d80800000000000000
-      internalID: -8276262488406422588
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spritesheet_9
-      rect:
-        serializedVersion: 2
-        x: 1152
-        y: 0
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7054c8ef1e6360ea0800000000000000
-      internalID: -5906973516983679737
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spritesheet_10
-      rect:
-        serializedVersion: 2
-        x: 1280
-        y: 0
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 44b0e3cc05dfd2050800000000000000
-      internalID: 5777552420452043588
+      spriteID: 2f50d84c8735ab680800000000000000
+      internalID: -8738580348800268814
       vertices: []
       indices: 
       edges: []
@@ -357,7 +285,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: a6a7165246bfe514fbd4f358680a7875
     internalID: 0
     vertices: []
     indices: 
