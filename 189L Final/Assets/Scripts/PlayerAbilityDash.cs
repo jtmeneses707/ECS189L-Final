@@ -22,27 +22,29 @@ namespace Player.Command
         // teleport to the correct side during dash.
         private float DirectionFacing;
         private GameObject Player;
-        private Vector2 LastPosition;
         private bool Active;
+        public bool IsFacingRight;
+
+        // Added to fix console bug
+        private Animator animator;
 
         void Start()
         {
             this.ElapsedTime = 0f;
             this.Active = false;
-
+            this.IsFacingRight = true;
+            this.DirectionFacing = 1f;
         }
 
         public void Update()
         {
             // Get animator attached to player.
-            var animator = this.Player.GetComponent<Animator>();
+   
             if (this.Active)
             {
                 this.ElapsedTime += Time.deltaTime;
                 if (this.ElapsedTime < ACTIVE_TIME)
                 {
-                    // animator.SetBool("IsDashing", true);
-                    Debug.Log("TRUE");
                     this.Player.transform.position = new Vector2(this.Player.transform.position.x + Time.deltaTime * DirectionFacing * DASH_DISTANCE, this.Player.transform.position.y);
                 }
                 else
@@ -55,70 +57,38 @@ namespace Player.Command
             }
         }
 
-
         public void Execute(GameObject gameObject)
         {
+           
             // Resets used if dash ability is currently not active.
             if (!this.Active)
             {
                 // Using command pattern, so need to set Player obj to
                 // param of Execute. 
                 this.Player = gameObject;
+                this.animator = this.Player.GetComponent<Animator>();
+
                 // Sets dash to active now.
                 this.Active = true;
                 this.ElapsedTime = 0f;
 
                 // Set direction of animation to correct direction.
-                this.DirectionFacing = 1f;
-                if (gameObject.GetComponent<SpriteRenderer>().flipX == true)
+                //this.DirectionFacing = 1f;
+                //Debug.Log(this.IsFacingRight);
+
+                if (!this.IsFacingRight)
                 {
                     this.DirectionFacing = -1f;
                 }
+                else
+                {
+                    this.DirectionFacing = 1f;
+                }
 
             }
-
+            Debug.Log(this.DirectionFacing);
 
         }
 
-
-
-
-        // public void Execute(GameObject gameObject)
-        // {
-
-
-
-        //     this.Player = gameObject;
-        //     var rigidBody = gameObject.GetComponent<Rigidbody2D>();
-
-
-        //     if (rigidBody != null)
-        //     {
-        //         // Check for facing in positive direction.
-        //         if (gameObject.GetComponent<SpriteRenderer>().flipX == false)
-
-        //             // 1st approach
-        //             // Boost the speed of the player
-        //             // this.Player.GetComponent<Rigidbody2D>().velocity = new Vector2(rigidBody.velocity.x * DASH_DISTANCE, rigidBody.velocity.y);
-
-        //             // 2nd approach
-        //             // Teleports the player to dodge projectiles
-        //             // Combined with animation, it will give off dash effect
-        //             this.Player.transform.position = new Vector3(this.Player.transform.position.x + DASH_DISTANCE, this.Player.transform.position.y, 0.0f);
-
-        //         // Otherwise it will be moving in negative direction.
-        //         else
-        //         {
-        //             //this.Player.GetComponent<Rigidbody2D>().velocity = new Vector2(rigidBody.velocity.x * DASH_DISTANCE, rigidBody.velocity.y);
-        //             this.Player.transform.position = new Vector3(this.Player.transform.position.x - DASH_DISTANCE, this.Player.transform.position.y, 0.0f);
-        //         } 
-        //         Player.GetComponent<Animator>().SetTrigger("IsDashing");
-        //     }
-        // }
-
-        //void Update()
-        //{
-        //    LastPosition = 
-        //}
     }
 }

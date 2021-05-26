@@ -5,6 +5,11 @@ using Player.Command;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject ProjectilePrefab;
+    [SerializeField]
+    private Transform FirePoint;
+
     private IPlayerCommand Right;
     private IPlayerCommand Left;
     private IPlayerCommand Up;
@@ -18,13 +23,12 @@ public class PlayerController : MonoBehaviour
 
     private BoxCollider2D Feet;
 
-    // Use later to determine projectile instantiation direction
-    private enum Direction {Left, Right};
-    private Direction CurrentDirection;
+    private bool IsFacingRight = true;
 
     // Start is called before the first frame update
     void Start()
     {
+      
         this.Right = ScriptableObject.CreateInstance<MovePlayerRight>();
         this.Left = ScriptableObject.CreateInstance<MovePlayerLeft>();
         this.gameObject.AddComponent<MovePlayerUp>();
@@ -35,6 +39,10 @@ public class PlayerController : MonoBehaviour
         this.Fire2 = this.gameObject.GetComponent<PlayerAbilityShoot>();
         this.Feet = this.gameObject.transform.Find("Feet").GetComponent<BoxCollider2D>();
 
+        // Passing ProjectilePrefab to PlayerAbilityShoot
+        this.gameObject.GetComponent<PlayerAbilityShoot>().ProjectilePrefab = this.ProjectilePrefab;
+        // Fire Point is where the bullet will come out (positioned on the player's hand).
+        this.gameObject.GetComponent<PlayerAbilityShoot>().FirePoint = this.FirePoint;
     }
 
     // Update is called once per frame
@@ -72,10 +80,28 @@ public class PlayerController : MonoBehaviour
         if (Input.GetAxis("Horizontal") > 0.01)
         {
             this.Right.Execute(this.gameObject);
+            
         }
         if (Input.GetAxis("Horizontal") < -0.01)
         {
             this.Left.Execute(this.gameObject);
+        }
+
+
+        // New implementation for flipping player sprite
+        // Used for also flipping all child objects attached to player sprite:
+        // including FirePoint.
+        if(Input.GetAxis("Horizontal") > 0 && !this.IsFacingRight)
+        {
+            this.IsFacingRight = !this.IsFacingRight;
+            
+            gameObject.transform.Rotate(0.0f, 180.0f, 0.0f);
+        }
+        else if(Input.GetAxis("Horizontal") < 0 && this.IsFacingRight)
+        {
+            this.IsFacingRight = !this.IsFacingRight;
+            
+            gameObject.transform.Rotate(0.0f, 180.0f, 0.0f);
         }
 
 
@@ -100,15 +126,23 @@ public class PlayerController : MonoBehaviour
         //    }
         //}
 
+        // Passing in player's sprite direction for dash
+        
+
         // Dash/ teleport ability
         if (Input.GetKeyDown("space"))
         {
+            // Pass in FacingRight since we are no longer using sprite renderer.flipx
+            this.gameObject.GetComponent<PlayerAbilityDash>().IsFacingRight = this.IsFacingRight;
+            //Debug.Log(this.gameObject.GetComponent<PlayerAbilityDash>().IsFacingRight);
             this.SpaceBar.Execute(this.gameObject);
         }
+
 
         // Shoot Projectile
         if (Input.GetButtonDown("Fire2"))
         {
+
             this.Fire2.Execute(this.gameObject);
         }
 

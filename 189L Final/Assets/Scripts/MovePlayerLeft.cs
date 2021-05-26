@@ -16,7 +16,7 @@ namespace Player.Command
             if (rigidBody != null)
             {
                 rigidBody.velocity = new Vector2(-this.Speed, rigidBody.velocity.y);
-                gameObject.GetComponent<SpriteRenderer>().flipX = true;
+                //gameObject.GetComponent<SpriteRenderer>().flipX = true;
             }
         }
     }

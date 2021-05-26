@@ -40,7 +40,7 @@ namespace Player.Command
                 this.CanDoubleJump = false;
             }
 
-            
+            //Debug.Log(this.IsGrounded);
         }
 
 
