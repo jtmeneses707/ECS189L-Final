@@ -10,7 +10,7 @@ namespace Player.Command
 {
     public class PlayerAbilityDash : MonoBehaviour, IPlayerCommand
     {
-        private const float DASH_DISTANCE = 5f;
+        private const float DASH_DISTANCE = 2.5f;
         private const float ACTIVE_TIME = 0.3f;
 
         // Total time dash has been active.
