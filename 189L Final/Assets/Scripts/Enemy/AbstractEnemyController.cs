@@ -10,27 +10,27 @@ public class AbstractEnemyController : MonoBehaviour, EnemyBehavior
 {
     private MovementFactory Move;
 
-    void EnemyBehavior.Attack(GameObject gameObject)
+    void EnemyBehavior.Idle(GameObject enemyObject)
     {
         throw new System.NotImplementedException();
     }
 
-    void EnemyBehavior.Death(GameObject gameObject)
+    void EnemyBehavior.Roam(GameObject enemyObject)
     {
         throw new System.NotImplementedException();
     }
 
-    void EnemyBehavior.Idle(GameObject gameObject)
+    void EnemyBehavior.Attack(GameObject enemyObject)
     {
         throw new System.NotImplementedException();
     }
 
-    void EnemyBehavior.Roam(GameObject gameObject)
+    void EnemyBehavior.TakeDamage(GameObject enemyObject)
     {
         throw new System.NotImplementedException();
     }
 
-    void EnemyBehavior.TakeDamage(GameObject gameObject)
+    void EnemyBehavior.Death(GameObject enemyObject)
     {
         throw new System.NotImplementedException();
     }
@@ -46,6 +46,24 @@ public class AbstractEnemyController : MonoBehaviour, EnemyBehavior
     {
 
     }
+
+
+
+    private bool isPlayerNear()
+    {
+
+    }
+
+    private void followPlayer(GameObject playerObject)
+    {
+
+    }
+
+    private void attackPlayer(GameObject playerObject)
+    {
+
+    }
+
 
 
 

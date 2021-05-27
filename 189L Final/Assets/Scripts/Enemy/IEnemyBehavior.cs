@@ -6,15 +6,15 @@ namespace Enemy.Behavior
 {
     public interface EnemyBehavior
     {
-        void Idle(GameObject gameObject);
+        void Idle(GameObject enemyObject);
 
-        void Roam(GameObject gameObject);
+        void Roam(GameObject enemyObject);
 
-        void Attack(GameObject gameObject);
+        void Attack(GameObject enemyObject);
 
-        void TakeDamage(GameObject gameObject);
+        void TakeDamage(GameObject enemyObject);
 
-        void Death(GameObject gameObject);
+        void Death(GameObject enemyObject);
     }
 }
 
