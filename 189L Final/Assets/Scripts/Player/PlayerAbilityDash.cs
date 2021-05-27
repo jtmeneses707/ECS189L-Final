@@ -85,7 +85,7 @@ namespace Player.Command
                 }
 
             }
-            Debug.Log(this.DirectionFacing);
+            //Debug.Log(this.DirectionFacing);
 
         }
 

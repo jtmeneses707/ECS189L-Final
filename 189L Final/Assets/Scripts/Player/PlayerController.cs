@@ -9,6 +9,12 @@ public class PlayerController : MonoBehaviour
     private GameObject ProjectilePrefab;
     [SerializeField]
     private Transform FirePoint;
+    [SerializeField]
+    private Transform MeleeAttackPoint;
+
+    [SerializeField]
+    private LayerMask EnemyLayer;
+
 
     private IPlayerCommand Right;
     private IPlayerCommand Left;
@@ -37,6 +43,15 @@ public class PlayerController : MonoBehaviour
         this.SpaceBar = this.gameObject.GetComponent<PlayerAbilityDash>();
         this.gameObject.AddComponent<PlayerAbilityShoot>();
         this.Fire2 = this.gameObject.GetComponent<PlayerAbilityShoot>();
+
+        this.gameObject.AddComponent<PlayerAbilityMelee>();
+        this.Fire1 = this.gameObject.GetComponent<PlayerAbilityMelee>();
+        // Pass in Melee Point transform
+        this.gameObject.GetComponent<PlayerAbilityMelee>().MeleeAttackPoint = this.MeleeAttackPoint;
+        // Pass in Enemy Layer for damage detection
+        this.gameObject.GetComponent<PlayerAbilityMelee>().EnemyLayer = this.EnemyLayer;
+        
+        // Feet used for grounded detection
         this.Feet = this.gameObject.transform.Find("Feet").GetComponent<BoxCollider2D>();
 
         // Passing ProjectilePrefab to PlayerAbilityShoot
@@ -126,8 +141,6 @@ public class PlayerController : MonoBehaviour
         //    }
         //}
 
-        // Passing in player's sprite direction for dash
-        
 
         // Dash/ teleport ability
         if (Input.GetKeyDown("space"))
@@ -138,6 +151,12 @@ public class PlayerController : MonoBehaviour
             this.SpaceBar.Execute(this.gameObject);
         }
 
+        // Melee Attack
+        if (Input.GetButtonDown("Fire1"))
+        {
+
+            this.Fire1.Execute(this.gameObject);
+        }
 
         // Shoot Projectile
         if (Input.GetButtonDown("Fire2"))

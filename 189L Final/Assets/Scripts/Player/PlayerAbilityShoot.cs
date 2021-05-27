@@ -57,7 +57,7 @@ namespace Player.Command
             //Instantiate(ProjectilePrefab, FirePoint.position, FirePoint.rotation);
 
 
-            // Resets used if dash ability is currently not active.
+            // Resets used if shoot ability is currently not active.
             if (!this.Active)
             {
                 // Using command pattern, so need to set Player obj to
@@ -65,7 +65,6 @@ namespace Player.Command
                 this.Player = gameObject;
                 this.animator = this.Player.GetComponent<Animator>();
 
-                // Sets dash to active now.
                 this.Active = true;
                 this.ElapsedTime = 0f;
 
@@ -78,7 +77,7 @@ namespace Player.Command
                 // Give it velocity to send it flying.
                 RB.velocity = transform.right * Speed;
 
-
+                // Currently projectile script processes damage to enemies with BasicEnemy script attached to them.
             }
 
         }
