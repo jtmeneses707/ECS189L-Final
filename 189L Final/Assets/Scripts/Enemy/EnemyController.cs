@@ -6,33 +6,35 @@ using Enemy.Movement;
 using Enemy.Constants;
 using Enemy.Behavior;
 
-public class AbstractEnemyController : MonoBehaviour, EnemyBehavior
+public class EnemyController : MonoBehaviour, EnemyBehavior
 {
+    [SerializeField]
+    private GameObject PlayerObject;
     private MovementFactory Move;
 
-    void EnemyBehavior.Idle(GameObject enemyObject)
+    void EnemyBehavior.Idle()
     {
-        throw new System.NotImplementedException();
+        //TODO
     }
 
-    void EnemyBehavior.Roam(GameObject enemyObject)
+    void EnemyBehavior.Roam()
     {
-        throw new System.NotImplementedException();
+        //TODO
     }
 
     void EnemyBehavior.Attack(GameObject enemyObject)
     {
-        throw new System.NotImplementedException();
+        //TODO
     }
 
-    void EnemyBehavior.TakeDamage(GameObject enemyObject)
+    void EnemyBehavior.TakeDamage()
     {
-        throw new System.NotImplementedException();
+        //TODO
     }
 
-    void EnemyBehavior.Death(GameObject enemyObject)
+    void EnemyBehavior.Death()
     {
-        throw new System.NotImplementedException();
+        //TODO
     }
 
     // Start is called before the first frame update
@@ -44,19 +46,22 @@ public class AbstractEnemyController : MonoBehaviour, EnemyBehavior
     // Update is called once per frame
     void Update()
     {
-
+        followPlayer(PlayerObject);
     }
 
 
 
     private bool isPlayerNear()
     {
-
+        //TODO
+        return true;
     }
 
     private void followPlayer(GameObject playerObject)
     {
-
+        float step = EnemyConstants.BasicEnemySpeed * Time.deltaTime;
+        Vector2 playerPosition = playerObject.transform.position;
+        transform.position = Vector2.MoveTowards(transform.position, playerPosition, step);
     }
 
     private void attackPlayer(GameObject playerObject)
