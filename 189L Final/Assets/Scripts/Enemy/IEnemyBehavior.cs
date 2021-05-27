@@ -8,6 +8,7 @@ namespace Enemy.Behavior
     {
         void Idle();
         void Roam();
+        void Follow(GameObject targetObject);
         void Attack(GameObject targetObject);
         void TakeDamage();
         void Death();

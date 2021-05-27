@@ -11,6 +11,20 @@ public class EnemyController : MonoBehaviour, EnemyBehavior
     [SerializeField]
     private GameObject PlayerObject;
     private MovementFactory Move;
+    private float VisibleRadius;
+    private float AttackRadius;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        Move = new MovementFactory(EnemyConstants.BasicEnemySpeed, this.gameObject);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
 
     void EnemyBehavior.Idle()
     {
@@ -22,7 +36,15 @@ public class EnemyController : MonoBehaviour, EnemyBehavior
         //TODO
     }
 
-    void EnemyBehavior.Attack(GameObject enemyObject)
+    void EnemyBehavior.Follow(GameObject targetObject)
+    {
+        float step = EnemyConstants.BasicEnemySpeed * Time.deltaTime;
+        Vector2 playerPosition = playerObject.transform.position;
+        playerPosition.y = transform.position.y;
+        transform.position = Vector2.MoveTowards(transform.position, playerPosition, step);
+    }
+
+    void EnemyBehavior.Attack(GameObject targetObject)
     {
         //TODO
     }
@@ -37,40 +59,27 @@ public class EnemyController : MonoBehaviour, EnemyBehavior
         //TODO
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        Move = new MovementFactory(EnemyConstants.BasicEnemySpeed, this.gameObject);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        followPlayer(PlayerObject);
-    }
-
-
-
     private bool isPlayerNear()
     {
         //TODO
         return true;
     }
 
-    private void followPlayer(GameObject playerObject)
+    public void AILogic()
     {
-        float step = EnemyConstants.BasicEnemySpeed * Time.deltaTime;
-        Vector2 playerPosition = playerObject.transform.position;
-        playerPosition.y = transform.position.y;
-        transform.position = Vector2.MoveTowards(transform.position, playerPosition, step);
+        //Choose randomly between 5-10 seconds on whether to idle or roam
+
+        //If player is within Visible Radius
+        followPlayer(PlayerObject);
+
+        //If player is within Attack Radius
+        EnemyBehavior.Attack(PlayerObject);
     }
 
-    private void attackPlayer(GameObject playerObject)
-    {
-
-    }
 
 
+
+    
 
 
 
