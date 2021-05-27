@@ -6,6 +6,6 @@ namespace Enemy.Constants
 {
     public static class EnemyConstants
     {
-        public const float BasicEnemySpeed = 1.0f;
+        public const float BasicEnemySpeed = 0.5f;
     }
 }

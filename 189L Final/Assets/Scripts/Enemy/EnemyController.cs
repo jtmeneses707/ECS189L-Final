@@ -61,6 +61,7 @@ public class EnemyController : MonoBehaviour, EnemyBehavior
     {
         float step = EnemyConstants.BasicEnemySpeed * Time.deltaTime;
         Vector2 playerPosition = playerObject.transform.position;
+        playerPosition.y = transform.position.y;
         transform.position = Vector2.MoveTowards(transform.position, playerPosition, step);
     }
 
