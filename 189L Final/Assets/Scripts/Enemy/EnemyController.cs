@@ -9,10 +9,10 @@ using Enemy.Behavior;
 public class EnemyController : MonoBehaviour, EnemyBehavior
 {
     [SerializeField]
-    private GameObject PlayerObject;
-    private MovementFactory Move;
-    private float VisibleRadius;
-    private float AttackRadius;
+    protected GameObject PlayerObject;
+    protected MovementFactory Move;
+    protected float VisibleRadius;
+    protected float AttackRadius;
 
     // Start is called before the first frame update
     void Start()
