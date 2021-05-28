@@ -22,13 +22,11 @@ namespace Player.Command
         // Added to fix console bug
         private Animator animator;
         private GameObject Player;
-        private bool Active;
 
         private Collider2D[] AllEnemiesHit;
 
         void Start()
         {
-            this.Active = false;
         }
 
         void Update()
@@ -66,7 +64,6 @@ namespace Player.Command
                 // Added trigger to transition state instead of bool.
                 this.animator.SetTrigger("IsAttackingTrigger");
 
-                this.Active = true;
 
                 // Detect enemies in attack range (shape of circle)    
                 // Note: Must add enemy layer to all enemies and give basicenemy script to all enemies
