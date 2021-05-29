@@ -10,33 +10,40 @@ public class EnemyController : MonoBehaviour, EnemyBehavior
 {
     [SerializeField]
     protected GameObject PlayerObject;
-    protected MovementFactory Move;
+    protected EnemyMovement Move;
     protected float VisibleRadius;
     protected float AttackRadius;
+    protected float Health = 100.0f;
+    protected float RoamTimer = 0.0f;
+    protected GameObject deathAnimation;
+
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
-        Move = new MovementFactory(EnemyConstants.BasicEnemySpeed, this.gameObject);
+        Move = new EnemyMovement(EnemyConstants.BasicEnemySpeed, this.gameObject);
+        Follow(PlayerObject);
+
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
-
+        
     }
 
-    void EnemyBehavior.Idle()
+    public void MoveLeft()
     {
-        //TODO
+        Move.MoveLeft();
     }
 
-    void EnemyBehavior.Roam()
+    public void MoveRight()
     {
-        //TODO
+        Move.MoveRight();
     }
 
-    void EnemyBehavior.Follow(GameObject targetObject)
+
+    public void Follow(GameObject targetObject)
     {
         float step = EnemyConstants.BasicEnemySpeed * Time.deltaTime;
         Vector2 playerPosition = PlayerObject.transform.position;
@@ -44,19 +51,21 @@ public class EnemyController : MonoBehaviour, EnemyBehavior
         transform.position = Vector2.MoveTowards(transform.position, playerPosition, step);
     }
 
-    void EnemyBehavior.Attack(GameObject targetObject)
+    public void Attack(GameObject targetObject)
     {
         //TODO
+        //Play attack animation
+        //Subtract damage from player
     }
 
-    void EnemyBehavior.TakeDamage()
+    public void TakeDamage(float amount)
     {
-        //TODO
+        Health = Health - amount;
     }
 
-    void EnemyBehavior.Death()
+    public void Death()
     {
-        //TODO
+        Destroy(gameObject);
     }
 
     private bool isPlayerNear()

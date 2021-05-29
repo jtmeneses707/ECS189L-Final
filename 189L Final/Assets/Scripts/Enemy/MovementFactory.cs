@@ -11,18 +11,18 @@ namespace Enemy.Movement
      * MoveLeft() - Moves the character left
      * MoveRight() - Moves the character right
      */
-    public class MovementFactory
+    public class EnemyMovement
     {
         private GameObject CharacterObject;
         private MoveLeftScript MoveLeftCommand;
         private MoveRightScript MoveRightCommand;
 
         /*
-         * MovementFactory - Constructor method to create a movement controller for a game object.
+         * EnemyMovement - Constructor method to create a movement controller for a game object.
          * @speed - GameObject movement speed
          * @characterObject - GameObject of the character
          */
-        public MovementFactory(float speed, GameObject characterObject)
+        public EnemyMovement(float speed, GameObject characterObject)
         {
             this.CharacterObject = characterObject;
             this.MoveLeftCommand = ScriptableObject.CreateInstance<MoveLeftScript>();
@@ -64,6 +64,8 @@ namespace Enemy.Movement
                 rigidBody.velocity = new Vector2(-Speed, rigidBody.velocity.y);
             }
         }
+
+
     }
 
     public class MoveRightScript : ScriptableObject, IEnemyCommand
