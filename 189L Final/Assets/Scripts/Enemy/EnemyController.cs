@@ -39,7 +39,7 @@ public class EnemyController : MonoBehaviour, EnemyBehavior
     void EnemyBehavior.Follow(GameObject targetObject)
     {
         float step = EnemyConstants.BasicEnemySpeed * Time.deltaTime;
-        Vector2 playerPosition = playerObject.transform.position;
+        Vector2 playerPosition = PlayerObject.transform.position;
         playerPosition.y = transform.position.y;
         transform.position = Vector2.MoveTowards(transform.position, playerPosition, step);
     }
@@ -70,10 +70,10 @@ public class EnemyController : MonoBehaviour, EnemyBehavior
         //Choose randomly between 5-10 seconds on whether to idle or roam
 
         //If player is within Visible Radius
-        followPlayer(PlayerObject);
+        // followPlayer(PlayerObject);
 
-        //If player is within Attack Radius
-        EnemyBehavior.Attack(PlayerObject);
+        // //If player is within Attack Radius
+        // EnemyBehavior.Attack(PlayerObject);
     }
 
 

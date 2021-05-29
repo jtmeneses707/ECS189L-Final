@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private LayerMask EnemyLayer;
 
+    //private AudioManager AudioManager;
 
     private IPlayerCommand Right;
     private IPlayerCommand Left;
@@ -102,11 +103,17 @@ public class PlayerController : MonoBehaviour
             this.Left.Execute(this.gameObject);
         }
 
+        //if((Input.GetAxis("Horizontal") > 0 || Input.GetAxis("Horizontal") > 0) && this.gameObject.GetComponent<MovePlayerUp>().IsGrounded == true)
+        //{
+        //    //FindObjectOfType<AudioManager>().Play("PlayerFootSteps");
+        //    FindObjectOfType<AudioManager>().Play("PlayerFootSteps");
+        //}
+        
 
         // New implementation for flipping player sprite
         // Used for also flipping all child objects attached to player sprite:
         // including FirePoint.
-        if(Input.GetAxis("Horizontal") > 0 && !this.IsFacingRight)
+        if (Input.GetAxis("Horizontal") > 0 && !this.IsFacingRight)
         {
             this.IsFacingRight = !this.IsFacingRight;
             
@@ -129,17 +136,6 @@ public class PlayerController : MonoBehaviour
         {
             this.Up.Execute(this.gameObject);
         }
-
-
-        // Code to be used later: If we want to place cool down on ability
-        //if(Time.time > this.NextDashTime)
-        //{
-        //    if (Input.GetKeyDown("space"))
-        //    {
-        //        this.SpaceBar.Execute(this.gameObject);
-        //        this.NextDashTime = Time.time + this.DashCoolDownTime;
-        //    }
-        //}
 
 
         // Dash/ teleport ability
@@ -165,7 +161,6 @@ public class PlayerController : MonoBehaviour
             this.Fire2.Execute(this.gameObject);
         }
 
-
         // Get the animator for the player. 
         var animator = this.gameObject.GetComponent<Animator>();
 
@@ -175,6 +170,18 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("IsGrounded", this.gameObject.GetComponent<MovePlayerUp>().IsGrounded);
         // animator.SetBool("CanDoubleJump", this.gameObject.GetComponent<MovePlayerUp>().CanDoubleJump);
     }
+
+    // This is added as a function event for the running animation
+    private void FootStep()
+    {
+        // Ensure that the player is touching the ground
+        if(this.gameObject.GetComponent<MovePlayerUp>().IsGrounded == true)
+        {
+            FindObjectOfType<AudioManager>().Play("PlayerFootSteps");
+        }
+    }
+
+
 
     //private void OnCollisionEnter2D(Collision2D collision)
     //{
@@ -206,4 +213,3 @@ public class PlayerController : MonoBehaviour
     //}
 
 }
-// TO DO: FIX JUMPING CONDITION FOR FEET

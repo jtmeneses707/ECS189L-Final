@@ -1,0 +1,54 @@
+using UnityEngine.Audio;
+using UnityEngine;
+using System;
+
+public class AudioManager : MonoBehaviour
+{
+    public Sound[] sounds;
+
+    public static AudioManager instance;
+
+    // Start is called before the first frame update
+    void Awake()
+    {
+        if (instance == null) // Ensure that there is always an audio manager
+        {
+            instance = this;
+        }
+        else // Get rid of more than one audiomanager
+        {
+            Destroy(gameObject);
+        }
+
+        // Prevent audio from being cut when changing scenes
+        DontDestroyOnLoad(gameObject);
+
+        foreach (Sound s in sounds)
+        {
+            s.source = this.gameObject.AddComponent<AudioSource>();
+            s.source.clip = s.Clip;
+            s.source.volume = s.Volume;
+            s.source.pitch = s.Pitch;
+            s.source.loop = s.Loop;
+        }
+    }
+
+    void Start()
+    {
+        // Play the audio clip named within the Audio Manager
+        Play("MainTheme");
+    }
+
+    public void Play(string name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.Name == name);
+
+        if(s == null)
+        {
+            Debug.LogWarning("Wrong Audio Name: " + name);
+            return;
+        }
+
+        s.source.Play();
+    }
+}
