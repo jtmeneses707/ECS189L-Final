@@ -80,10 +80,12 @@ public class PlayerController : MonoBehaviour
                 //Debug.Log( "Here!");
                 this.gameObject.GetComponent<MovePlayerUp>().IsGrounded = true;
                 this.gameObject.GetComponent<MovePlayerUp>().CanDoubleJump = true;
+               
             }
             else
             {
                 this.gameObject.GetComponent<MovePlayerUp>().IsGrounded = false;
+               
             }
             break;
         }
@@ -171,7 +173,7 @@ public class PlayerController : MonoBehaviour
         // animator.SetBool("CanDoubleJump", this.gameObject.GetComponent<MovePlayerUp>().CanDoubleJump);
     }
 
-    // This is added as a function event for the running animation
+    // This is added as a function event for the ruddadnning animation
     private void FootStep()
     {
         // Ensure that the player is touching the ground
@@ -181,33 +183,42 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-
-
-    //private void OnCollisionEnter2D(Collision2D collision)
+    //public void CollisionDetected(ChildCollider collider)
     //{
-         
-    ////Debug.Log(collision.collider.gameObject);
-    //Debug.Log(collision.gameObject);
-    //    //collision.collider.name == "groundCheck"
-
-    //    //var ground_checker = collision.GetContacts
-    //    // Update IsGrounded whenever ground is touched
-    //    // Added condition to make sure that the player's feet needs to touch the ground,
-    //    // instead of just any part of the body like before
-    //    if (collision.gameObject.tag == "Ground" && this.FeetIsInContactWithGround)
-    //    {
-    //        this.gameObject.GetComponent<MovePlayerUp>().IsGrounded = true;
-    //        this.gameObject.GetComponent<MovePlayerUp>().CanDoubleJump = true;
-    //        Debug.Log("Works1");
-    //    }
+    //    Debug.Log("child collided");
     //}
+
+    ////private void OnCollisionEnter2D(Collision2D collision)
+    ////{
+
+    ////    Collider myCollider = collision.contacts[0].thisCollider;
+    ////    Debug.Log(myCollider);
+
+    ////    Debug.Log(this.gameObject.GetComponent<MovePlayerUp>().GetIsGrounded());
+    ////    //Debug.Log(collision.collider.gameObject);
+    ////    //Debug.Log(collision.gameObject);
+    ////    ////collision.collider.name == "groundCheck"
+
+    ////    ////var ground_checker = collision.GetContacts
+    ////    //// Update IsGrounded whenever ground is touched
+    ////    //// Added condition to make sure that the player's feet needs to touch the ground,
+    ////    //// instead of just any part of the body like before
+    ////    if (collision.gameObject.tag == "Ground")
+    ////    {
+    ////        //this.gameObject.GetComponent<MovePlayerUp>().IsGrounded = true;
+    ////        //this.gameObject.GetComponent<MovePlayerUp>().CanDoubleJump = true;
+    ////        //FindObjectOfType<AudioManager>().Play("PlayerFootSteps");
+    ////        Debug.Log("Works1");
+    ////    }
+    ////}
 
     //private void OnCollisionExit2D(Collision2D collision)
     //{
     //    // Update Is Grounded whenever player leaves the ground
-    //    if (collision.gameObject.tag == "Ground" && this.FeetIsInContactWithGround == false)
+    //    if (collision.gameObject.tag == "Ground")
     //    {
-    //        this.gameObject.GetComponent<MovePlayerUp>().IsGrounded = false;
+    //        FindObjectOfType<AudioManager>().Play("PlayerJumpOffGroundSound");
+    //        //this.gameObject.GetComponent<MovePlayerUp>().IsGrounded = false;
     //        Debug.Log("Works2");
     //    }
     //}

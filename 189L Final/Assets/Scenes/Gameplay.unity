@@ -271,7 +271,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 807667224}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.017, y: -0.536, z: 0}
+  m_LocalPosition: {x: -0.017, y: -0.533, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 912158787}
@@ -286,7 +286,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 807667224}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 5d42d63560de3d84cbcc12a9bb9e3a6f, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -337,7 +337,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.01761517, y: -0.32375488}
+  m_Offset: {x: 0.018941998, y: -0.32375488}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -348,7 +348,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.14558333, y: 0.30902177}
+  m_Size: {x: 0.13228273, y: 0.30902177}
   m_EdgeRadius: 0
 --- !u!50 &912158785
 Rigidbody2D:
@@ -411,7 +411,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 1133225561774975513, guid: e900762fa99332a4f8fde6e00d1c58b9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -779,7 +779,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1075230920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1214,6 +1214,7 @@ GameObject:
   - component: {fileID: 1815641430}
   - component: {fileID: 1815641429}
   - component: {fileID: 1815641431}
+  - component: {fileID: 1815641433}
   - component: {fileID: 1815641432}
   m_Layer: 0
   m_Name: Tilemap/ Main Platform
@@ -1256,7 +1257,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 88f58a8a3ef6c5c41bb9b4abac4975a4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1688,8 +1689,8 @@ Tilemap:
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Origin: {x: -4, y: -3, z: 0}
-  m_Size: {x: 16, y: 7, z: 1}
+  m_Origin: {x: -5, y: -3, z: 0}
+  m_Size: {x: 17, y: 7, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
@@ -1722,7 +1723,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.015986085, y: -0.6772697}
+  m_Offset: {x: 0.0037572384, y: -1.202218}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1733,7 +1734,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.5435326, y: 0.14092398}
+  m_Size: {x: 3.5830193, y: 1.0450675}
   m_EdgeRadius: 0
 --- !u!19719996 &1815641432
 TilemapCollider2D:
@@ -1751,6 +1752,32 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+--- !u!61 &1815641433
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1815641427}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 3.1483316, y: -0.6989169}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.7685633, y: 1.0391722}
+  m_EdgeRadius: 0
 --- !u!1 &1986758433
 GameObject:
   m_ObjectHideFlags: 0
@@ -1936,7 +1963,7 @@ MonoBehaviour:
   sounds:
   - Name: MainTheme
     Clip: {fileID: 8300000, guid: 10675422655cd6f489b470854969d85a, type: 3}
-    Volume: 0.15
+    Volume: 0.05
     Pitch: 1
     Loop: 1
     source: {fileID: 0}
@@ -1951,6 +1978,12 @@ MonoBehaviour:
     Volume: 0
     Pitch: 1
     Loop: 1
+    source: {fileID: 0}
+  - Name: PlayerJumpOffGroundSound
+    Clip: {fileID: 8300000, guid: f42760acdd77d6c459020ab0f9db4f30, type: 3}
+    Volume: 10
+    Pitch: 1.23
+    Loop: 0
     source: {fileID: 0}
 --- !u!4 &2083805264
 Transform:

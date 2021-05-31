@@ -17,7 +17,7 @@ namespace Player.Command
         public bool IsDoubleJump;
         void Start()
         {
-            this.IsGrounded = false;
+            this.IsGrounded = true;
             this.CanDoubleJump = false;
         }
 
@@ -29,6 +29,8 @@ namespace Player.Command
             {
                 this.Jumper.GetComponent<Rigidbody2D>().velocity = Vector2.up * Speed;
                 this.CanDoubleJump = true;
+
+                FindObjectOfType<AudioManager>().Play("PlayerJumpOffGroundSound");
                 //Debug.Log(this.DoubleJump);
                 //Debug.Log("we are here 1");
             }
@@ -41,6 +43,11 @@ namespace Player.Command
             }
 
             //Debug.Log(this.IsGrounded);
+        }
+
+        public bool GetIsGrounded()
+        {
+            return this.IsGrounded;
         }
 
 
