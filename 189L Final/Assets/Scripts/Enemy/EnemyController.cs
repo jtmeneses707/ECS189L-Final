@@ -22,8 +22,6 @@ public class EnemyController : MonoBehaviour, EnemyBehavior
     public void Start()
     {
         Move = new EnemyMovement(EnemyConstants.BasicEnemySpeed, this.gameObject);
-        Follow(PlayerObject);
-
     }
 
     // Update is called once per frame
@@ -68,22 +66,19 @@ public class EnemyController : MonoBehaviour, EnemyBehavior
         Destroy(gameObject);
     }
 
-    private bool isPlayerNear()
+    public bool isPlayerNearVisibleRadius()
     {
         //TODO
         return true;
     }
 
-    public void AILogic()
+    public bool isPlayerNearAttackRadius()
     {
-        //Choose randomly between 5-10 seconds on whether to idle or roam
-
-        //If player is within Visible Radius
-        // followPlayer(PlayerObject);
-
-        // //If player is within Attack Radius
-        // EnemyBehavior.Attack(PlayerObject);
+        //TODO
+        return true;
     }
+
+
 
 
 
