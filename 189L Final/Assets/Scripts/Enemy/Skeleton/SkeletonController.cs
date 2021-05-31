@@ -42,12 +42,7 @@ namespace Enemy
         public void RoamOrIdleLogic()
         {
             //Choose randomly between 5-10 seconds on whether to idle or roam
-
-            //If player is within Visible Radius
-            // followPlayer(PlayerObject);
-
-            // //If player is within Attack Radius
-            // EnemyBehavior.Attack(PlayerObject);
+            //Must add a 2d box collider to prevent falling off a cliff
         }
 
     }

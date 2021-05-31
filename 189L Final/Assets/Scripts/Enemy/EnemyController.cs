@@ -68,14 +68,14 @@ public class EnemyController : MonoBehaviour, EnemyBehavior
 
     public bool isPlayerNearVisibleRadius()
     {
-        //TODO
-        return true;
+        float playerDistance = (PlayerObject.transform.position - transform.position).magnitude;
+        return playerDistance < VisibleRadius;
     }
 
     public bool isPlayerNearAttackRadius()
     {
-        //TODO
-        return true;
+        float playerDistance = (PlayerObject.transform.position - transform.position).magnitude;
+        return playerDistance < AttackRadius;
     }
 
 
