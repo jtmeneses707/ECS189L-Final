@@ -183,6 +183,17 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void MeleeSound()
+    {
+        FindObjectOfType<AudioManager>().Play("MeleeSound");
+    }
+
+    private void ShootSound()
+    {
+        FindObjectOfType<AudioManager>().Play("ShootSound");
+    }
+
+
     //public void CollisionDetected(ChildCollider collider)
     //{
     //    Debug.Log("child collided");

@@ -577,7 +577,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 7
   m_Sprite: {fileID: 1133225561774975513, guid: e900762fa99332a4f8fde6e00d1c58b9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1498,7 +1498,6 @@ GameObject:
   - component: {fileID: 1815641430}
   - component: {fileID: 1815641429}
   - component: {fileID: 1815641431}
-  - component: {fileID: 1815641433}
   - component: {fileID: 1815641432}
   m_Layer: 0
   m_Name: Tilemap/ Main Platform
@@ -2324,6 +2323,18 @@ MonoBehaviour:
     Clip: {fileID: 8300000, guid: f42760acdd77d6c459020ab0f9db4f30, type: 3}
     Volume: 10
     Pitch: 1.23
+    Loop: 0
+    source: {fileID: 0}
+  - Name: MeleeSound
+    Clip: {fileID: 8300000, guid: 79e6e1370ee1ca747b469e68d0dcb0fe, type: 3}
+    Volume: 0.2
+    Pitch: 0.5
+    Loop: 0
+    source: {fileID: 0}
+  - Name: ShootSound
+    Clip: {fileID: 8300000, guid: cc6699269b4c1d44ea1e860518b9bb73, type: 3}
+    Volume: 0.05
+    Pitch: 0.68
     Loop: 0
     source: {fileID: 0}
 --- !u!4 &2083805264

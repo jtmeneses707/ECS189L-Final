@@ -77,6 +77,9 @@ namespace Player.Command
                 // Give it velocity to send it flying.
                 RB.velocity = transform.right * Speed;
 
+                // Destroy it prefab after awhile and it hasnt hit anything
+                Destroy(projectile, 10.0f);
+
                 // Currently projectile script processes damage to enemies with BasicEnemy script attached to them.
             }
 
