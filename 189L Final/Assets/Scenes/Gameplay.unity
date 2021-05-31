@@ -2326,9 +2326,9 @@ MonoBehaviour:
     Loop: 0
     source: {fileID: 0}
   - Name: MeleeSound
-    Clip: {fileID: 8300000, guid: 79e6e1370ee1ca747b469e68d0dcb0fe, type: 3}
+    Clip: {fileID: 8300000, guid: d7da440ad4f6c4e7489efd85844988d8, type: 3}
     Volume: 0.2
-    Pitch: 0.5
+    Pitch: 0.75
     Loop: 0
     source: {fileID: 0}
   - Name: ShootSound
