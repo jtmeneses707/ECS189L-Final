@@ -31,8 +31,11 @@ namespace Player.Command
 
         void Update()
         {
+
+
             if (this.Active)
             {
+
                 this.ElapsedTime += Time.deltaTime;
                 if (this.ElapsedTime < ACTIVE_TIME)
                 {
