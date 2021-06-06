@@ -11,15 +11,30 @@ public class PlayerController : MonoBehaviour
     private Transform FirePoint;
     [SerializeField]
     private Transform MeleeAttackPoint;
+    [SerializeField]
+    private Transform DownSmashPoint;
 
     [SerializeField]
     private LayerMask EnemyLayer;
+
+    // ** Changeable values for game tuning ** // 
+    [SerializeField]
+    private float JumpSpeed = 2.0f; // to be passed into MovePlayerUp, determines how high we jump
+    [SerializeField]
+    private float MeleeAttackRange = 0.3f;
+    [SerializeField]
+    private float DownSmashRange = 2.0f;
+    //[SerializeField]
+    //private float PlayerMovementSpeed = 2.0f;
+    // **   *******  *******  *******    ** // 
+
 
     //private AudioManager AudioManager;
 
     private IPlayerCommand Right;
     private IPlayerCommand Left;
     private IPlayerCommand Up;
+    private IPlayerCommand Down;
 
     private IPlayerCommand Fire1;
     private IPlayerCommand Fire2;
@@ -40,10 +55,18 @@ public class PlayerController : MonoBehaviour
         this.Left = ScriptableObject.CreateInstance<MovePlayerLeft>();
         this.gameObject.AddComponent<MovePlayerUp>();
         this.Up = this.gameObject.GetComponent<MovePlayerUp>();
+
         this.gameObject.AddComponent<PlayerAbilityDash>();
         this.SpaceBar = this.gameObject.GetComponent<PlayerAbilityDash>();
         this.gameObject.AddComponent<PlayerAbilityShoot>();
         this.Fire2 = this.gameObject.GetComponent<PlayerAbilityShoot>();
+
+        this.gameObject.AddComponent<PlayerAbilityDownSmash>();
+        this.Down = this.gameObject.GetComponent<PlayerAbilityDownSmash>();
+        // Pass in Melee Point transform
+        this.gameObject.GetComponent<PlayerAbilityDownSmash>().DownSmashPoint = this.DownSmashPoint;
+        // Pass in Enemy Layer for damage detection
+        this.gameObject.GetComponent<PlayerAbilityDownSmash>().EnemyLayer = this.EnemyLayer;
 
         this.gameObject.AddComponent<PlayerAbilityMelee>();
         this.Fire1 = this.gameObject.GetComponent<PlayerAbilityMelee>();
@@ -64,7 +87,18 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        // ***Adjust this values for game feel as needed*** // 
+        this.gameObject.GetComponent<MovePlayerUp>().JumpSpeed = this.JumpSpeed;
+        this.gameObject.GetComponent<PlayerAbilityMelee>().MeleeAttackRange = this.MeleeAttackRange;
+        this.gameObject.GetComponent<PlayerAbilityDownSmash>().DownSmashRange = this.DownSmashRange;
+
+        //this.Left.ChangeSpeed(this.PlayerMovementSpeed);
+
+        //this.Left.Speed = this.PlayerMovementSpeed;
+        //this.gameObject.GetComponent<MovePlayerRight>().Speed = this.PlayerMovementSpeed;
+        // ***************            ***************** //
+
+
         // To Check for IsGrounded we look through all the contacts that the Player's Feet Box Collider
         // Is in contact with.
         // This resolves the issue of being able to spam jump on the sides of the ground
@@ -90,10 +124,6 @@ public class PlayerController : MonoBehaviour
             break;
         }
 
-        //if (Input.GetKey("d"))
-        //if (Input.GetKey("a"))
-        //var Firepoint = gameObject.transform.Find("FirePoint");
-
         // Left and right movement
         if (Input.GetAxis("Horizontal") > 0.01)
         {
@@ -105,12 +135,6 @@ public class PlayerController : MonoBehaviour
             this.Left.Execute(this.gameObject);
         }
 
-        //if((Input.GetAxis("Horizontal") > 0 || Input.GetAxis("Horizontal") > 0) && this.gameObject.GetComponent<MovePlayerUp>().IsGrounded == true)
-        //{
-        //    //FindObjectOfType<AudioManager>().Play("PlayerFootSteps");
-        //    FindObjectOfType<AudioManager>().Play("PlayerFootSteps");
-        //}
-        
 
         // New implementation for flipping player sprite
         // Used for also flipping all child objects attached to player sprite:
@@ -148,6 +172,16 @@ public class PlayerController : MonoBehaviour
             //Debug.Log(this.gameObject.GetComponent<PlayerAbilityDash>().IsFacingRight);
             this.SpaceBar.Execute(this.gameObject);
         }
+
+        //Down Smash Ability
+        if (Input.GetKeyDown("s") || Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            if (this.gameObject.GetComponent<MovePlayerUp>().IsGrounded)
+            {
+                this.Down.Execute(this.gameObject);
+            }            
+        }
+
 
         // Melee Attack
         if (Input.GetButtonDown("Fire1"))
@@ -191,6 +225,19 @@ public class PlayerController : MonoBehaviour
     private void ShootSound()
     {
         FindObjectOfType<AudioManager>().Play("ShootSound");
+    }
+
+    private void DownSmashSound()
+    {
+        FindObjectOfType<AudioManager>().Play("DownSmashSound");
+    }
+
+    public void SetAllCollidersStatus(bool active)
+    {
+        foreach (Collider c in GetComponents<Collider>())
+        {
+            c.enabled = active;
+        }
     }
 
 

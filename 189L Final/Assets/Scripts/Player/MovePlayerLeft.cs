@@ -8,7 +8,7 @@ namespace Player.Command
 {
     public class MovePlayerLeft : ScriptableObject, IPlayerCommand
     {
-        private float Speed = 2.0f;
+        public float Speed = 2.0f;
 
         public void Execute(GameObject gameObject)
         {
@@ -18,6 +18,11 @@ namespace Player.Command
                 rigidBody.velocity = new Vector2(-this.Speed, rigidBody.velocity.y);
                 //gameObject.GetComponent<SpriteRenderer>().flipX = true;
             }
+        }
+
+        public void ChangeSpeed(float newSpeed)
+        {
+            this.Speed = newSpeed;
         }
     }
 }

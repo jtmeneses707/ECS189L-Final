@@ -6,16 +6,16 @@ using Player.Command;
 
 namespace Player.Command
 {
-    public class PlayerAbilityMelee : MonoBehaviour, IPlayerCommand
+    public class PlayerAbilityDownSmash: MonoBehaviour, IPlayerCommand
     {
 
-        public Transform MeleeAttackPoint;
-        public float MeleeAttackRange = 0.3f;
+        public Transform DownSmashPoint;
+        public float DownSmashRange = 0.3f;
         public LayerMask EnemyLayer;
         public int DamageInflicted = 1;
         public float DamageDelay = 0.05f;
 
-        public float AttackRate = 2.0f;
+        public float AttackRate = 2f;
         public float NextAttackTime = 0.0f;
         public bool CanAttack = false;
 
@@ -33,7 +33,7 @@ namespace Player.Command
         {
 
             //Debug.Log(this.AllEnemiesHit[0]);
-            if(Time.time >= this.NextAttackTime)
+            if (Time.time >= this.NextAttackTime)
             {
                 this.CanAttack = true;
             }
@@ -62,12 +62,13 @@ namespace Player.Command
                 //animator.SetBool("IsAttacking", true);
                 // Easier way of activating animation.
                 // Added trigger to transition state instead of bool.
-                this.animator.SetTrigger("IsAttackingTrigger");
+                this.animator.SetTrigger("IsDownSmashingTrigger");
 
 
                 // Detect enemies in attack range (shape of circle)    
                 // Note: Must add enemy layer to all enemies and give basicenemy script to all enemies
-                this.AllEnemiesHit = Physics2D.OverlapCircleAll(MeleeAttackPoint.position, MeleeAttackRange, EnemyLayer);
+                //this.AllEnemiesHit = Physics2D.OverlapBoxAll(DownSmashPoint.position, transform.localScale / 2, 0.0f, EnemyLayer);
+                this.AllEnemiesHit = Physics2D.OverlapCircleAll(DownSmashPoint.position, this.DownSmashRange, EnemyLayer);
 
                 foreach (Collider2D enemy in this.AllEnemiesHit)
                 {
@@ -90,28 +91,21 @@ namespace Player.Command
 
         }
 
-        // This is not currently being used!
-        // Attempt at Timing attack animation with dealing damage
-        private IEnumerator DelayForDamage(Collider2D enemy)
-        {
-            yield return new WaitForSeconds(DamageDelay);
-            enemy.GetComponent<BasicEnemy>().TakeDamage(this.DamageInflicted);
-        }
-
 
         // Note Gizmos only called when the Player object is selected in the scene!
         void OnDrawGizmosSelected()
         {
             //Debug.Log("Gizmos!");
 
-            if (MeleeAttackPoint == null)
+            if (DownSmashPoint == null)
             {
                 return;
             }
-            Gizmos.color = Color.red;
+            Gizmos.color = Color.blue;
 
             // Draws the sphere so that we know how much to adjust melee aoe
-            Gizmos.DrawWireSphere(this.MeleeAttackPoint.position, this.MeleeAttackRange);
+            //Gizmos.DrawWireCube(this.DownSmashPoint.position, new Vector3(1,1,1));
+            Gizmos.DrawWireSphere(this.DownSmashPoint.position, this.DownSmashRange);
         }
 
     }

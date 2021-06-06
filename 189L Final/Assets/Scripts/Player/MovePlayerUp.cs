@@ -8,7 +8,7 @@ namespace Player.Command
 {
     public class MovePlayerUp: MonoBehaviour, IPlayerCommand
     {
-        private float Speed = 2.0f;
+        public float JumpSpeed = 2.0f;
         private GameObject Jumper;
         public bool IsGrounded;
 
@@ -27,7 +27,7 @@ namespace Player.Command
             var rigidBody = gameObject.GetComponent<Rigidbody2D>();
             if (this.IsGrounded == true)
             {
-                this.Jumper.GetComponent<Rigidbody2D>().velocity = Vector2.up * Speed;
+                this.Jumper.GetComponent<Rigidbody2D>().velocity = Vector2.up * this.JumpSpeed;
                 this.CanDoubleJump = true;
 
                 FindObjectOfType<AudioManager>().Play("PlayerJumpOffGroundSound");
@@ -38,7 +38,7 @@ namespace Player.Command
             {
                 //Debug.Log("we are here 2");
                 //this.Jumper.GetComponent<Rigidbody2D>().velocity = Vector2.up * Speed;
-                this.Jumper.GetComponent<Rigidbody2D>().velocity = new Vector2(rigidBody.velocity.x, this.Speed*1.5f);
+                this.Jumper.GetComponent<Rigidbody2D>().velocity = new Vector2(rigidBody.velocity.x, this.JumpSpeed * 1.5f);
                 this.CanDoubleJump = false;
             }
 
