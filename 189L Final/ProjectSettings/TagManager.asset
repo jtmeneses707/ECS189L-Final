@@ -19,7 +19,7 @@ TagManager:
   - Background
   - Projectiles
   - PlayerGhost
-  - 
+  - Platforms
   - 
   - 
   - 
@@ -44,6 +44,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: PlatformObstacles
+    uniqueID: 4229556553
+    locked: 0
   - name: Water
-    uniqueID: 1763259185
+    uniqueID: 3297123249
     locked: 0

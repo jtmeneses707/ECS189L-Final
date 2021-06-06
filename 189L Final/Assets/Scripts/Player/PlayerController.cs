@@ -232,6 +232,11 @@ public class PlayerController : MonoBehaviour
         FindObjectOfType<AudioManager>().Play("DownSmashSound");
     }
 
+    private void DownSmashDamage()
+    {
+        // apply damage to all enemies caught in the down smash ability
+    }
+
     private void GhostModeOff()
     {
         //Debug.Log("Ended!");
