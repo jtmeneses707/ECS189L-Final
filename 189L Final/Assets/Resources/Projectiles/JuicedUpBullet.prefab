@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3683086360484383501}
   - component: {fileID: 4377437227917836380}
   - component: {fileID: 6164913291202006704}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: JuicedUpBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}

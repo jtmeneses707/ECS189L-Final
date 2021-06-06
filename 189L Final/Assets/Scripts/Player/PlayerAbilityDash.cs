@@ -84,6 +84,11 @@ namespace Player.Command
                     this.DirectionFacing = 1f;
                 }
 
+                this.gameObject.layer = LayerMask.NameToLayer("PlayerGhost");
+
+                //Debug.Log(this.gameObject.layer);
+
+
             }
             //Debug.Log(this.DirectionFacing);
 

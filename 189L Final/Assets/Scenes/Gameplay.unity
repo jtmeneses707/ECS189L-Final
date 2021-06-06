@@ -861,7 +861,7 @@ GameObject:
   m_Component:
   - component: {fileID: 807667225}
   - component: {fileID: 807667226}
-  m_Layer: 3
+  m_Layer: 10
   m_Name: Feet
   m_TagString: Feet
   m_Icon: {fileID: 0}
@@ -2039,13 +2039,13 @@ GameObject:
   - component: {fileID: 1423070024}
   - component: {fileID: 1423070027}
   - component: {fileID: 1423070028}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: DemonKing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &1423070024
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2112,7 +2112,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 7
   m_Sprite: {fileID: 896248011664601087, guid: 6804805b7ddc1e24f931a6954190bb5a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2158,7 +2158,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 5
 --- !u!95 &1423070028
 Animator:
   serializedVersion: 3
@@ -3380,7 +3380,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1986758434
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3467,8 +3467,8 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
+  m_CollisionDetection: 1
+  m_Constraints: 5
 --- !u!61 &1986758437
 BoxCollider2D:
   m_ObjectHideFlags: 0

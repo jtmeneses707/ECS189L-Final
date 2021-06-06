@@ -232,6 +232,12 @@ public class PlayerController : MonoBehaviour
         FindObjectOfType<AudioManager>().Play("DownSmashSound");
     }
 
+    private void GhostModeOff()
+    {
+        //Debug.Log("Ended!");
+        this.gameObject.layer = LayerMask.NameToLayer("Characters");
+    }
+
     public void SetAllCollidersStatus(bool active)
     {
         foreach (Collider c in GetComponents<Collider>())
