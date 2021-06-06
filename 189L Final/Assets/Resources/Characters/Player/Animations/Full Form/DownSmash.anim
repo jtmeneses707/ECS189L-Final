@@ -21,37 +21,37 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: 2190733906213979201, guid: e900762fa99332a4f8fde6e00d1c58b9, type: 3}
-    - time: 0.05
+    - time: 0.06666667
       value: {fileID: 8127171722363611835, guid: e900762fa99332a4f8fde6e00d1c58b9, type: 3}
-    - time: 0.083333336
+    - time: 0.11111111
       value: {fileID: -4572745086699969478, guid: e900762fa99332a4f8fde6e00d1c58b9, type: 3}
-    - time: 0.11666667
+    - time: 0.15555556
       value: {fileID: -8120228248784971962, guid: e900762fa99332a4f8fde6e00d1c58b9, type: 3}
-    - time: 0.16666667
+    - time: 0.22222222
       value: {fileID: 6149042687256423687, guid: e900762fa99332a4f8fde6e00d1c58b9, type: 3}
-    - time: 0.23333333
+    - time: 0.31111112
       value: {fileID: -8231177621417865229, guid: e900762fa99332a4f8fde6e00d1c58b9, type: 3}
-    - time: 0.31666666
+    - time: 0.42222223
       value: {fileID: 4088621185012169358, guid: e900762fa99332a4f8fde6e00d1c58b9, type: 3}
-    - time: 0.36666667
+    - time: 0.4888889
       value: {fileID: -5240484249966723822, guid: e900762fa99332a4f8fde6e00d1c58b9, type: 3}
-    - time: 0.4
+    - time: 0.53333336
       value: {fileID: -4386858576086754329, guid: e900762fa99332a4f8fde6e00d1c58b9, type: 3}
-    - time: 0.43333334
+    - time: 0.5777778
       value: {fileID: 511631208990033819, guid: e900762fa99332a4f8fde6e00d1c58b9, type: 3}
-    - time: 0.45
+    - time: 0.6
       value: {fileID: -9095749111205262990, guid: e900762fa99332a4f8fde6e00d1c58b9, type: 3}
-    - time: 0.48333332
+    - time: 0.64444447
       value: {fileID: -470508937037716172, guid: e900762fa99332a4f8fde6e00d1c58b9, type: 3}
-    - time: 0.5
+    - time: 0.6666667
       value: {fileID: -5724903703765000868, guid: e900762fa99332a4f8fde6e00d1c58b9, type: 3}
-    - time: 0.51666665
+    - time: 0.6888889
       value: {fileID: -3935358528164337788, guid: e900762fa99332a4f8fde6e00d1c58b9, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
-  m_SampleRate: 60
+  m_SampleRate: 45
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -85,7 +85,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.5333333
+    m_StopTime: 0.7111111
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -105,7 +105,7 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0.31666666
+  - time: 0.42222223
     functionName: DownSmashSound
     data: 
     objectReferenceParameter: {fileID: 0}
