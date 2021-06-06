@@ -42,6 +42,23 @@ namespace Player.Command
                 this.CanAttack = false;
             }
 
+            //if (this.Active)
+            //{
+            //    // Get animator attached to player.
+            //    var animator = this.Player.GetComponent<Animator>();
+            //    this.ElapsedTime += Time.deltaTime;
+            //    if (this.ElapsedTime < ACTIVE_TIME)
+            //    {
+            //        this.Player.transform.position = new Vector2(this.Player.transform.position.x, this.Player.transform.position.y - Time.deltaTime * DirectionFacing * DASH_DISTANCE);
+            //    }
+            //    else
+            //    {
+            //        this.Active = false;
+            //    }
+            //    // Update animator to set isDashing param to current state of ability.
+            //    animator.SetBool("IsDashing", this.Active);
+            //}
+
 
         }
 
