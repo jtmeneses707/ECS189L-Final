@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class ProjectileController : MonoBehaviour
 {
+    // Need to change these in the prefab in projectiles folder, for the numbers to actually change
     public float Speed = 10.0f;
-    public int Damage = 1;
+    public float Damage = 50.0f;
     public Rigidbody2D RB;
 
     // Start is called before the first frame update
@@ -32,9 +33,11 @@ public class ProjectileController : MonoBehaviour
     {
         Debug.Log(hitInfo.name);
 
-        BasicEnemy enemy = hitInfo.GetComponent<BasicEnemy>();
+        //BasicEnemy enemy = hitInfo.GetComponent<BasicEnemy>();
 
-        if(enemy != null)
+        EnemyController enemy = hitInfo.GetComponent<EnemyController>(); 
+
+        if (enemy != null)
         {
             enemy.TakeDamage(this.Damage);
         }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 using Player.Command;
 
+// All Enemies need to be set to EnemyLayer for this class to deal damage against them
 namespace Player.Command
 {
     public class PlayerAbilityDownSmash: MonoBehaviour, IPlayerCommand
@@ -95,7 +96,8 @@ namespace Player.Command
                     //StartCoroutine(DelayForDamage(enemy));
 
                     // Code to allow enemies to take damage/ decrease HP
-                    enemy.GetComponent<BasicEnemy>().TakeDamage(this.DamageInflicted);
+                    //enemy.GetComponent<BasicEnemy>().TakeDamage(this.DamageInflicted);
+                    enemy.GetComponent<EnemyController>().TakeDamage(this.DamageInflicted);
                 }
 
                 // Increment Timer so that we delay when the next attack can be done.

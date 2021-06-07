@@ -4,6 +4,7 @@ using UnityEngine;
 
 using Player.Command;
 
+// All Enemies need to be set to EnemyLayer for this class to deal damage against them
 namespace Player.Command
 {
     public class PlayerAbilityMelee : MonoBehaviour, IPlayerCommand
@@ -12,7 +13,7 @@ namespace Player.Command
         public Transform MeleeAttackPoint;
         public float MeleeAttackRange = 0.3f;
         public LayerMask EnemyLayer;
-        public int DamageInflicted = 1;
+        public float DamageInflicted = 50.0f;
         public float DamageDelay = 0.05f;
 
         public float AttackRate = 2.0f;
@@ -77,7 +78,10 @@ namespace Player.Command
                     //StartCoroutine(DelayForDamage(enemy));
 
                     // Code to allow enemies to take damage/ decrease HP
-                    enemy.GetComponent<BasicEnemy>().TakeDamage(this.DamageInflicted);
+                    //enemy.GetComponent<BasicEnemy>().TakeDamage(this.DamageInflicted);
+                    
+                    enemy.GetComponent<EnemyController>().TakeDamage(this.DamageInflicted);
+
                 }
 
                 // Increment Timer so that we delay when the next attack can be done.
@@ -92,11 +96,11 @@ namespace Player.Command
 
         // This is not currently being used!
         // Attempt at Timing attack animation with dealing damage
-        private IEnumerator DelayForDamage(Collider2D enemy)
-        {
-            yield return new WaitForSeconds(DamageDelay);
-            enemy.GetComponent<BasicEnemy>().TakeDamage(this.DamageInflicted);
-        }
+        //private IEnumerator DelayForDamage(Collider2D enemy)
+        //{
+        //    yield return new WaitForSeconds(DamageDelay);
+        //    enemy.GetComponent<BasicEnemy>().TakeDamage(this.DamageInflicted);
+        //}
 
 
         // Note Gizmos only called when the Player object is selected in the scene!

@@ -4,6 +4,8 @@ using UnityEngine;
 
 using Player.Command;
 
+
+// Damage to Enemy is implemented in the ProjectileController class.
 namespace Player.Command
 {
     public class PlayerAbilityShoot : MonoBehaviour, IPlayerCommand
@@ -80,7 +82,7 @@ namespace Player.Command
                 // Give it velocity to send it flying.
                 RB.velocity = transform.right * Speed;
 
-                // Destroy it prefab after awhile and it hasnt hit anything
+                // Destroy the prefab after awhile and it hasnt hit anything
                 Destroy(projectile, 10.0f);
 
                 // Currently projectile script processes damage to enemies with BasicEnemy script attached to them.
