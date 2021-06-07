@@ -15,6 +15,9 @@ public class PlayerController : MonoBehaviour
     private Transform DownSmashPoint;
 
     [SerializeField]
+    private Collider2D DownSmashPointCollider;
+
+    [SerializeField]
     private LayerMask EnemyLayer;
 
     // ** Changeable values for game tuning ** // 
@@ -46,6 +49,8 @@ public class PlayerController : MonoBehaviour
     private BoxCollider2D Feet;
 
     private bool IsFacingRight = true;
+    private bool RestrictMovement = false;
+    private bool RestrictTurning = false;
 
     // Start is called before the first frame update
     void Start()
@@ -65,6 +70,8 @@ public class PlayerController : MonoBehaviour
         this.Down = this.gameObject.GetComponent<PlayerAbilityDownSmash>();
         // Pass in Melee Point transform
         this.gameObject.GetComponent<PlayerAbilityDownSmash>().DownSmashPoint = this.DownSmashPoint;
+        // Pass in collider for hit box
+        this.gameObject.GetComponent<PlayerAbilityDownSmash>().DownSmashPointCollider = this.DownSmashPointCollider;
         // Pass in Enemy Layer for damage detection
         this.gameObject.GetComponent<PlayerAbilityDownSmash>().EnemyLayer = this.EnemyLayer;
 
@@ -123,78 +130,78 @@ public class PlayerController : MonoBehaviour
             }
             break;
         }
-
-        // Left and right movement
-        if (Input.GetAxis("Horizontal") > 0.01)
+        
+        if(RestrictMovement == false) 
         {
-            this.Right.Execute(this.gameObject);
-            
-        }
-        if (Input.GetAxis("Horizontal") < -0.01)
-        {
-            this.Left.Execute(this.gameObject);
-        }
-
-
-        // New implementation for flipping player sprite
-        // Used for also flipping all child objects attached to player sprite:
-        // including FirePoint.
-        if (Input.GetAxis("Horizontal") > 0 && !this.IsFacingRight)
-        {
-            this.IsFacingRight = !this.IsFacingRight;
-            
-            gameObject.transform.Rotate(0.0f, 180.0f, 0.0f);
-        }
-        else if(Input.GetAxis("Horizontal") < 0 && this.IsFacingRight)
-        {
-            this.IsFacingRight = !this.IsFacingRight;
-            
-            gameObject.transform.Rotate(0.0f, 180.0f, 0.0f);
-        }
-
-
-        // Needed to change jump inputs to specific keys
-        // Using vertical > 0.01 lead to updates that were too fast
-        // Using .GetKeyDown instead of .GetKey b/c 
-        // it forces the player to have to double click w
-        // -.getkeyDown() is called for that specific frame
-        if (Input.GetKeyDown("w") || Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            this.Up.Execute(this.gameObject);
-        }
-
-
-        // Dash/ teleport ability
-        if (Input.GetKeyDown("space"))
-        {
-            // Pass in FacingRight since we are no longer using sprite renderer.flipx
-            this.gameObject.GetComponent<PlayerAbilityDash>().IsFacingRight = this.IsFacingRight;
-            //Debug.Log(this.gameObject.GetComponent<PlayerAbilityDash>().IsFacingRight);
-            this.SpaceBar.Execute(this.gameObject);
-        }
-
-        //Down Smash Ability
-        if (Input.GetKeyDown("s") || Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            if (this.gameObject.GetComponent<MovePlayerUp>().IsGrounded)
+            // Left and right movement
+            if (Input.GetAxis("Horizontal") > 0.01)
             {
-                this.Down.Execute(this.gameObject);
-            }            
-        }
+                this.Right.Execute(this.gameObject);
 
+            }
+            if (Input.GetAxis("Horizontal") < -0.01)
+            {
+                this.Left.Execute(this.gameObject);
+            }
 
-        // Melee Attack
-        if (Input.GetButtonDown("Fire1"))
-        {
+            // New implementation for flipping player sprite
+            // Used for also flipping all child objects attached to player sprite:
+            // including FirePoint.
+            if (Input.GetAxis("Horizontal") > 0 && !this.IsFacingRight)
+            {
+                this.IsFacingRight = !this.IsFacingRight;
 
-            this.Fire1.Execute(this.gameObject);
-        }
+                gameObject.transform.Rotate(0.0f, 180.0f, 0.0f);
+            }
+            else if (Input.GetAxis("Horizontal") < 0 && this.IsFacingRight)
+            {
+                this.IsFacingRight = !this.IsFacingRight;
 
-        // Shoot Projectile
-        if (Input.GetButtonDown("Fire2"))
-        {
+                gameObject.transform.Rotate(0.0f, 180.0f, 0.0f);
+            }
 
-            this.Fire2.Execute(this.gameObject);
+            // Needed to change jump inputs to specific keys
+            // Using vertical > 0.01 lead to updates that were too fast
+            // Using .GetKeyDown instead of .GetKey b/c 
+            // it forces the player to have to double click w
+            // -.getkeyDown() is called for that specific frame
+            if (Input.GetKeyDown("w") || Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                this.Up.Execute(this.gameObject);
+            }
+
+            // Dash/ teleport ability
+            if (Input.GetKeyDown("space"))
+            {
+                // Pass in FacingRight since we are no longer using sprite renderer.flipx
+                this.gameObject.GetComponent<PlayerAbilityDash>().IsFacingRight = this.IsFacingRight;
+                //Debug.Log(this.gameObject.GetComponent<PlayerAbilityDash>().IsFacingRight);
+                this.SpaceBar.Execute(this.gameObject);
+            }
+
+            // Melee Attack
+            if (Input.GetButtonDown("Fire1"))
+            {
+
+                this.Fire1.Execute(this.gameObject);
+            }
+
+            // Shoot Projectile
+            if (Input.GetButtonDown("Fire2"))
+            {
+
+                this.Fire2.Execute(this.gameObject);
+            }
+
+            //Down Smash Ability
+            if (Input.GetKeyDown("s") || Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                if (this.gameObject.GetComponent<MovePlayerUp>().IsGrounded)
+                {
+                    this.Down.Execute(this.gameObject);
+                }
+            }
+            
         }
 
         // Get the animator for the player. 
@@ -217,6 +224,32 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    //// Used for melee
+    //private void RestrictPlayerTurning()
+    //{
+    //    //Debug.Log("yes");
+    //    RestrictTurning = true;
+    //}
+
+    //private void UnRestrictPlayerTurning()
+    //{
+    //    //Debug.Log("No");
+    //    RestrictTurning = false;
+    //}
+
+    // Allow the player to move again after using DownSmashAbility
+    private void RestrictPlayerMovement()
+    {
+        RestrictMovement = true;
+    }
+
+    // During the DownSmash the player can't move/ use abilities
+    private void UnRestrictPlayerMovement()
+    {
+        RestrictMovement = false;
+    }
+
+
     private void MeleeSound()
     {
         FindObjectOfType<AudioManager>().Play("MeleeSound");
@@ -237,19 +270,20 @@ public class PlayerController : MonoBehaviour
         // apply damage to all enemies caught in the down smash ability
     }
 
+    // For Passing through enemies
     private void GhostModeOff()
     {
         //Debug.Log("Ended!");
         this.gameObject.layer = LayerMask.NameToLayer("Characters");
     }
 
-    public void SetAllCollidersStatus(bool active)
-    {
-        foreach (Collider c in GetComponents<Collider>())
-        {
-            c.enabled = active;
-        }
-    }
+    //public void SetAllCollidersStatus(bool active)
+    //{
+    //    foreach (Collider c in GetComponents<Collider>())
+    //    {
+    //        c.enabled = active;
+    //    }
+    //}
 
 
     //public void CollisionDetected(ChildCollider collider)

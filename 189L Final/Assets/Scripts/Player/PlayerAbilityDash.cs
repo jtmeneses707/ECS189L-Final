@@ -36,7 +36,6 @@ namespace Player.Command
 
         public void Update()
         {
-            // Get animator attached to player.
    
             if (this.Active)
             {

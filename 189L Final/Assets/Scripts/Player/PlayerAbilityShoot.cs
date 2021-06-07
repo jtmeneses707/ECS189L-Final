@@ -14,7 +14,9 @@ namespace Player.Command
         // Position where projectile is being launched from
         public Transform FirePoint;
         // Speed of projectile
-        public float Speed = 3.0f; 
+        public float Speed = 3f;
+
+        public float BulletCreationDelay = 0.2f;
 
         [SerializeField]
         private const float ACTIVE_TIME = 0.5f;
@@ -85,12 +87,36 @@ namespace Player.Command
                 // Destroy the prefab after awhile and it hasnt hit anything
                 Destroy(projectile, 10.0f);
 
+
+                //StartCoroutine(DelayBulletCreation());
                 // Currently projectile script processes damage to enemies with BasicEnemy script attached to them.
             }
 
         }
+        //private IEnumerator DelayBulletCreation()
+        //{
+        //    yield return new WaitForSeconds(BulletCreationDelay);
+
+        //    // Quaternion.identity - for no rotation. Aligned with the game's 2D axis
+        //    var projectile = (GameObject)Instantiate(ProjectilePrefab, FirePoint.position, Quaternion.identity);
+
+        //    // Get New instantiate projectiles rigidbody.
+        //    var RB = projectile.GetComponent<Rigidbody2D>();
+
+        //    // Give it velocity to send it flying.
+        //    RB.velocity = transform.right * Speed;
+
+        //    // Destroy the prefab after awhile and it hasnt hit anything
+        //    Destroy(projectile, 10.0f);
+
+
+        //}
     }
 }
+
+
+
+
 
 //// Quaternion.identity - for no rotation. Aligned with the game's 2D axis
 //var projectile = (GameObject)Instantiate(ProjectilePrefab, FirePoint.position, Quaternion.identity);

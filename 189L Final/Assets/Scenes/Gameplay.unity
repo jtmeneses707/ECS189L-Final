@@ -491,6 +491,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 123479079}
+  - component: {fileID: 123479080}
   m_Layer: 3
   m_Name: DownSmashPoint
   m_TagString: Untagged
@@ -506,12 +507,38 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 123479078}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.031, y: -0.597, z: 0}
+  m_LocalPosition: {x: 0.006, y: -0.597, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 912158787}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &123479080
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 123479078}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.006777033, y: 0.2275511}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.7421465, y: 0.21763253}
+  m_EdgeRadius: 0
 --- !u!1001 &133488497
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4961,12 +4988,13 @@ MonoBehaviour:
   FirePoint: {fileID: 1715892430}
   MeleeAttackPoint: {fileID: 606187305}
   DownSmashPoint: {fileID: 123479079}
+  DownSmashPointCollider: {fileID: 123479080}
   EnemyLayer:
     serializedVersion: 2
     m_Bits: 64
   JumpSpeed: 2.2
   MeleeAttackRange: 0.3
-  DownSmashRange: 0.4
+  DownSmashRange: 0.48
 --- !u!95 &912158789
 Animator:
   serializedVersion: 3
@@ -8598,7 +8626,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 5
+  m_Constraints: 4
 --- !u!95 &1423070028
 Animator:
   serializedVersion: 3
