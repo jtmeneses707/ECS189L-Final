@@ -10,6 +10,7 @@ public class MainMenu : MonoBehaviour
     {
         Debug.Log("Loading next scene...");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        Time.timeScale = 1f;
     }
 
     public void QuitGame()
