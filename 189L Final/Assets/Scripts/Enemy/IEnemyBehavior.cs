@@ -8,8 +8,8 @@ namespace Enemy.Behavior
     {
         void MoveLeft();
         void MoveRight();
-        void Follow(GameObject targetObject);
-        void Attack(GameObject targetObject);
+        void FollowPlayer();
+        void AttackPlayer();
         void TakeDamage(float Amount);
         void Die();
     }
