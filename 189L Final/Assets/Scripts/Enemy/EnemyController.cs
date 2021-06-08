@@ -169,6 +169,10 @@ namespace Enemy.Controller
             {
                 animator.SetTrigger("Attack");
             }
+            else
+            {
+                animator.ResetTrigger("Attack");
+            }
         }
 
 
