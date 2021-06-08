@@ -6,14 +6,23 @@ using Enemy.Movement;
 using Enemy.Constants;
 using Enemy.Behavior;
 
-public class EnemyController : MonoBehaviour, EnemyBehavior
+public abstract class EnemyController : MonoBehaviour, EnemyBehavior
 {
     [SerializeField]
     protected GameObject PlayerObject;
+
+    [SerializeField]
+    protected float Health = 100.0f;
+
+    protected bool isTransformFlipped = false;
+
+    public Animator animator;
+
+
     protected EnemyMovement Move;
     protected float VisibleRadius;
     protected float AttackRadius;
-    public float Health = 100.0f;
+    
     protected float RoamTimer = 0.0f;
     protected GameObject deathAnimation;
 
@@ -77,7 +86,7 @@ public class EnemyController : MonoBehaviour, EnemyBehavior
 
         if (Health <= 0)
         {
-            Death();
+            Die();
         }
         else
         {
@@ -86,23 +95,50 @@ public class EnemyController : MonoBehaviour, EnemyBehavior
 
     }
 
+    public void Die()
+    {
+        //Play Die Animation
+        animator.SetBool("IsDead", true);
+
+        //Disable Enemy
+        GetComponent<Collider2D>().enabled = false;
+        this.enabled = false;
+    }
+
     void ResetMaterial()
     {
         SR.material = this.MatDefault;
     }
 
-    public void Death()
+    protected void FacePlayer()
     {
-        Destroy(gameObject);
+        if (transform.position.x > PlayerObject.transform.position.x && isTransformFlipped)
+        {
+            FlipEnemyTransform();
+        }
+        else if (transform.position.x < PlayerObject.transform.position.x && !isTransformFlipped)
+        {
+            FlipEnemyTransform();
+        }
     }
 
-    public bool isPlayerNearVisibleRadius()
+    protected void FlipEnemyTransform()
+    {
+        Vector3 transformScale = transform.localScale;
+        transformScale.z = transformScale.z * -1;
+
+        transform.localScale = transformScale;
+        transform.Rotate(0f, 180f, 0f);
+        isTransformFlipped = !isTransformFlipped;
+    }
+
+    protected bool isPlayerNearVisibleRadius()
     {
         float playerDistance = (PlayerObject.transform.position - transform.position).magnitude;
         return playerDistance < VisibleRadius;
     }
 
-    public bool isPlayerNearAttackRadius()
+    protected bool isPlayerNearAttackRadius()
     {
         float playerDistance = (PlayerObject.transform.position - transform.position).magnitude;
         return playerDistance < AttackRadius;
@@ -113,7 +149,6 @@ public class EnemyController : MonoBehaviour, EnemyBehavior
 
 
 
-    
 
 
 
