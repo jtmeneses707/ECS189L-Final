@@ -92,6 +92,17 @@ namespace Enemy.Controller
 
         public void TakeDamage(float amount)
         {
+
+            if(this.gameObject.tag == "SkeletonEnemy")
+            {
+                FindObjectOfType<AudioManager>().Play("SkeletonDamageSound");
+            }
+            else if(this.gameObject.tag == "DemonKing")
+            {
+                FindObjectOfType<AudioManager>().Play("BossDamageSound");
+            }
+            
+
             Debug.Log(amount);
 
             Health = Health - amount;

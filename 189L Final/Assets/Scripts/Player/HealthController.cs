@@ -43,6 +43,8 @@ public class HealthController : MonoBehaviour
     ///</Summary>
     public void TakeDamage()
     {
+        FindObjectOfType<AudioManager>().Play("PlayerDamageSound");
+
         if (this.Hearts > 0)
         {
             this.Hearts--;
