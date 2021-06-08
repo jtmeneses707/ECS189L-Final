@@ -1,19 +1,31 @@
 fileFormatVersion: 2
-guid: 6611522d0fa2eff4a80ebe4019932f5d
+guid: c0103c1c2713852448751e12deae90aa
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6019723214565923347
-    second: Idle_01-sheet_0
+      213: 2557614664315369013
+    second: Walk_01-sheet-sheet 1_0
   - first:
-      213: -2527672060488649118
-    second: Idle_01-sheet_1
+      213: 4379223350790694249
+    second: Walk_01-sheet-sheet 1_1
   - first:
-      213: -7791402851864225764
-    second: Idle_01-sheet_2
+      213: -3854927729739842340
+    second: Walk_01-sheet-sheet 1_2
   - first:
-      213: 8078397236685889641
-    second: Idle_01-sheet_3
+      213: 4629722186140192390
+    second: Walk_01-sheet-sheet 1_3
+  - first:
+      213: 5586470900055768944
+    second: Walk_01-sheet-sheet 1_4
+  - first:
+      213: 4378566550508092521
+    second: Walk_01-sheet-sheet 1_5
+  - first:
+      213: 8520251581608878057
+    second: Walk_01-sheet-sheet 1_6
+  - first:
+      213: -9165410113031389422
+    second: Walk_01-sheet-sheet 1_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -103,13 +115,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Idle_01-sheet_0
+      name: Walk_01-sheet-sheet 1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 64
-        height: 64
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -117,20 +129,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 31adf5aae5a5a8350800000000000000
-      internalID: 6019723214565923347
+      spriteID: 536f8d28cf87e7320800000000000000
+      internalID: 2557614664315369013
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_01-sheet_1
+      name: Walk_01-sheet-sheet 1_1
       rect:
         serializedVersion: 2
         x: 64
         y: 0
         width: 64
-        height: 64
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -138,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 266f4e537a7ebecd0800000000000000
-      internalID: -2527672060488649118
+      spriteID: 965a9f77f6026cc30800000000000000
+      internalID: 4379223350790694249
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_01-sheet_2
+      name: Walk_01-sheet-sheet 1_2
       rect:
         serializedVersion: 2
         x: 128
         y: 0
         width: 64
-        height: 64
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -159,20 +171,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c18daa803606fd390800000000000000
-      internalID: -7791402851864225764
+      spriteID: cdcbd0277ab808ac0800000000000000
+      internalID: -3854927729739842340
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_01-sheet_3
+      name: Walk_01-sheet-sheet 1_3
       rect:
         serializedVersion: 2
         x: 192
         y: 0
         width: 64
-        height: 64
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -180,8 +192,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 960e82f4c7b3c1070800000000000000
-      internalID: 8078397236685889641
+      spriteID: 68e81a98cc3104040800000000000000
+      internalID: 4629722186140192390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_01-sheet-sheet 1_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07f71e96fa1278d40800000000000000
+      internalID: 5586470900055768944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_01-sheet-sheet 1_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96c317c341bc3cc30800000000000000
+      internalID: 4378566550508092521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_01-sheet-sheet 1_6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 64
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9efd1c6dba30e3670800000000000000
+      internalID: 8520251581608878057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_01-sheet-sheet 1_7
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 64
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21fbdf7001cedc080800000000000000
+      internalID: -9165410113031389422
       vertices: []
       indices: 
       edges: []
@@ -189,7 +285,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 32d1c0e0b5e214c42bea19798941d028
+    spriteID: 3d237615428249549989afa6b6067751
     internalID: 0
     vertices: []
     indices: 

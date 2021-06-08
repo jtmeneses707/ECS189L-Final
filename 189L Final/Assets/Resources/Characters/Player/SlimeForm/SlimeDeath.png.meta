@@ -1,25 +1,25 @@
 fileFormatVersion: 2
-guid: 198e93275e0aedf4ba20a5950e1c46d7
+guid: 68d3dfef2f2b6554bb6d3f9fbc061d39
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6908694742835972899
-    second: Attack_01-sheet_0
+      213: -8248874143158181610
+    second: SlimeDeath_0
   - first:
-      213: 368018412183795648
-    second: Attack_01-sheet_1
+      213: 4607122159584648237
+    second: SlimeDeath_1
   - first:
-      213: -5239922240782280688
-    second: Attack_01-sheet_2
+      213: 6474343901315240914
+    second: SlimeDeath_2
   - first:
-      213: 2102712918216533656
-    second: Attack_01-sheet_3
+      213: -8535977896162509796
+    second: SlimeDeath_3
   - first:
-      213: -6331693189051976062
-    second: Attack_01-sheet_4
+      213: 1932137430910769947
+    second: SlimeDeath_4
   - first:
-      213: -4486795821847670651
-    second: Attack_01-sheet_5
+      213: 8411027701798509436
+    second: SlimeDeath_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -109,13 +109,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Attack_01-sheet_0
+      name: SlimeDeath_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 64
-        height: 64
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -123,20 +123,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dd437a73cb26f10a0800000000000000
-      internalID: -6908694742835972899
+      spriteID: 611e624dbac168d80800000000000000
+      internalID: -8248874143158181610
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack_01-sheet_1
+      name: SlimeDeath_1
       rect:
         serializedVersion: 2
         x: 64
         y: 0
         width: 64
-        height: 64
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -144,20 +144,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0c7b409cbc67b1500800000000000000
-      internalID: 368018412183795648
+      spriteID: d2c9fdec139cfef30800000000000000
+      internalID: 4607122159584648237
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack_01-sheet_2
+      name: SlimeDeath_2
       rect:
         serializedVersion: 2
         x: 128
         y: 0
         width: 64
-        height: 64
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -165,20 +165,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 018d08bfb7e0847b0800000000000000
-      internalID: -5239922240782280688
+      spriteID: 2d39c97c97d79d950800000000000000
+      internalID: 6474343901315240914
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack_01-sheet_3
+      name: SlimeDeath_3
       rect:
         serializedVersion: 2
         x: 192
         y: 0
         width: 64
-        height: 64
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -186,20 +186,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 896ebea22465e2d10800000000000000
-      internalID: 2102712918216533656
+      spriteID: c1cb5a8345d1a8980800000000000000
+      internalID: -8535977896162509796
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack_01-sheet_4
+      name: SlimeDeath_4
       rect:
         serializedVersion: 2
         x: 256
         y: 0
         width: 64
-        height: 64
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -207,20 +207,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 286fbcf579e4128a0800000000000000
-      internalID: -6331693189051976062
+      spriteID: b1b1caaa1c450da10800000000000000
+      internalID: 1932137430910769947
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack_01-sheet_5
+      name: SlimeDeath_5
       rect:
         serializedVersion: 2
         x: 320
         y: 0
         width: 64
-        height: 64
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -228,8 +228,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 580101bd8f2bbb1c0800000000000000
-      internalID: -4486795821847670651
+      spriteID: c7b9ba99129f9b470800000000000000
+      internalID: 8411027701798509436
       vertices: []
       indices: 
       edges: []
@@ -237,7 +237,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 1bd44b1fa4e23054e8689fb99239ed6f
+    spriteID: fa0ffbb3e3487174d91bf06c03c92ab1
     internalID: 0
     vertices: []
     indices: 
