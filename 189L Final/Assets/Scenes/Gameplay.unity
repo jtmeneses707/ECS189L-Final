@@ -8692,8 +8692,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc645233a40998548b7e8c6373829517, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
   PlayerObject: {fileID: 0}
-  Health: 150
 --- !u!1001 &1438896202
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14552,13 +14552,14 @@ GameObject:
   - component: {fileID: 1986758436}
   - component: {fileID: 1986758437}
   - component: {fileID: 1986758438}
+  - component: {fileID: 1986758439}
   m_Layer: 3
   m_Name: Skeleton Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1986758434
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14692,6 +14693,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1986758439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1986758433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2f0099a182451f49838ba6b5ac2d9f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 1986758438}
+  PlayerObject: {fileID: 912158783}
 --- !u!1001 &2023723524
 PrefabInstance:
   m_ObjectHideFlags: 0

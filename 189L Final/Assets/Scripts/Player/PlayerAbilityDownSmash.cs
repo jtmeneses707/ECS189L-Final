@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Enemy.Controller;
 using Player.Command;
 
 // All Enemies need to be set to EnemyLayer for this class to deal damage against them

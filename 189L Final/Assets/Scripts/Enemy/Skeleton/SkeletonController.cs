@@ -3,40 +3,30 @@ using System.Collections.Generic;
 using Enemy.Behavior;
 using UnityEngine;
 
-namespace Enemy
+namespace Enemy.Controller
 {
     public class SkeletonController : EnemyController
     {
-
         // Start is called before the first frame update
-        void Start()
-        {
 
-        }
 
         // Update is called once per frame
-        void Update()
-        {
-            FollowPlayerLogic();
-            AttackPlayerLogic();
-            RoamOrIdleLogic();
-        }
+        //void Update()
+        //{
+        //    FollowPlayerLogic();
+        //    AttackPlayerLogic();
+        //    RoamOrIdleLogic();
+        //}
 
-        public void FollowPlayerLogic()
-        {
-            if (IsPlayerNearVisibleRadius())
-            {
-                Follow(PlayerObject);
-            }
-        }
 
-        public void AttackPlayerLogic()
-        {
-            if (IsPlayerNearAttackRadius())
-            {
-                Attack(PlayerObject);
-            }
-        }
+
+        //public void AttackPlayerLogic()
+        //{
+        //    if (IsPlayerNearAttackRadius())
+        //    {
+        //        AttackPlayer();
+        //    }
+        //}
 
 
         public void RoamOrIdleLogic()
