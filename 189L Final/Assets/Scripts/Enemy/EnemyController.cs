@@ -8,23 +8,25 @@ using Enemy.Behavior;
 
 public abstract class EnemyController : MonoBehaviour, EnemyBehavior
 {
+    public Animator animator;
+
     [SerializeField]
     protected GameObject PlayerObject;
 
     [SerializeField]
     protected float Health = 100.0f;
 
-    protected bool isTransformFlipped = false;
+    [SerializeField]
+    protected float VisibilityRadius;
 
-    public Animator animator;
-
-
-    protected EnemyMovement Move;
-    protected float VisibleRadius;
+    [SerializeField]
     protected float AttackRadius;
-    
+
+    [SerializeField]
     protected float RoamTimer = 0.0f;
-    protected GameObject deathAnimation;
+
+    protected bool isTransformFlipped = false;
+    protected EnemyMovement Move;
 
     // Materials for indicating enemy damage
     private Material MatWhite;
@@ -59,7 +61,6 @@ public abstract class EnemyController : MonoBehaviour, EnemyBehavior
     {
         Move.MoveRight();
     }
-
 
     public void Follow(GameObject targetObject)
     {
@@ -110,7 +111,7 @@ public abstract class EnemyController : MonoBehaviour, EnemyBehavior
         SR.material = this.MatDefault;
     }
 
-    protected void FacePlayer()
+    public void FacePlayer()
     {
         if (transform.position.x > PlayerObject.transform.position.x && isTransformFlipped)
         {
@@ -122,7 +123,7 @@ public abstract class EnemyController : MonoBehaviour, EnemyBehavior
         }
     }
 
-    protected void FlipEnemyTransform()
+    public void FlipEnemyTransform()
     {
         Vector3 transformScale = transform.localScale;
         transformScale.z = transformScale.z * -1;
@@ -132,13 +133,13 @@ public abstract class EnemyController : MonoBehaviour, EnemyBehavior
         isTransformFlipped = !isTransformFlipped;
     }
 
-    protected bool isPlayerNearVisibleRadius()
+    public bool IsPlayerNearVisibleRadius()
     {
         float playerDistance = (PlayerObject.transform.position - transform.position).magnitude;
-        return playerDistance < VisibleRadius;
+        return playerDistance < VisibilityRadius;
     }
 
-    protected bool isPlayerNearAttackRadius()
+    public bool IsPlayerNearAttackRadius()
     {
         float playerDistance = (PlayerObject.transform.position - transform.position).magnitude;
         return playerDistance < AttackRadius;
