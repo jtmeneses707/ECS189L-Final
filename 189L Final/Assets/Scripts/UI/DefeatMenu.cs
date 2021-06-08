@@ -5,13 +5,13 @@ using UnityEngine;
 public class DefeatMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
-    // public bool StartDefeatMusic;
+    public bool StartDefeatMusic;
 
     public GameObject DefeatMenuUI;
 
     void Start()
     {
-        // StartDefeatMusic = false;
+        StartDefeatMusic = false;
     }
         // Update is called once per frame
         void Update()
@@ -22,16 +22,16 @@ public class DefeatMenu : MonoBehaviour
             Time.timeScale = 0f;
             GameIsPaused = true;
 
-            /*
+
             FindObjectOfType<AudioManager>().Stop("MainTheme");
 
-            if(StartVictoryMusic == false)
+            if (StartDefeatMusic == false)
             {
-                FindObjectOfType<AudioManager>().Play("VictoryTheme");
-                StartVictoryMusic = true;
+                FindObjectOfType<AudioManager>().Play("LoseTheme");
+                StartDefeatMusic = true;
 
             }
-            */
+
         }
     }
 }

@@ -20,6 +20,8 @@ namespace Enemy.Controller
         protected float AttackRadius;
         protected float RoamTimer;
 
+        protected bool AttackActive;
+
         protected bool isTransformFlipped = false;
         protected EnemyMovement Move;
 
@@ -43,6 +45,7 @@ namespace Enemy.Controller
             // By default Ressources.Load returns an object, but here we want a material.
             this.MatWhite = Resources.Load("Materials/WhiteFlash", typeof(Material)) as Material;
             this.MatDefault = this.SR.material;
+            this.AttackActive = false;
 
             Move = new EnemyMovement(EnemyConstants.BasicEnemySpeed, this.gameObject);
         }
@@ -173,6 +176,21 @@ namespace Enemy.Controller
             {
                 animator.ResetTrigger("Attack");
             }
+        }
+
+
+        /// <Summary>
+        /// Used with animation events in animator to 
+        /// set when an attack is active. Allows us to 
+        /// set a specific, frame accurate window to check if any collisions
+        /// occur with player.
+        /// </Summary>
+        public void SetAttackActive() {
+            this.AttackActive = true;
+        }
+
+        public void SetAttackInactive() {
+            this.AttackActive = false;
         }
 
 

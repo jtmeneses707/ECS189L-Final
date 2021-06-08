@@ -14948,7 +14948,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 912158783}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.365, y: -1.912, z: 0}
+  m_LocalPosition: {x: 0.169, y: -2.056, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 807667225}
@@ -19404,19 +19404,19 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.03688945, y: -1.5175107}
-      - {x: 0.075774096, y: -1.4429765}
-      - {x: 0.37169006, y: -1.161479}
-      - {x: 0.29521236, y: -0.61575794}
-      - {x: 0.054977, y: -0.36790574}
-      - {x: -0.2140627, y: -0.29463333}
-      - {x: -0.33549583, y: -0.3365925}
+    - - {x: 0.3334587, y: -1.1827118}
+      - {x: 0.40493953, y: -1.1441281}
+      - {x: 0.42488626, y: -0.74053055}
+      - {x: 0.35339916, y: -0.5637048}
+      - {x: 0.096539125, y: -0.3332037}
+      - {x: -0.2140627, y: -0.2512559}
+      - {x: -0.2632239, y: -0.2715775}
+      - {x: -0.31323814, y: -0.2922518}
+      - {x: -0.6513672, y: -0.43202296}
+      - {x: -0.18656445, y: -0.46628237}
       - {x: 0.0007981211, y: -0.6017183}
       - {x: 0.13440423, y: -0.8853514}
-      - {x: 0.07907592, y: -1.1151389}
-      - {x: -0.11365741, y: -1.3648016}
-      - {x: -0.1640536, y: -1.4418834}
-      - {x: -0.058969855, y: -1.4600288}
+      - {x: 0.16219984, y: -1.1758676}
 --- !u!1001 &1276483716
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32661,7 +32661,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1986758433}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.415, y: -2.217, z: 0}
+  m_LocalPosition: {x: 0.929, y: -2.217, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 1262239760}
@@ -34544,7 +34544,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6502980637208349909, guid: e84e27d923f4cae4c9c385e0a2f68c78, type: 3}
       propertyPath: sounds.Array.size
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6502980637208349909, guid: e84e27d923f4cae4c9c385e0a2f68c78, type: 3}
       propertyPath: sounds.Array.data[8].Clip
@@ -34559,7 +34559,23 @@ PrefabInstance:
       value: VictoryTheme
       objectReference: {fileID: 0}
     - target: {fileID: 6502980637208349909, guid: e84e27d923f4cae4c9c385e0a2f68c78, type: 3}
+      propertyPath: sounds.Array.data[9].Clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 05f3a0c05cde6d345a9d56a58370862c, type: 3}
+    - target: {fileID: 6502980637208349909, guid: e84e27d923f4cae4c9c385e0a2f68c78, type: 3}
+      propertyPath: sounds.Array.data[9].Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6502980637208349909, guid: e84e27d923f4cae4c9c385e0a2f68c78, type: 3}
+      propertyPath: sounds.Array.data[9].Name
+      value: LoseTheme
+      objectReference: {fileID: 0}
+    - target: {fileID: 6502980637208349909, guid: e84e27d923f4cae4c9c385e0a2f68c78, type: 3}
       propertyPath: sounds.Array.data[8].Pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6502980637208349909, guid: e84e27d923f4cae4c9c385e0a2f68c78, type: 3}
+      propertyPath: sounds.Array.data[9].Pitch
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6502980637208349909, guid: e84e27d923f4cae4c9c385e0a2f68c78, type: 3}
@@ -34568,6 +34584,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6502980637208349909, guid: e84e27d923f4cae4c9c385e0a2f68c78, type: 3}
       propertyPath: sounds.Array.data[8].Volume
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6502980637208349909, guid: e84e27d923f4cae4c9c385e0a2f68c78, type: 3}
+      propertyPath: sounds.Array.data[9].Volume
       value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
