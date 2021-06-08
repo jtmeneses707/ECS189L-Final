@@ -122,8 +122,6 @@ namespace Player.Command
                     //enemy.GetComponent<EnemyController>().TakeDamage(this.DamageInflicted);
                 }
 
-           
-
                 // Increment Timer so that we delay when the next attack can be done.
                 //this.NextAttackTime = Time.time + 1.0f / AttackRate;
 
