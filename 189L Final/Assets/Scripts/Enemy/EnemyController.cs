@@ -81,9 +81,13 @@ namespace Enemy.Controller
 
         public void AttackPlayer()
         {
-            //TODO
-            //Play attack animation
-            //Subtract damage from player
+            PolygonCollider2D weaponHitBox = GetComponentInChildren<PolygonCollider2D>();
+            Collider2D playerCollider = PlayerObject.GetComponent<BoxCollider2D>();
+            if (weaponHitBox.IsTouching(playerCollider))
+            {
+                HealthController playerHealthController = playerCollider.GetComponent<HealthController>();
+                playerHealthController.TakeDamage();
+            }
         }
 
         public void TakeDamage(float amount)
@@ -154,7 +158,7 @@ namespace Enemy.Controller
             return playerDistance < AttackRadius;
         }
 
-        public void SeekPlayerLogic()
+        public void SeekPlayerStateLogic()
         {
             if (IsPlayerNearVisibleRadius())
             {
@@ -166,7 +170,7 @@ namespace Enemy.Controller
             }
         }
 
-        public void AttackPlayerLogic()
+        public void AttackPlayerStateLogic()
         {
             if (IsPlayerNearAttackRadius())
             {
@@ -186,6 +190,7 @@ namespace Enemy.Controller
         /// occur with player.
         /// </Summary>
         public void SetAttackActive() {
+            AttackPlayer();
             this.AttackActive = true;
         }
 

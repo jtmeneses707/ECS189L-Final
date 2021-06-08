@@ -15,25 +15,6 @@ namespace Enemy.Controller
             SetStats(EnemyConstants.SkeletonHealth, EnemyConstants.SkeletonVisibilityRadius, EnemyConstants.SkeletonAttackRadius, EnemyConstants.SkeletonRoamTimer);
         }
 
-        // Update is called once per frame
-        //void Update()
-        //{
-        //    FollowPlayerLogic();
-        //    AttackPlayerLogic();
-        //    RoamOrIdleLogic();
-        //}
-
-
-
-        //public void AttackPlayerLogic()
-        //{
-        //    if (IsPlayerNearAttackRadius())
-        //    {
-        //        AttackPlayer();
-        //    }
-        //}
-
-
         public void RoamOrIdleLogic()
         {
             //Choose randomly between 5-10 seconds on whether to idle or roam

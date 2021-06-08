@@ -17,13 +17,13 @@ public class Skeleton_Walk : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         skeletonController.FollowPlayer();
-        skeletonController.AttackPlayerLogic();
-        skeletonController.SeekPlayerLogic();
+        skeletonController.AttackPlayerStateLogic();
+        skeletonController.SeekPlayerStateLogic();
     }
 
     //OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        skeletonController.AttackPlayerLogic();
+        skeletonController.AttackPlayerStateLogic();
     }
 }

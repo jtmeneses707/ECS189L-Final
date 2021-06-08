@@ -4,17 +4,18 @@ using UnityEngine;
 
 public class HealthController : MonoBehaviour
 {
+    public Animator animator;
+
+    
     // 3 Hearts for main form, and 1 heart for Slime Form.
     private int Hearts;
-
-    private Animator Animator;
 
     private PlayerController PlayerController;
     // Start is called before the first frame update
     void Start()
     {
         this.Hearts = 4;
-        this.Animator = this.gameObject.GetComponent<Animator>();
+        this.animator = this.gameObject.GetComponent<Animator>();
         this.PlayerController = this.gameObject.GetComponent<PlayerController>();
     }
 
@@ -32,14 +33,15 @@ public class HealthController : MonoBehaviour
         // Set layer weight to change from full form to slime form sprites.
         if (this.Hearts == 1)
         {
-            this.Animator.SetLayerWeight(0, 0);
-            this.Animator.SetLayerWeight(1, 1);
+            this.animator.SetLayerWeight(0, 0);
+            this.animator.SetLayerWeight(1, 1);
         }
 
-        // if (this.Hearts == 0) 
-        // {
-        //     this.PlayerController.
-        // }
+        if (this.Hearts == 0)
+        {
+            animator.SetBool("IsDead", true);
+            Destroy(GameObject.Find("IsAlive"));
+        }
     }
 
     /// <Summary>
@@ -48,8 +50,8 @@ public class HealthController : MonoBehaviour
     public void ResetForm() {
         this.Hearts = 4;
         // Revert from Slime to Full Form layer.
-        this.Animator.SetLayerWeight(1, 0);
-        this.Animator.SetLayerWeight(0, 1);
+        this.animator.SetLayerWeight(1, 0);
+        this.animator.SetLayerWeight(0, 1);
      }
      public int GetHearts() {
          return this.Hearts;
