@@ -25,6 +25,8 @@ namespace Player.Command
         private GameObject Player;
 
         private Collider2D[] AllEnemiesHit;
+        public int SlimeHitCounter = 0;
+        public bool IsSlime = false;
 
         void Start()
         {
@@ -42,7 +44,6 @@ namespace Player.Command
             {
                 this.CanAttack = false;
             }
-
 
         }
 
@@ -72,14 +73,20 @@ namespace Player.Command
 
                 foreach (Collider2D enemy in this.AllEnemiesHit)
                 {
-                    Debug.Log("We hit " + enemy.name);
+                    //Debug.Log("We hit " + enemy.name);
 
+                    if (this.IsSlime)
+                    {
+                        // Increase Slime Hit Counter
+                        this.SlimeHitCounter++;
+                    }
+                    
                     // Pass deal damage into coroutine to time it with animation
                     //StartCoroutine(DelayForDamage(enemy));
 
                     // Code to allow enemies to take damage/ decrease HP
                     //enemy.GetComponent<BasicEnemy>().TakeDamage(this.DamageInflicted);
-                    
+
                     enemy.GetComponent<EnemyController>().TakeDamage(this.DamageInflicted);
 
                 }

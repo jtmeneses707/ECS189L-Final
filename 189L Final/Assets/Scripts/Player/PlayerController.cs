@@ -53,7 +53,8 @@ public class PlayerController : MonoBehaviour
 
     private bool IsFacingRight = true;
     private bool RestrictMovement = false;
-    private bool RestrictTurning = false;
+    private bool IsSlime = false;
+    private int SlimeHitCounter = 0;
 
     void OnCollisionEnter2D(Collision2D collision)
         {   
@@ -213,15 +214,6 @@ public class PlayerController : MonoBehaviour
                 this.Up.Execute(this.gameObject);
             }
 
-            // Dash/ teleport ability
-            if (Input.GetKeyDown("space"))
-            {
-                // Pass in FacingRight since we are no longer using sprite renderer.flipx
-                this.gameObject.GetComponent<PlayerAbilityDash>().IsFacingRight = this.IsFacingRight;
-                //Debug.Log(this.gameObject.GetComponent<PlayerAbilityDash>().IsFacingRight);
-                this.SpaceBar.Execute(this.gameObject);
-            }
-
             // Melee Attack
             if (Input.GetButtonDown("Fire1"))
             {
@@ -229,21 +221,35 @@ public class PlayerController : MonoBehaviour
                 this.Fire1.Execute(this.gameObject);
             }
 
-            // Shoot Projectile
-            if (Input.GetButtonDown("Fire2"))
+            // Can only do these special moves when not in slime mode
+            if(IsSlime == false)
             {
-
-                this.Fire2.Execute(this.gameObject);
-            }
-
-            //Down Smash Ability
-            if (Input.GetKeyDown("s") || Input.GetKeyDown(KeyCode.DownArrow))
-            {
-                if (this.gameObject.GetComponent<MovePlayerUp>().IsGrounded)
+                // Dash/ teleport ability
+                if (Input.GetKeyDown("space"))
                 {
-                    this.Down.Execute(this.gameObject);
+                    // Pass in FacingRight since we are no longer using sprite renderer.flipx
+                    this.gameObject.GetComponent<PlayerAbilityDash>().IsFacingRight = this.IsFacingRight;
+                    //Debug.Log(this.gameObject.GetComponent<PlayerAbilityDash>().IsFacingRight);
+                    this.SpaceBar.Execute(this.gameObject);
+                }
+
+                // Shoot Projectile
+                if (Input.GetButtonDown("Fire2"))
+                {
+
+                    this.Fire2.Execute(this.gameObject);
+                }
+
+                //Down Smash Ability
+                if (Input.GetKeyDown("s") || Input.GetKeyDown(KeyCode.DownArrow))
+                {
+                    if (this.gameObject.GetComponent<MovePlayerUp>().IsGrounded)
+                    {
+                        this.Down.Execute(this.gameObject);
+                    }
                 }
             }
+            
             
         }
 
@@ -254,6 +260,27 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("X-Velocity", Mathf.Abs(this.gameObject.GetComponent<Rigidbody2D>().velocity.x));
         animator.SetFloat("Y-Velocity", Mathf.Abs(this.gameObject.GetComponent<Rigidbody2D>().velocity.y));
         animator.SetBool("IsGrounded", this.gameObject.GetComponent<MovePlayerUp>().IsGrounded);
+
+        this.gameObject.GetComponent<PlayerAbilityMelee>().IsSlime = this.IsSlime;
+
+        if (this.HealthController.GetHearts() == 0 && this.IsSlime == false)
+        {
+            animator.SetLayerWeight(0, 0);
+            animator.SetLayerWeight(1, 1);
+            this.IsSlime = true;
+        }
+        else if(this.gameObject.GetComponent<PlayerAbilityMelee>().SlimeHitCounter == 2 && this.IsSlime == true)
+        {
+            //Debug.Log("Hello!");
+            //this.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.up * 10.0f;
+            this.IsSlime = false;
+            this.HealthController.ResetForm();
+            this.gameObject.GetComponent<PlayerAbilityMelee>().SlimeHitCounter = 0; // reset counter
+
+            //StartCoroutine(DelayTransformation());
+        }
+
+        Debug.Log(this.gameObject.GetComponent<PlayerAbilityMelee>().SlimeHitCounter);
         // animator.SetBool("CanDoubleJump", this.gameObject.GetComponent<MovePlayerUp>().CanDoubleJump);
     }
 
@@ -267,17 +294,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    //// Used for melee
-    //private void RestrictPlayerTurning()
+    //private IEnumerator DelayTransformation()
     //{
-    //    //Debug.Log("yes");
-    //    RestrictTurning = true;
-    //}
-
-    //private void UnRestrictPlayerTurning()
-    //{
-    //    //Debug.Log("No");
-    //    RestrictTurning = false;
+    //    yield return new WaitForSeconds(0.5f);
+    //    this.IsSlime = false;
+    //    //this.Up.Execute(this.gameObject);
+    //    this.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.up * 3.0f;
+    //    this.HealthController.ResetForm();
+    //    this.gameObject.GetComponent<PlayerAbilityMelee>().SlimeHitCounter = 0;
     //}
 
     // Allow the player to move again after using DownSmashAbility
