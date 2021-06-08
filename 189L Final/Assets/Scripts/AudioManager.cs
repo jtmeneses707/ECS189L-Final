@@ -83,4 +83,17 @@ public class AudioManager : MonoBehaviour
 
         return false;
     }
+
+    public void ChangeBGM()
+    {
+        // If we are already playing the theme just stop the function
+        if (IsPlaying("BossTheme"))
+        {
+            return;
+        }
+
+        Stop("MainTheme");
+        Play("BossTheme");
+    }
+
 }

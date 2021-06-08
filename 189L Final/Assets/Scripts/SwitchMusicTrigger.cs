@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class SwitchMusicTrigger : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    public AudioManager AM;
+
+    void OnTriggerEnter2D(Collider2D other)
     {
-        
-    }
+        if(other.tag == "Player")
+        {
+            AM.ChangeBGM();
+        }
+    } 
 }

@@ -22,8 +22,8 @@ public class DefeatMenu : MonoBehaviour
             Time.timeScale = 0f;
             GameIsPaused = true;
 
-
             FindObjectOfType<AudioManager>().Stop("MainTheme");
+            FindObjectOfType<AudioManager>().Stop("BossTheme");
 
             if (StartDefeatMusic == false)
             {

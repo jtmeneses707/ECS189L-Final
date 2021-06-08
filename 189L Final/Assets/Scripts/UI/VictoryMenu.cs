@@ -23,8 +23,9 @@ public class VictoryMenu : MonoBehaviour
             GameIsPaused = true;
 
             FindObjectOfType<AudioManager>().Stop("MainTheme");
+            FindObjectOfType<AudioManager>().Stop("BossTheme");
 
-            if(StartVictoryMusic == false)
+            if (StartVictoryMusic == false)
             {
                 FindObjectOfType<AudioManager>().Play("VictoryTheme");
                 StartVictoryMusic = true;

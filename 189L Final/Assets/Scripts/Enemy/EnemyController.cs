@@ -102,7 +102,6 @@ namespace Enemy.Controller
                 FindObjectOfType<AudioManager>().Play("BossDamageSound");
             }
             
-
             Debug.Log(amount);
 
             Health = Health - amount;
