@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HealthController : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class HealthController : MonoBehaviour
     
     // 3 Hearts for main form, and 1 heart for Slime Form.
     private int Hearts;
+    public Image[] UIHearts;
+    public Sprite fullHeart;
+    public Sprite emptyHeart;
 
     private PlayerController PlayerController;
     // Start is called before the first frame update
@@ -19,6 +23,20 @@ public class HealthController : MonoBehaviour
         this.PlayerController = this.gameObject.GetComponent<PlayerController>();
     }
 
+    void Update()
+    {
+        for (int i = 0; i < UIHearts.Length; i++)
+        {
+            if (i < Hearts)
+            {
+                UIHearts[i].sprite = fullHeart;
+            }
+            else
+            {
+                UIHearts[i].sprite = emptyHeart;
+            }
+        }
+    }
     ///<Summary>
     /// Removes a heart from the player. Will also set layers for the animator
     /// to switch from player to slime form and vice versa.
