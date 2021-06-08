@@ -263,14 +263,18 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("IsGrounded", this.gameObject.GetComponent<MovePlayerUp>().IsGrounded);
 
         this.gameObject.GetComponent<PlayerAbilityMelee>().IsSlime = this.IsSlime;
+        Debug.Log(this.IsSlime);
 
-        if (this.HealthController.GetHearts() == 0 && this.IsSlime == false)
+        // Condition for Changing into Slime
+        if (this.HealthController.GetHearts() == 1 && this.IsSlime == false)
         {
             animator.SetLayerWeight(0, 0);
             animator.SetLayerWeight(1, 1);
             this.IsSlime = true;
         }
-        else if(this.gameObject.GetComponent<PlayerAbilityMelee>().SlimeHitCounter == 2 && this.IsSlime == true)
+
+        // Change back into OG form once enough damage is done
+        else if (this.gameObject.GetComponent<PlayerAbilityMelee>().SlimeHitCounter == 2 && this.IsSlime == true)
         {
             //Debug.Log("Hello!");
             //this.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.up * 10.0f;
