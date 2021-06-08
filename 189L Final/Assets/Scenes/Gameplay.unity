@@ -493,6 +493,7 @@ GameObject:
   - component: {fileID: 52026468}
   - component: {fileID: 52026467}
   - component: {fileID: 52026466}
+  - component: {fileID: 52026469}
   m_Layer: 0
   m_Name: Fire
   m_TagString: Untagged
@@ -592,6 +593,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &52026469
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 52026465}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 868afde70f7a3384f80160295e98309a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &66693859
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18507,6 +18527,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7eff8b75d2e44c04297451b57e6ca42e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StartDefeatMusic: 0
   DefeatMenuUI: {fileID: 1486517688}
 --- !u!1001 &1191803661
 PrefabInstance:
@@ -24316,8 +24337,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 6, y: 91}
-  m_SizeDelta: {x: -641.0127, y: -448.742}
+  m_AnchoredPosition: {x: 33.576965, y: 72.47818}
+  m_SizeDelta: {x: -585.8588, y: -411.6984}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1695952129
 MonoBehaviour:
