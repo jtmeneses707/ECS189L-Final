@@ -112,12 +112,16 @@ namespace Enemy.Controller
 
         public void Die()
         {
-            //Play Die Animation
-            animator.SetBool("IsDead", true);
+            Debug.Log("Skeleton Dead!");
+            
 
             //Disable Enemy
             GetComponent<Collider2D>().enabled = false;
             this.enabled = false;
+
+            //Play Die Animation
+            animator.SetBool("IsDead", true);
+            Destroy(gameObject);
         }
 
         void ResetMaterial()
@@ -176,10 +180,6 @@ namespace Enemy.Controller
             if (IsPlayerNearAttackRadius())
             {
                 animator.SetTrigger("Attack");
-            }
-            else
-            {
-                animator.ResetTrigger("Attack");
             }
         }
 
