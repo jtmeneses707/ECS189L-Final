@@ -5,6 +5,8 @@ using Player.Command;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private GameObject IsAlive;
+
     [SerializeField]
     private GameObject ProjectilePrefab;
     [SerializeField]
@@ -53,6 +55,17 @@ public class PlayerController : MonoBehaviour
     private bool RestrictMovement = false;
     private bool RestrictTurning = false;
 
+    void OnCollisionEnter2D(Collision2D collision)
+        {
+            if(collision.gameObject.name == "WaterHitbox"){
+                Debug.Log("Hit collision");
+                Destroy(IsAlive);
+                // HERE we know that the other object we collided with is an enemy
+            }
+            else{
+                Debug.Log("Did not collide?");
+            }
+        }
     // Start is called before the first frame update
     void Start()
     {
