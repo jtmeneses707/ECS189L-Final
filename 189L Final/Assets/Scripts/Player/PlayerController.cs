@@ -62,6 +62,12 @@ public class PlayerController : MonoBehaviour
                 Destroy(IsAlive);
                 // HERE we know that the other object we collided with is an enemy
             }
+
+            // Cannot do detection for enemy attacks this way. Will always trigger if we enter
+            // the trigger collider, even if not during an attack.
+            // else{
+            //     Debug.Log("Did not collide?");
+            // }
         }
     // Start is called before the first frame update
     void Start()
