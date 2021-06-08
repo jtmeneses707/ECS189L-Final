@@ -4,19 +4,32 @@ using UnityEngine;
 
 public class VictoryMenu : MonoBehaviour
 {
-
     public static bool GameIsPaused = false;
+    public bool StartVictoryMusic;
 
     public GameObject VictoryMenuUI;
 
-    // Update is called once per frame
-    void Update()
+    void Start()
+    {
+        StartVictoryMusic = false;
+    }
+        // Update is called once per frame
+        void Update()
     {
         if (GameObject.Find("DemonKing") == null)
         {
             VictoryMenuUI.SetActive(true);
             Time.timeScale = 0f;
             GameIsPaused = true;
+
+            FindObjectOfType<AudioManager>().Stop("MainTheme");
+
+            if(StartVictoryMusic == false)
+            {
+                FindObjectOfType<AudioManager>().Play("VictoryTheme");
+                StartVictoryMusic = true;
+
+            }
         }
     }
 }

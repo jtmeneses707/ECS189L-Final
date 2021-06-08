@@ -5,6 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+
+    void Start()
+    {
+        AudioManager.instance.Stop("VictoryTheme");
+
+        if (!AudioManager.instance.IsPlaying("MainTheme"))
+            AudioManager.instance.Play("MainTheme");
+    }
+
     // Start is called before the first frame update
     public void PlayGame()
     {

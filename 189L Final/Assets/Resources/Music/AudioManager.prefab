@@ -1,0 +1,94 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6502980637208349908
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6502980637208349898}
+  - component: {fileID: 6502980637208349909}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6502980637208349898
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6502980637208349908}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6502980637208349909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6502980637208349908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95df2ca70a25d664faff0e00a419497b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - Name: MainTheme
+    Clip: {fileID: 8300000, guid: 10675422655cd6f489b470854969d85a, type: 3}
+    Volume: 0.05
+    Pitch: 1
+    Loop: 1
+    source: {fileID: 0}
+  - Name: PlayerFootSteps
+    Clip: {fileID: 8300000, guid: f42760acdd77d6c459020ab0f9db4f30, type: 3}
+    Volume: 10
+    Pitch: 2.64
+    Loop: 0
+    source: {fileID: 0}
+  - Name: BossTheme
+    Clip: {fileID: 8300000, guid: 8ab12ab154e08464eb8d14846dbbf576, type: 3}
+    Volume: 0
+    Pitch: 1
+    Loop: 1
+    source: {fileID: 0}
+  - Name: PlayerJumpOffGroundSound
+    Clip: {fileID: 8300000, guid: f42760acdd77d6c459020ab0f9db4f30, type: 3}
+    Volume: 10
+    Pitch: 1.23
+    Loop: 0
+    source: {fileID: 0}
+  - Name: MeleeSound
+    Clip: {fileID: 8300000, guid: d7da440ad4f6c4e7489efd85844988d8, type: 3}
+    Volume: 0.2
+    Pitch: 0.75
+    Loop: 0
+    source: {fileID: 0}
+  - Name: ShootSound
+    Clip: {fileID: 8300000, guid: cc6699269b4c1d44ea1e860518b9bb73, type: 3}
+    Volume: 0.05
+    Pitch: 0.68
+    Loop: 0
+    source: {fileID: 0}
+  - Name: ShootSound
+    Clip: {fileID: 8300000, guid: cc6699269b4c1d44ea1e860518b9bb73, type: 3}
+    Volume: 0.05
+    Pitch: 0.68
+    Loop: 0
+    source: {fileID: 0}
+  - Name: DownSmashSound
+    Clip: {fileID: 8300000, guid: d4c1e9ed79b6dab4683e834254b9a097, type: 3}
+    Volume: 0.05
+    Pitch: 0.68
+    Loop: 0
+    source: {fileID: 0}
