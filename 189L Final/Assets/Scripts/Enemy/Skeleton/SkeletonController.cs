@@ -24,7 +24,7 @@ namespace Enemy
 
         public void FollowPlayerLogic()
         {
-            if (isPlayerNearVisibleRadius())
+            if (IsPlayerNearVisibleRadius())
             {
                 Follow(PlayerObject);
             }
@@ -32,7 +32,7 @@ namespace Enemy
 
         public void AttackPlayerLogic()
         {
-            if (isPlayerNearAttackRadius())
+            if (IsPlayerNearAttackRadius())
             {
                 Attack(PlayerObject);
             }
