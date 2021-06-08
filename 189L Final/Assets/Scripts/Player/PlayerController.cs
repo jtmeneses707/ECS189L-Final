@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour
     //private float PlayerMovementSpeed = 2.0f;
     // **   *******  *******  *******    ** // 
 
+    private HealthController HealthController;
 
     //private AudioManager AudioManager;
 
@@ -89,6 +90,8 @@ public class PlayerController : MonoBehaviour
         this.gameObject.GetComponent<PlayerAbilityShoot>().ProjectilePrefab = this.ProjectilePrefab;
         // Fire Point is where the bullet will come out (positioned on the player's hand).
         this.gameObject.GetComponent<PlayerAbilityShoot>().FirePoint = this.FirePoint;
+
+        this.HealthController = this.gameObject.GetComponent<HealthController>();
     }
 
     // Update is called once per frame
