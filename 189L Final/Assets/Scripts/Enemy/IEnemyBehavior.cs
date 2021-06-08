@@ -11,7 +11,7 @@ namespace Enemy.Behavior
         void Follow(GameObject targetObject);
         void Attack(GameObject targetObject);
         void TakeDamage(float Amount);
-        void Death();
+        void Die();
     }
 }
 
