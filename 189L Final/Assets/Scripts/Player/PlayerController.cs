@@ -62,9 +62,6 @@ public class PlayerController : MonoBehaviour
                 Destroy(IsAlive);
                 // HERE we know that the other object we collided with is an enemy
             }
-            else{
-                Debug.Log("Did not collide?");
-            }
         }
     // Start is called before the first frame update
     void Start()
