@@ -92,11 +92,11 @@ namespace Enemy.Controller
 
         public void TakeDamage(float amount)
         {
-            Debug.Log(amount);
+            //Debug.Log(amount);
 
             Health = Health - amount;
             this.SR.material = this.MatWhite;
-            Debug.Log(Health);
+            //Debug.Log(Health);
 
             if (Health <= 0)
             {
