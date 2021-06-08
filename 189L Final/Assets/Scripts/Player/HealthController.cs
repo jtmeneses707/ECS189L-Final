@@ -51,4 +51,7 @@ public class HealthController : MonoBehaviour
         this.Animator.SetLayerWeight(1, 0);
         this.Animator.SetLayerWeight(0, 1);
      }
+     public int GetHearts() {
+         return this.Hearts;
+     }
 }

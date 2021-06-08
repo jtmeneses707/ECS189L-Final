@@ -20,7 +20,7 @@ namespace Player.Command
         // teleport to the correct side during dash.
         private float DirectionFacing;
         private GameObject Player;
-        private bool Active;
+        public bool Active;
         public bool IsFacingRight;
 
         // Added to fix console bug

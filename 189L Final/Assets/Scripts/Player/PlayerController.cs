@@ -56,11 +56,35 @@ public class PlayerController : MonoBehaviour
     private bool RestrictTurning = false;
 
     void OnCollisionEnter2D(Collision2D collision)
-        {
-            if(collision.gameObject.name == "WaterHitbox"){
-                Debug.Log("Hit collision");
+        {   
+            // Grab the name and compare the name to all of the potential collisions
+            var collider = collision.gameObject.name;
+
+            // Water collision, should result in death and defeat screen
+            if (collider == "WaterHitbox")
+            {
+                Debug.Log("Death by water");
                 Destroy(IsAlive);
-                // HERE we know that the other object we collided with is an enemy
+            }
+            // Fire collison, should result in taking damage or ignoring the collision if player dashed
+            var dashCommand = this.gameObject.GetComponent<PlayerAbilityDash>();
+            if (collider == "Fire") 
+            {
+                // Ignore collision if player successfully dashed through the fire
+                if (dashCommand.Active == true) 
+                {
+                    var fireCollider = collision.gameObject.GetComponent<BoxCollider2D>();
+                    var ourCollider = this.GetComponent<BoxCollider2D>();
+                    Physics2D.IgnoreCollision(fireCollider, ourCollider, true);
+                }
+                // Take damage if player failed to utilize dash to bypass the fire
+                else 
+                {
+                    Debug.Log("We lost one heart by burning!");
+                    this.HealthController.TakeDamage();
+                }
+                // Checking health
+                Debug.Log(this.HealthController.GetHearts());
             }
         }
     // Start is called before the first frame update
