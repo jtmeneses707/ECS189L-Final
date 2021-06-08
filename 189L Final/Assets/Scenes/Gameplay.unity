@@ -29621,7 +29621,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4576c996517a3384faa81975e229a229, type: 2}
+  - {fileID: 2100000, guid: 88f58a8a3ef6c5c41bb9b4abac4975a4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -38546,7 +38546,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6502980637208349909, guid: e84e27d923f4cae4c9c385e0a2f68c78, type: 3}
       propertyPath: sounds.Array.size
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 6502980637208349909, guid: e84e27d923f4cae4c9c385e0a2f68c78, type: 3}
       propertyPath: sounds.Array.data[8].Clip
@@ -38573,11 +38573,27 @@ PrefabInstance:
       value: LoseTheme
       objectReference: {fileID: 0}
     - target: {fileID: 6502980637208349909, guid: e84e27d923f4cae4c9c385e0a2f68c78, type: 3}
+      propertyPath: sounds.Array.data[10].Clip
+      value: 
+      objectReference: {fileID: 8300000, guid: b56671bc9d83ed44084ad64fde9b2293, type: 3}
+    - target: {fileID: 6502980637208349909, guid: e84e27d923f4cae4c9c385e0a2f68c78, type: 3}
+      propertyPath: sounds.Array.data[10].Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6502980637208349909, guid: e84e27d923f4cae4c9c385e0a2f68c78, type: 3}
+      propertyPath: sounds.Array.data[10].Name
+      value: FireBurn
+      objectReference: {fileID: 0}
+    - target: {fileID: 6502980637208349909, guid: e84e27d923f4cae4c9c385e0a2f68c78, type: 3}
       propertyPath: sounds.Array.data[8].Pitch
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6502980637208349909, guid: e84e27d923f4cae4c9c385e0a2f68c78, type: 3}
       propertyPath: sounds.Array.data[9].Pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6502980637208349909, guid: e84e27d923f4cae4c9c385e0a2f68c78, type: 3}
+      propertyPath: sounds.Array.data[10].Pitch
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6502980637208349909, guid: e84e27d923f4cae4c9c385e0a2f68c78, type: 3}
@@ -38590,6 +38606,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6502980637208349909, guid: e84e27d923f4cae4c9c385e0a2f68c78, type: 3}
       propertyPath: sounds.Array.data[9].Volume
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6502980637208349909, guid: e84e27d923f4cae4c9c385e0a2f68c78, type: 3}
+      propertyPath: sounds.Array.data[10].Volume
       value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []

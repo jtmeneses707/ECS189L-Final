@@ -82,6 +82,7 @@ public class PlayerController : MonoBehaviour
                 else 
                 {
                     Debug.Log("We lost one heart by burning!");
+                    FindObjectOfType<AudioManager>().Play("FireBurn");
                     this.HealthController.TakeDamage();
                 }
                 // Checking health
@@ -280,7 +281,7 @@ public class PlayerController : MonoBehaviour
             //StartCoroutine(DelayTransformation());
         }
 
-        Debug.Log(this.gameObject.GetComponent<PlayerAbilityMelee>().SlimeHitCounter);
+        //Debug.Log(this.gameObject.GetComponent<PlayerAbilityMelee>().SlimeHitCounter);
         // animator.SetBool("CanDoubleJump", this.gameObject.GetComponent<MovePlayerUp>().CanDoubleJump);
     }
 
