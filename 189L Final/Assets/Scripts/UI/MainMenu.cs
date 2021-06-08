@@ -9,7 +9,7 @@ public class MainMenu : MonoBehaviour
     void Start()
     {
         AudioManager.instance.Stop("VictoryTheme");
-
+        AudioManager.instance.Stop("LoseTheme");
         if (!AudioManager.instance.IsPlaying("MainTheme"))
             AudioManager.instance.Play("MainTheme");
     }

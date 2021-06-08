@@ -34434,7 +34434,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6502980637208349909, guid: e84e27d923f4cae4c9c385e0a2f68c78, type: 3}
       propertyPath: sounds.Array.size
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6502980637208349909, guid: e84e27d923f4cae4c9c385e0a2f68c78, type: 3}
       propertyPath: sounds.Array.data[8].Clip
@@ -34449,7 +34449,23 @@ PrefabInstance:
       value: VictoryTheme
       objectReference: {fileID: 0}
     - target: {fileID: 6502980637208349909, guid: e84e27d923f4cae4c9c385e0a2f68c78, type: 3}
+      propertyPath: sounds.Array.data[9].Clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 05f3a0c05cde6d345a9d56a58370862c, type: 3}
+    - target: {fileID: 6502980637208349909, guid: e84e27d923f4cae4c9c385e0a2f68c78, type: 3}
+      propertyPath: sounds.Array.data[9].Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6502980637208349909, guid: e84e27d923f4cae4c9c385e0a2f68c78, type: 3}
+      propertyPath: sounds.Array.data[9].Name
+      value: LoseTheme
+      objectReference: {fileID: 0}
+    - target: {fileID: 6502980637208349909, guid: e84e27d923f4cae4c9c385e0a2f68c78, type: 3}
       propertyPath: sounds.Array.data[8].Pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6502980637208349909, guid: e84e27d923f4cae4c9c385e0a2f68c78, type: 3}
+      propertyPath: sounds.Array.data[9].Pitch
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6502980637208349909, guid: e84e27d923f4cae4c9c385e0a2f68c78, type: 3}
@@ -34458,6 +34474,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6502980637208349909, guid: e84e27d923f4cae4c9c385e0a2f68c78, type: 3}
       propertyPath: sounds.Array.data[8].Volume
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6502980637208349909, guid: e84e27d923f4cae4c9c385e0a2f68c78, type: 3}
+      propertyPath: sounds.Array.data[9].Volume
       value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
