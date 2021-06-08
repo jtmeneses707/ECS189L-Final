@@ -8,7 +8,7 @@ using Enemy.Behavior;
 
 namespace Enemy.Controller
 {
-    public abstract class EnemyController : MonoBehaviour, EnemyBehavior
+    public class EnemyController : MonoBehaviour, EnemyBehavior
     {
         public Animator animator;
 
@@ -34,11 +34,13 @@ namespace Enemy.Controller
         public void Start()
         {
             Init();
+
+            
         }
 
         protected void Init()
         {
-            InitStats();
+            SetStats(EnemyConstants.DefaultHealth, EnemyConstants.DefaultVisibilityRadius, EnemyConstants.DefaultAttackRadius, EnemyConstants.DefaultRoamTimer);
             this.SR = GetComponent<SpriteRenderer>();
             // By default Ressources.Load returns an object, but here we want a material.
             this.MatWhite = Resources.Load("Materials/WhiteFlash", typeof(Material)) as Material;
@@ -46,8 +48,6 @@ namespace Enemy.Controller
 
             Move = new EnemyMovement(EnemyConstants.BasicEnemySpeed, this.gameObject);
         }
-
-        protected abstract void InitStats();
 
         protected void SetStats(float health, float visibilityRadius, float attackRadius, float roamTimer)
         {
@@ -160,18 +160,6 @@ namespace Enemy.Controller
             else
             {
                 animator.SetBool("InRangeOfPlayer", false);
-            }
-        }
-
-        public void AttackPlayerLogic()
-        {
-            if (IsPlayerNearAttackRadius())
-            {
-                animator.SetTrigger("Attack");
-            }
-            else
-            {
-                animator.ResetTrigger("Attack");
             }
         }
 

@@ -10,7 +10,6 @@ public class PauseMenu : MonoBehaviour
     public GameObject PauseMenuUI;
 
     public GameObject VictoryMenuUI;
-    public GameObject DefeatMenuUI;
 
     public void Resume()
     {
@@ -40,7 +39,7 @@ public class PauseMenu : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && VictoryMenuUI.activeInHierarchy != true && DefeatMenuUI.activeInHierarchy != true)
+        if (Input.GetKeyDown(KeyCode.Escape) && VictoryMenuUI.activeInHierarchy != true)
         {
             if (GameIsPaused)
             {
