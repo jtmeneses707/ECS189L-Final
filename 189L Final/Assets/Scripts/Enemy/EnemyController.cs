@@ -101,6 +101,7 @@ namespace Enemy.Controller
             if (Health <= 0)
             {
                 Die();
+                Debug.Log("Dead");
             }
             else
             {
