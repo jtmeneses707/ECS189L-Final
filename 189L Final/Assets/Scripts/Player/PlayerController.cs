@@ -263,7 +263,6 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("IsGrounded", this.gameObject.GetComponent<MovePlayerUp>().IsGrounded);
 
         this.gameObject.GetComponent<PlayerAbilityMelee>().IsSlime = this.IsSlime;
-        Debug.Log(this.IsSlime);
 
         // Condition for Changing into Slime
         if (this.HealthController.GetHearts() == 1 && this.IsSlime == false)
