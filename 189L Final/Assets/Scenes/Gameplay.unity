@@ -36431,7 +36431,7 @@ GameObject:
   - component: {fileID: 1986758437}
   - component: {fileID: 1986758438}
   - component: {fileID: 1986758439}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Skeleton Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38579,7 +38579,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: b56671bc9d83ed44084ad64fde9b2293, type: 3}
     - target: {fileID: 6502980637208349909, guid: e84e27d923f4cae4c9c385e0a2f68c78, type: 3}
       propertyPath: sounds.Array.data[10].Loop
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6502980637208349909, guid: e84e27d923f4cae4c9c385e0a2f68c78, type: 3}
       propertyPath: sounds.Array.data[10].Name
