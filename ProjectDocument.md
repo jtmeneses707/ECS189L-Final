@@ -189,6 +189,7 @@ Originally, we had planned on having multiple levels and allowing Urumir to unlo
 
 **Include links to your presskit materials and trailer.**
 I created our press kit using static html with css. I did not secure hosting for the files, and instead went with using htmlpreview.github.io to render our static files. There were some unforseen drawbacks with this, such as how long it takes for the static pages to load the linked files like css files. This results in a somewhat ugly webpage as it loads, but styles are eventually applied. With more time, I would make a website that is friendlier to screens smaller than 1920x1080, and include a mobile view. 
+[Press Kit and Trailer](https://htmlpreview.github.io/?https://github.com/jtmeneses707/ECS189L-Final/blob/main/Press%20Kit/index.html)
 
 **Describe how you showcased your work. How did you choose what to show in the trailer? Why did you choose your screenshots?**
 
