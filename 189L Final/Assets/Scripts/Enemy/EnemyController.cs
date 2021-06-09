@@ -30,12 +30,13 @@ namespace Enemy.Controller
         private Material MatDefault;
         SpriteRenderer SR;
 
-
-
         // Start is called before the first frame update
         public void Start()
         {
             Init();
+            Collider2D playerCollider = PlayerObject.GetComponent<BoxCollider2D>();
+            Collider2D enemyCollider = GetComponent<BoxCollider2D>();
+            Physics2D.IgnoreCollision(playerCollider, enemyCollider);
         }
 
         protected void Init()
@@ -51,7 +52,7 @@ namespace Enemy.Controller
         }
 
         void OnCollisionEnter2D(Collision2D collision)
-        {   
+        {
             // Grab the name and compare the name to all of the potential collisions
             var collider = collision.gameObject.name;
 
@@ -85,11 +86,16 @@ namespace Enemy.Controller
 
         public void FollowPlayer()
         {
+            if (this.AttackActive == true)
+                return;
             FacePlayer();
-            float step = EnemyConstants.BasicEnemySpeed * Time.fixedDeltaTime;
-            Vector2 playerPosition = PlayerObject.transform.position;
+            float speed = EnemyConstants.BasicEnemySpeed * Time.fixedDeltaTime;
+            Rigidbody2D enemyRigidBody = GetComponent<Rigidbody2D>();
+            Vector2 playerPosition = new Vector2(PlayerObject.transform.position.x, PlayerObject.transform.position.y);
             playerPosition.y = transform.position.y;
-            transform.position = Vector2.MoveTowards(transform.position, playerPosition, step);
+            Vector2 newPosition = Vector2.MoveTowards(enemyRigidBody.position, playerPosition, speed);
+
+            enemyRigidBody.MovePosition(newPosition);
         }
 
         public void AttackPlayer()
@@ -106,15 +112,15 @@ namespace Enemy.Controller
         public void TakeDamage(float amount)
         {
 
-            if(this.gameObject.tag == "SkeletonEnemy")
+            if (this.gameObject.tag == "SkeletonEnemy")
             {
                 FindObjectOfType<AudioManager>().Play("SkeletonDamageSound");
             }
-            else if(this.gameObject.tag == "DemonKing")
+            else if (this.gameObject.tag == "DemonKing")
             {
                 FindObjectOfType<AudioManager>().Play("BossDamageSound");
             }
-            
+
             Debug.Log(amount);
 
             Health = Health - amount;
@@ -136,7 +142,7 @@ namespace Enemy.Controller
         public void Die()
         {
             Debug.Log("Skeleton Dead!");
-            
+
 
             //Disable Enemy
             GetComponent<Collider2D>().enabled = false;
@@ -144,7 +150,7 @@ namespace Enemy.Controller
 
             //Play Die Animation
             animator.SetBool("IsDead", true);
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
 
         void ResetMaterial()
@@ -213,12 +219,14 @@ namespace Enemy.Controller
         /// set a specific, frame accurate window to check if any collisions
         /// occur with player.
         /// </Summary>
-        public void SetAttackActive() {
+        public void SetAttackActive()
+        {
             AttackPlayer();
             this.AttackActive = true;
         }
 
-        public void SetAttackInactive() {
+        public void SetAttackInactive()
+        {
             this.AttackActive = false;
         }
 

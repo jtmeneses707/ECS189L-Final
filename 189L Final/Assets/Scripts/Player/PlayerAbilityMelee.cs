@@ -13,7 +13,7 @@ namespace Player.Command
         public Transform MeleeAttackPoint;
         public float MeleeAttackRange = 0.3f;
         public LayerMask EnemyLayer;
-        public float DamageInflicted = 50.0f;
+        public float DamageInflicted = 100.0f;
         public float DamageDelay = 0.05f;
 
         public float AttackRate = 2.0f;
@@ -52,8 +52,6 @@ namespace Player.Command
         // Apply damage
         public void Execute(GameObject gameObject)
         {
-
-
             // Only melee when can attack is true
             if (this.CanAttack)
             {
@@ -66,7 +64,6 @@ namespace Player.Command
                 // Added trigger to transition state instead of bool.
                 this.animator.SetTrigger("IsAttackingTrigger");
 
-
                 // Detect enemies in attack range (shape of circle)    
                 // Note: Must add enemy layer to all enemies and give basicenemy script to all enemies
                 this.AllEnemiesHit = Physics2D.OverlapCircleAll(MeleeAttackPoint.position, MeleeAttackRange, EnemyLayer);
@@ -74,31 +71,26 @@ namespace Player.Command
                 foreach (Collider2D enemy in this.AllEnemiesHit)
                 {
                     //Debug.Log("We hit " + enemy.name);
-
-                    if (this.IsSlime)
-                    {
-                        // Increase Slime Hit Counter
-                        this.SlimeHitCounter++;
-                    }
-                    
                     // Pass deal damage into coroutine to time it with animation
                     //StartCoroutine(DelayForDamage(enemy));
 
-                    // Code to allow enemies to take damage/ decrease HP
-                    //enemy.GetComponent<BasicEnemy>().TakeDamage(this.DamageInflicted);
+                    if (enemy.GetComponent<EnemyController>() != null)
+                    {
+                        if (this.IsSlime)
+                        {
+                            // Increase Slime Hit Counter
+                            this.SlimeHitCounter++;
+                            Debug.Log("Here!");
+                        }
 
-                    enemy.GetComponent<EnemyController>().TakeDamage(this.DamageInflicted);
-
+                        enemy.GetComponent<EnemyController>().TakeDamage(this.DamageInflicted);
+                    }   
                 }
 
                 // Increment Timer so that we delay when the next attack can be done.
                 this.NextAttackTime = Time.time + 1.0f / AttackRate;
 
             }
-
-            //Debug.Log(Time.time);
-            //Debug.Log(NextAttackTime);
-
         }
 
         // This is not currently being used!

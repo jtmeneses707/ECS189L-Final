@@ -8,7 +8,7 @@ namespace Player.Command
 {
     public class MovePlayerRight : ScriptableObject, IPlayerCommand
     {
-        public float Speed = 2.0f;
+        public float Speed = 1.0f;
 
         public void Execute(GameObject gameObject)
         {
@@ -21,6 +21,3 @@ namespace Player.Command
         }
     }
 }
-
-// Use for later after finding audio clip
-// FindObjectOfType<AudioManager>().Play("PlayerFootSteps");

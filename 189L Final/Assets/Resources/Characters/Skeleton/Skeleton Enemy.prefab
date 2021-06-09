@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 8
   m_Sprite: {fileID: 3330878315701135778, guid: 3caa916cbb9e5aa499a489d39b1c9b50, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -108,7 +108,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 5
+  m_Constraints: 4
 --- !u!61 &1398424849757367880
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -122,7 +122,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.04438608, y: -0.05915235}
+  m_Offset: {x: -0.08003968, y: -0.05915235}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -133,7 +133,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.13122784, y: 0.2504643}
+  m_Size: {x: 0.20253503, y: 0.2504643}
   m_EdgeRadius: 0
 --- !u!95 &1398424849757367883
 Animator:
@@ -178,9 +178,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1398424849835764093}
   - component: {fileID: 1398424849835764092}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Hitbox
-  m_TagString: Untagged
+  m_TagString: SkeletonEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -206,7 +206,7 @@ PolygonCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1398424849835764066}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -233,7 +233,7 @@ PolygonCollider2D:
       - {x: -0.2632239, y: -0.2715775}
       - {x: -0.31323814, y: -0.2922518}
       - {x: -0.6513672, y: -0.43202296}
-      - {x: -0.21249929, y: -0.7132756}
-      - {x: -0.041346002, y: -0.8520952}
-      - {x: 0.056599375, y: -0.9902389}
+      - {x: -0.28659067, y: -0.729752}
+      - {x: -0.21565053, y: -0.87374187}
+      - {x: -0.2265096, y: -1.141824}
       - {x: 0.16219984, y: -1.1758676}
