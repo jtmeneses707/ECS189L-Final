@@ -32,7 +32,7 @@ You should replay any **bold text** with your relevant information. Liberally us
 
 ## User Interface (Jerrie)
 
-The user interface is designed based on the core game logic and any information we believe is necessary for the player to have when challenging the Demon King. There are four scenes, three of which are for purposes of the user interface only. Any buttons or interactables in the UI have simple shadows when hovered or clicked to provide feedback to the player, letting them know a button is interactable or that they have successfully clicked the button.
+The user interface is designed based on the core game logic and any information we believe is necessary for the player to have when challenging the Demon King. There are four scenes, three of which are for purposes of the user interface only. Any buttons or interactables in the UI have simple shadows when hovered or clicked to provide feedback to the player, letting them know a button is interactable or that they have successfully clicked the button. All user interfaces were tested for any major discrepancies between differing monitor specs and should display properly for all aspect ratios and resolutions.
 
 ![image](https://user-images.githubusercontent.com/15057519/121341896-b9319600-c8e6-11eb-9904-3bc270f82e10.png)
 
