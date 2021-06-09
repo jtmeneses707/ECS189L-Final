@@ -148,7 +148,7 @@ namespace Enemy.Controller
 
             //Play Die Animation
             animator.SetBool("IsDead", true);
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
 
         void ResetMaterial()
