@@ -118,7 +118,7 @@ All the audio that was implemented in the game was attached to a AudioManager pr
 
 Due to the lack of time left, the gameplay testing was conducted with two passes of play with the development team, followed by a group of willing friends to act as playtesters. Some gameplay testing was done asynchronously, with people submitting a thoughtful review, while others played the game more casually and screenshared their gameplay, voicing their thoughts as they came. Some open-ended questions were asked to help develop a general theme of what should be improved in the next iteration of the game. 
 
-The full gameplay results have been formatted in markdown can be found [here](https://github.com/jtmeneses707/ECS189L-Final/blob/0617f46a998cca9920d101acf5febe4edada251e/GameplayTestingResults.md).
+The full gameplay results have been formatted in Markdown and can be found [here](https://github.com/jtmeneses707/ECS189L-Final/blob/0617f46a998cca9920d101acf5febe4edada251e/GameplayTestingResults.md).
 
 **Key Findings:**
     - Players were typically confused about what the controls were, so we should implement a UI with the controls indicated.
