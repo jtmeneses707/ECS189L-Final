@@ -1,0 +1,38 @@
+#trailer-wrapper {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: black;
+}
+
+#trailer-wrapper > h1 {
+    margin-bottom: 3em;
+}
+
+#image-gallery {
+    width: 80%;
+    margin-top: 5em;
+    margin-left: auto;
+    margin-right: auto;
+    border: 10px;
+    border-color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.image-wrapper  {
+    height: 200px;
+
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.image-wrapper>img {
+    height: 100%;
+}
+
+
