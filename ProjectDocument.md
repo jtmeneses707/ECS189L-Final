@@ -88,7 +88,7 @@ Since our game is a 2D action platformer, we followed the basic movement scheme 
 
 **Platform and InputStyle**
 
-Our Project supports Unity Game version 2021.1.0f1 for MAC and Windows platforms. The main input style chosen was keyboard and mouse. However, only a keybord is needed to be able to use all inputs as seen above.
+Our Project supports Unity Game version 2021.1.0f1 for MAC and Windows platforms. The main input style chosen was keyboard and mouse. However, only a keyboard is needed to be able to use all inputs as seen above.
 
 **Implementation**
 
