@@ -32,12 +32,20 @@ You should replay any **bold text** with your relevant information. Liberally us
 
 ## User Interface (Jerrie)
 
-The user interface is designed based on the core game logic and any information we believe is necessary for the player to have when challenging the Demon King. There are four scenes, three of which are for purposes of the user interface only.
+The user interface is designed based on the core game logic and any information we believe is necessary for the player to have when challenging the Demon King. There are four scenes, three of which are for purposes of the user interface only. Any buttons or interactables in the UI have simple shadows when hovered or clicked to provide feedback to the player, letting them know a button is interactable or that they have successfully clicked the button.
 ![image](https://user-images.githubusercontent.com/15057519/121341896-b9319600-c8e6-11eb-9904-3bc270f82e10.png)
 
-### Start Screen ###
-![image](https://user-images.githubusercontent.com/15057519/121342716-88059580-c8e7-11eb-9fd5-898a5781be8d.png)
-- The scene that first appears when the player runs the game. Can go directly into the gameplay, check the controls, or quit the game.
+- *Start Screen UI* - The scene that first appears when the player runs the game. Can go directly into the gameplay, check the controls, or quit the game. [Image of UI](https://user-images.githubusercontent.com/15057519/121342716-88059580-c8e7-11eb-9fd5-898a5781be8d.png).
+- *Controls Scene UI* - The scene that appears when a player wants to check the controls of the game. Tips are also included so the player knows all of the functionalities of the game logic beforehand, something which seemed to be necessary after gameplay testing. Can go back to the main menu or quit the game. [Image of UI](https://user-images.githubusercontent.com/15057519/121343293-2265d900-c8e8-11eb-843c-b563a0d7d7f9.png).
+- *Credits Scene UI* - Credits our groupmates for their hard work in their respective roles! Can go back to the main menu or quit the game. [Image of UI](https://user-images.githubusercontent.com/15057519/121343458-504b1d80-c8e8-11eb-9737-2085e39cab92.png).
+
+### Gameplay UI ###
+The Gameplay UI is a bit more interesting as it has many pop-up menus for the player to interact with.
+![image](https://user-images.githubusercontent.com/15057519/121344105-f9921380-c8e8-11eb-87bd-4dab7b37c7d3.png)
+- *Heart Bar* - The Heart Bar UI is also anchored to the bottom right of the screen to adjust to any resolution, as well as communicate with the player how many lives they have left. Upon taking damage, the player will lose hearts.
+- *Controls Pop-up Menu* - After gameplay testing, many players did not learn that they could double jump, phase through fire pits, or down smash by themselves. We added a control scene and a control UI so players don't need to figure out the controls through trial and error, and can always refer back to the controls by pausing the game and pulling up the controls pop-up menu.
+- *Three Pop-up Menus* - In addition to the controls pop-up menu, there are three additional pop-up menus in our Gameplay scene, the [Victory Menu](https://user-images.githubusercontent.com/15057519/121344920-e0d62d80-c8e9-11eb-8ab9-cc53bd920043.png), the [Pause Menu](https://user-images.githubusercontent.com/15057519/121345022-fc413880-c8e9-11eb-8af2-fd5d19a0ad25.png), and the [Defeat Menu](https://user-images.githubusercontent.com/15057519/121345051-0400dd00-c8ea-11eb-8e80-20df11a52106.png). Players can always pause the game by pressing their escape key, and victory and defeat screens appear according to the game logic.
+
 
 ## Movement/Physics
 
