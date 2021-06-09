@@ -30,8 +30,6 @@ namespace Enemy.Controller
         private Material MatDefault;
         SpriteRenderer SR;
 
-
-
         // Start is called before the first frame update
         public void Start()
         {

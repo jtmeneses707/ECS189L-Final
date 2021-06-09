@@ -13,7 +13,7 @@ namespace Player.Command
         public Transform MeleeAttackPoint;
         public float MeleeAttackRange = 0.3f;
         public LayerMask EnemyLayer;
-        public float DamageInflicted = 50.0f;
+        public float DamageInflicted = 100.0f;
         public float DamageDelay = 0.05f;
 
         public float AttackRate = 2.0f;

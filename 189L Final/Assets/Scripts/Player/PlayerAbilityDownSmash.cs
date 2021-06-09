@@ -13,7 +13,7 @@ namespace Player.Command
         public Transform DownSmashPoint;
         public float DownSmashRange = 0.3f;
         public LayerMask EnemyLayer;
-        public float DamageInflicted = 50f;
+        public float DamageInflicted = 150f;
         public float DamageDelay = 0.7f; // delay damage to time with attack animation
 
         //public float AttackRate = 2f;
