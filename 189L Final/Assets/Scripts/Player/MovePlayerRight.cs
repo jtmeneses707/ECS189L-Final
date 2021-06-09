@@ -8,7 +8,7 @@ namespace Player.Command
 {
     public class MovePlayerRight : ScriptableObject, IPlayerCommand
     {
-        public float Speed = 1.5f;
+        public float Speed = 1.2f;
 
         public void Execute(GameObject gameObject)
         {
