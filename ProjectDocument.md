@@ -136,11 +136,12 @@ In the early process of the game, our team brainstormed together looking at vari
 
 Originally, we had planned on having multiple levels and allowing Urumir to unlock the resulting abilities, acting as a parallel to Urumir's adventures and explorations in this fantasy world. However, due to the unexpected drop of a teammate, we needed to scale back our gameplay system, and so the system revolves around the time that Urumir ventures back home and finds his home destroyed.
 
-*Character Forms* - The ability to transform is clearly represented in the assets, as the weak form is a slime, and the strong form is neither human nor beast, representing what has become of Urumir after absorbing his enemies' abilities during his adventure.
-*Props* - Props such as graves and crosses represent Urumir's fallen loved ones, to represent the devastation and ruin of the land.
-*Gameplay* - In Urumir's strong form, he is able to use new abilities he gained from absorbing his enemies' abilities during his adventure, such as the dashing, the down smash, and the ranged attack.
+**Narrative Presentations:**
+- *Character Forms* - The ability to transform is clearly represented in the assets, as the weak form is a slime, and the strong form is neither human nor beast, representing what has become of Urumir after absorbing his enemies' abilities during his adventure.
+- *Props* - Props such as graves and crosses represent Urumir's fallen loved ones, to represent the devastation and ruin of the land.
+- *Gameplay* - In Urumir's strong form, he is able to use new abilities he gained from absorbing his enemies' abilities during his adventure, such as the dashing, the down smash, and the ranged attack.
 *Gameplay System* - The platforming mechanic of this game is supposed to be somewhat challenging in order to represent the physical destruction to the land caused by the Demon King, as Urumir faces this as a legitimate obstacle when making his way to the Demon King.
-*Boss Battle* - The boss battle directly correlates with Urumir's face-off against the Demon King in order to exact vegenance.
+- *Boss Battle* - The boss battle directly correlates with Urumir's face-off against the Demon King in order to exact vegenance.
 
 
 ## Press Kit and Trailer
