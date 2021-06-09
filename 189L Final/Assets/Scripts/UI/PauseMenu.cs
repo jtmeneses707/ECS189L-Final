@@ -11,12 +11,20 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject VictoryMenuUI;
     public GameObject DefeatMenuUI;
+    public GameObject ControlMenuUI;
 
     public void Resume()
     {
         PauseMenuUI.SetActive(false);
+        ControlMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
+    }
+
+    public void Controls()
+    {
+        PauseMenuUI.SetActive(false);
+        ControlMenuUI.SetActive(true);
     }
 
     void Pause()
@@ -40,7 +48,7 @@ public class PauseMenu : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && VictoryMenuUI.activeInHierarchy != true && DefeatMenuUI.activeInHierarchy != true)
+        if (Input.GetKeyDown(KeyCode.Escape) && VictoryMenuUI.activeInHierarchy != true && DefeatMenuUI.activeInHierarchy != true && ControlMenuUI.activeInHierarchy != true)
         {
             if (GameIsPaused)
             {
