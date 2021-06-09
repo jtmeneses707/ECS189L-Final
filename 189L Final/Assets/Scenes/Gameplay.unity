@@ -39859,7 +39859,7 @@ GameObject:
   - component: {fileID: 1423070024}
   - component: {fileID: 1423070027}
   - component: {fileID: 1423070028}
-  - component: {fileID: 1423070029}
+  - component: {fileID: 1423070030}
   m_Layer: 6
   m_Name: DemonKing
   m_TagString: DemonKing
@@ -39979,7 +39979,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!95 &1423070028
 Animator:
@@ -40000,7 +40000,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1423070029
+--- !u!114 &1423070030
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -40009,9 +40009,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1423070023}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc645233a40998548b7e8c6373829517, type: 3}
+  m_Script: {fileID: 11500000, guid: 6fb37f182ba883f489f49b9670890e77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 1423070028}
+  PlayerObject: {fileID: 912158783}
 --- !u!1 &1426729517
 GameObject:
   m_ObjectHideFlags: 0

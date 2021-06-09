@@ -15,12 +15,6 @@ namespace Enemy.Controller
             SetStats(EnemyConstants.SkeletonHealth, EnemyConstants.SkeletonVisibilityRadius, EnemyConstants.SkeletonAttackRadius, EnemyConstants.SkeletonRoamTimer);
         }
 
-        public void RoamOrIdleLogic()
-        {
-            //Choose randomly between 5-10 seconds on whether to idle or roam
-            //Must add a 2d box collider to prevent falling off a cliff
-        }
-
     }
 }
 
