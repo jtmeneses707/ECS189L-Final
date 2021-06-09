@@ -65,12 +65,14 @@ Furthermore, throughout the game, I added alot of audio cues to give it more dep
 All the audio that was implemented in the game was attached to a AudioManager prefab in each scene of our game. This prefab held an AudioManager.cs script that could play and stop all the audio that was attached to it, which includes all the themes and sound effects within the game. Along with this is a Sound Script used to allow us to change various properties of the audio while testing. These properties included: volume, pitch, and the ability to loop (which was very handy for playing themes). Lastly, there was a SwitchMusicTrigger.cs file. This was used to change the main theme to the epic boss music, once the player had entered the boss' area.
 
 Assets:
-Various License Free Sound Effects from: [Zapsplat](https://www.zapsplat.com/sound-effect-categories/)
-Unity Store Licensing: [FootSteps](https://assetstore.unity.com/packages/audio/sound-fx/foley/footsteps-essentials-189879), [Main Theme](https://assetstore.unity.com/packages/audio/ambient/platformer-music-pack-lite-178337), [Win Theme](https://assetstore.unity.com/packages/audio/ambient/platformer-music-pack-lite-178337), [Lose Theme](https://assetstore.unity.com/packages/audio/ambient/platformer-music-pack-lite-178337), [Boss Theme](https://assetstore.unity.com/packages/audio/music/electronic/dark-boss-fight-side-scroller-background-78149)
+
+* Various License Free Sound Effects from: [Zapsplat](https://www.zapsplat.com/sound-effect-categories/)
+* Unity Store Licensing: [FootSteps](https://assetstore.unity.com/packages/audio/sound-fx/foley/footsteps-essentials-189879), [Main Theme](https://assetstore.unity.com/packages/audio/ambient/platformer-music-pack-lite-178337), [Win Theme](https://assetstore.unity.com/packages/audio/ambient/platformer-music-pack-lite-178337), [Lose Theme](https://assetstore.unity.com/packages/audio/ambient/platformer-music-pack-lite-178337), [Boss Theme](https://assetstore.unity.com/packages/audio/music/electronic/dark-boss-fight-side-scroller-background-78149)
 
 References: 
-[Audio Manager Tutorial](https://www.youtube.com/watch?v=6OT43pvUyfY), 
-[Switch Music Tracks](https://www.youtube.com/watch?v=XoH8Qyqje1g)
+
+* [Audio Manager Tutorial](https://www.youtube.com/watch?v=6OT43pvUyfY), 
+* [Switch Music Tracks](https://www.youtube.com/watch?v=XoH8Qyqje1g)
 
 ## Gameplay Testing
 
