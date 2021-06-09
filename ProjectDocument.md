@@ -132,7 +132,7 @@ The full gameplay results have been formatted in Markdown and can be found [here
 
 **Document how the narrative is present in the game via assets, gameplay systems, and gameplay.** 
 
-In the early process of the game, our team brainstormed together looking at various characters and environmental designs, waiting to see what spoke out to us, keeping in mind the optional theme of "Power Down". After we found the sprites of Urumir's slime form and strong form, we thought it'd be cool to create a strong protagonist who powers down when injured and loses his strength, and crafted a narrative based upon this idea.
+In the early process of the game, our team brainstormed together looking at various characters and environmental designs, waiting to see what spoke out to us, keeping in mind the optional theme of "Power Down". After we found the sprites of Urumir's slime form and strong form, we thought it'd be cool to create a gloomy feeling game featuring a strong protagonist who powers down when injured and loses his strength, and crafted a narrative based upon this idea.
 
 Originally, we had planned on having multiple levels and allowing Urumir to unlock the resulting abilities, acting as a parallel to Urumir's adventures and explorations in this fantasy world. However, due to the unexpected drop of a teammate, we needed to scale back our gameplay system, and so the system revolves around the time that Urumir ventures back home and finds his home destroyed.
 
