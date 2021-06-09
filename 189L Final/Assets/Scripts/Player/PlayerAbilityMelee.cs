@@ -87,7 +87,8 @@ namespace Player.Command
                     // Code to allow enemies to take damage/ decrease HP
                     //enemy.GetComponent<BasicEnemy>().TakeDamage(this.DamageInflicted);
 
-                    enemy.GetComponent<EnemyController>().TakeDamage(this.DamageInflicted);
+                    if (enemy.GetComponent<EnemyController>() != null)
+                        enemy.GetComponent<EnemyController>().TakeDamage(this.DamageInflicted);
 
                 }
 
