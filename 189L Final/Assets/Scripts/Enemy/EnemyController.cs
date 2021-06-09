@@ -36,6 +36,9 @@ namespace Enemy.Controller
         public void Start()
         {
             Init();
+            Collider2D playerCollider = PlayerObject.GetComponent<BoxCollider2D>();
+            Collider2D enemyCollider = GetComponent<BoxCollider2D>();
+            Physics2D.IgnoreCollision(playerCollider, enemyCollider);
         }
 
         protected void Init()

@@ -206,7 +206,7 @@ PolygonCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1398424849835764066}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -233,7 +233,7 @@ PolygonCollider2D:
       - {x: -0.2632239, y: -0.2715775}
       - {x: -0.31323814, y: -0.2922518}
       - {x: -0.6513672, y: -0.43202296}
-      - {x: -0.21249929, y: -0.7132756}
-      - {x: -0.041346002, y: -0.8520952}
-      - {x: 0.056599375, y: -0.9902389}
+      - {x: -0.28659067, y: -0.729752}
+      - {x: -0.21565053, y: -0.87374187}
+      - {x: -0.2265096, y: -1.141824}
       - {x: 0.16219984, y: -1.1758676}
