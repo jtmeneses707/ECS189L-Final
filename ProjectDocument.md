@@ -19,6 +19,13 @@ If a player were to speedrun this game, they would likely want to rush the platf
 
 **If you did work that should be factored in to your grade that does not fit easily into the proscribed roles, add it here! Please include links to resources and descriptions of game-related material that does not fit into roles here.**
 
+### Jerrie Kraus-Liang ###
+- *Figma* - To help out Joshua with the Press Kit & Trailer, I created a [figma design](https://www.figma.com/file/LW0nAMa1yMyAFA2dVRh2yf/ECS-189L-Final?node-id=0%3A1) for desktop and mobile. 
+- *Level design & fine-tuning* - To help out with the game design, I first created rough sketches on paper with what the level would be laid out like. The [first sketch](https://user-images.githubusercontent.com/15057519/121359773-71683a00-c8f9-11eb-875a-397d39d0ff1a.png) ended up having too little gameplay time, so a [second sketch](https://user-images.githubusercontent.com/15057519/121359824-7c22cf00-c8f9-11eb-90cc-e2cfe4466221.png) was made to extend the level and challenge the player a bit more.
+- *Fire Pits* - While designing the level, coming up with different block arrangements felt repetitive, so I came up with a mechanic based on environmental damage and needing to circumvent it using the dashing ability. This seemed like a good idea as it makes the game more skill-based and provides the player with an additional challenge. The implementation can be found here.
+- *Sky Gradient* - To improve the visuals of the world, I added a gradient sky based on the color palette of the environment.
+
+
 # Main Roles #
 
 Your goal is to relate the work of your role and sub-role in terms of the content of the course. Please look at the role sections below for specific instructions for each role.
