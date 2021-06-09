@@ -1,4 +1,4 @@
-# Game Basic Information #
+# Ruined Isles Information #
 
 ## Summary ##
 
