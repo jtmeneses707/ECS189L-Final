@@ -178,9 +178,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1398424849835764093}
   - component: {fileID: 1398424849835764092}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Hitbox
-  m_TagString: Untagged
+  m_TagString: SkeletonEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

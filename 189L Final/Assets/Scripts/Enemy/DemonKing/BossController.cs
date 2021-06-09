@@ -18,10 +18,13 @@ namespace Enemy.Controller
 
         new public void AttackPlayer()
         {
-            Collider2D weaponHitBox = GetComponentInChildren<BoxCollider2D>();
+            Debug.Log("Die!!!! Boss Attack!");
+            GameObject hitboxObject = transform.Find("Hitbox").gameObject;
+            BoxCollider2D weaponHitBox = hitboxObject.GetComponent<BoxCollider2D>();
             Collider2D playerCollider = PlayerObject.GetComponent<BoxCollider2D>();
             if (weaponHitBox.IsTouching(playerCollider))
             {
+                Debug.Log("Touching!!!! Boss Attack!");
                 HealthController playerHealthController = playerCollider.GetComponent<HealthController>();
                 playerHealthController.TakeDamage();
             }
