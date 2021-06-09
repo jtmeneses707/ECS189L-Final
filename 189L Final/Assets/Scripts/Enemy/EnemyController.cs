@@ -50,6 +50,19 @@ namespace Enemy.Controller
             Move = new EnemyMovement(EnemyConstants.BasicEnemySpeed, this.gameObject);
         }
 
+        void OnCollisionEnter2D(Collision2D collision)
+        {   
+            // Grab the name and compare the name to all of the potential collisions
+            var collider = collision.gameObject.name;
+
+            // Water collision, should result in death and defeat screen
+            if (collider == "WaterHitbox")
+            {
+                Debug.Log("Death by water");
+                Die();
+            }
+        }
+
         protected abstract void InitStats();
 
         protected void SetStats(float health, float visibilityRadius, float attackRadius, float roamTimer)
