@@ -86,10 +86,13 @@ namespace Enemy.Controller
         public void FollowPlayer()
         {
             FacePlayer();
-            float step = EnemyConstants.BasicEnemySpeed * Time.fixedDeltaTime;
-            Vector2 playerPosition = PlayerObject.transform.position;
+            float speed = EnemyConstants.BasicEnemySpeed * Time.fixedDeltaTime;
+            Rigidbody2D enemyRigidBody = GetComponent<Rigidbody2D>();
+            Vector2 playerPosition = new Vector2(PlayerObject.transform.position.x, PlayerObject.transform.position.y);
             playerPosition.y = transform.position.y;
-            transform.position = Vector2.MoveTowards(transform.position, playerPosition, step);
+            Vector2 newPosition = Vector2.MoveTowards(enemyRigidBody.position, playerPosition, speed);
+
+            enemyRigidBody.MovePosition(newPosition);
         }
 
         public void AttackPlayer()
