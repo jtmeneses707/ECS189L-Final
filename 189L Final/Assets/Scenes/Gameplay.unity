@@ -28319,7 +28319,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
-  Hearts: 0
   UIHearts:
   - {fileID: 71812377}
   - {fileID: 1214017057}
