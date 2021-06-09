@@ -185,11 +185,19 @@ Originally, we had planned on having multiple levels and allowing Urumir to unlo
 - *Boss Battle* - The boss battle directly correlates with Urumir's face-off against the Demon King in order to exact vegenance.
 
 
-## Press Kit and Trailer
+## Press Kit and Trailer (Joshua-Troy)
 
 **Include links to your presskit materials and trailer.**
+I created our press kit using static html with css. I did not secure hosting for the files, and instead went with using htmlpreview.github.io to render our static files. There were some unforseen drawbacks with this, such as how long it takes for the static pages to load the linked files like css files. This results in a somewhat ugly webpage as it loads, but styles are eventually applied. With more time, I would make a website that is friendlier to screens smaller than 1920x1080, and include a mobile view. 
 
 **Describe how you showcased your work. How did you choose what to show in the trailer? Why did you choose your screenshots?**
+
+***Trailer***
+I watched a quick and short YouTube [video](https://www.youtube.com/watch?v=KRvEFwHXm8s) on how to create game trailers. One of the methods was called "Music Video Montage". The goal of this method was to create a quick and short video that would highlight fun aspects of our game while ramping with the intensity of the music, creating a trailer that is engaging for the viewers. I first start with basic visuals like the starting screen or simple walking, then gradually progress to more and more hectic gameplay, such as platforming and attacking multiple enemies. The trailer culminates into showing a preview of the fight with the final boss, saving the most epic part of the game for last. 
+
+***Screenshots***
+I chose a 4 screenshots that varied with intensity with each of them. This follows along with the main goal for the trailer.
+
 
 
 
