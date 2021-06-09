@@ -26,8 +26,9 @@ If a player were to speedrun this game, they would likely want to rush the platf
 - *Sky Gradient* - To improve the visuals of the world, I added a gradient sky based on the color palette of the environment.
 
 ### Johnson Le ###
-- *Slime Form* - I implemented the logic of the player transforming to the slime and transforming back to its original form, The player transforms to the slime after taking three hits. However, once in slime form they can transform back into their original form once they land two of their attacks. To add to the visuals of the transformation I created an animated object (essentially a brief smoke effect) that is attached to the player that would appear whenever they transformed and then disappear after a short period of time.
+- *Slime Form* - I implemented the logic of the player transforming to the slime and transforming back to its original form, The player transforms into the slime after taking three hits. However, once in slime form they can transform back into their original form once they land two of their attacks, gaining all their health back in the process. To add to the visuals of the transformation I created an animated object (essentially a brief smoke effect) that is attached to the player. This would appear whenever they transformed and then disappears after a short period of time.
 - *Damage Indication* - To add to the game feel of the game, I made it so that the player's and enemies briefly shined white whenever they took damage. This approach was inspired by games such as MegaMan and implemented by switching out the material of the game object whenever they took damage, and then reverting back to its original material after a brief delay.
+- *Level Implementation* - Following Jerrie's level design, I created a tile map so that could easily place all the platforms. I then created the level which was then finetuned by Jerrie after gameplay testing.
 
 # Main Roles #
 
