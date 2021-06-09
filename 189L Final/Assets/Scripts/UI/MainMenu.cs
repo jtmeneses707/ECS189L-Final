@@ -29,6 +29,11 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
 
+    public void ViewControls()
+    {
+        SceneManager.LoadScene(3);
+        Time.timeScale = 1f;    
+    }
     
     public void ReturnToMenu()
     {
