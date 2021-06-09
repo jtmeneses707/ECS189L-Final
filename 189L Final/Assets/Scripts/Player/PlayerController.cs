@@ -33,6 +33,9 @@ public class PlayerController : MonoBehaviour
     //private float PlayerMovementSpeed = 2.0f;
     // **   *******  *******  *******    ** // 
 
+    [SerializeField]
+    private GameObject TransformEffectPoint;
+
     private HealthController HealthController;
 
     //private AudioManager AudioManager;
@@ -55,6 +58,7 @@ public class PlayerController : MonoBehaviour
     private bool RestrictMovement = false;
     private bool IsSlime = false;
     private int SlimeHitCounter = 0;
+    private Animator animator;
 
     void OnCollisionEnter2D(Collision2D collision)
         {   
@@ -64,6 +68,7 @@ public class PlayerController : MonoBehaviour
             // Water collision, should result in death and defeat screen
             if (collider == "WaterHitbox")
             {
+                FindObjectOfType<AudioManager>().Play("WaterSplash");
                 Debug.Log("Death by water");
                 Destroy(IsAlive);
             }
@@ -98,7 +103,9 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-      
+        // Get the animator for the player. 
+        this.animator = this.gameObject.GetComponent<Animator>();
+
         this.Right = ScriptableObject.CreateInstance<MovePlayerRight>();
         this.Left = ScriptableObject.CreateInstance<MovePlayerLeft>();
         this.gameObject.AddComponent<MovePlayerUp>();
@@ -249,13 +256,8 @@ public class PlayerController : MonoBehaviour
                         this.Down.Execute(this.gameObject);
                     }
                 }
-            }
-            
-            
-        }
-
-        // Get the animator for the player. 
-        var animator = this.gameObject.GetComponent<Animator>();
+            }        
+        }      
 
         // Set params for animator. 
         animator.SetFloat("X-Velocity", Mathf.Abs(this.gameObject.GetComponent<Rigidbody2D>().velocity.x));
@@ -267,22 +269,27 @@ public class PlayerController : MonoBehaviour
         // Condition for Changing into Slime
         if (this.HealthController.GetHearts() == 1 && this.IsSlime == false)
         {
-            animator.SetLayerWeight(0, 0);
-            animator.SetLayerWeight(1, 1);
             this.IsSlime = true;
+            Debug.Log("Here!");
+            //this.animator.SetTrigger("IsDeadTrigger");
+            //animator.SetBool("IsDead", true);
+            TransformEffectPoint.active = true;
+            StartCoroutine(DelayTransformation(0));
         }
 
         // Change back into OG form once enough damage is done
         else if (this.gameObject.GetComponent<PlayerAbilityMelee>().SlimeHitCounter == 2 && this.IsSlime == true)
         {
             //Debug.Log("Hello!");
-            //this.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.up * 10.0f;
-            this.IsSlime = false;
-            this.HealthController.ResetForm();
-            this.gameObject.GetComponent<PlayerAbilityMelee>().SlimeHitCounter = 0; // reset counter
 
-            //StartCoroutine(DelayTransformation());
+            //this.IsSlime = false;
+            //this.HealthController.ResetForm();
+            //this.gameObject.GetComponent<PlayerAbilityMelee>().SlimeHitCounter = 0; // reset counter
+
+            TransformEffectPoint.active = true;
+            StartCoroutine(DelayTransformation(1));
         }
+
 
         //Debug.Log(this.gameObject.GetComponent<PlayerAbilityMelee>().SlimeHitCounter);
         // animator.SetBool("CanDoubleJump", this.gameObject.GetComponent<MovePlayerUp>().CanDoubleJump);
@@ -298,15 +305,36 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    //private IEnumerator DelayTransformation()
+    //// Add to the animation event frame to transform to slime
+    //private void AnimationEventTransform()
     //{
-    //    yield return new WaitForSeconds(0.5f);
-    //    this.IsSlime = false;
-    //    //this.Up.Execute(this.gameObject);
-    //    this.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.up * 3.0f;
-    //    this.HealthController.ResetForm();
-    //    this.gameObject.GetComponent<PlayerAbilityMelee>().SlimeHitCounter = 0;
+    //    animator.SetBool("IsDead", false);
     //}
+
+    //// Add to the animation event frame to transform back from slime
+    //private void AnimationEventTransformBack()
+    //{
+    //    animator.SetBool("IsSlimeDead", false);
+    //}
+
+    private IEnumerator DelayTransformation(int temp)
+    {
+        yield return new WaitForSeconds(0.3f);
+        TransformEffectPoint.active = false;
+        // animator.SetBool("IsDead", false);
+        if (temp == 0)
+        {
+            animator.SetLayerWeight(0, 0);
+            animator.SetLayerWeight(1, 1);
+            this.IsSlime = true;
+        }
+        else
+        {
+            this.IsSlime = false;
+            this.HealthController.ResetForm();
+            this.gameObject.GetComponent<PlayerAbilityMelee>().SlimeHitCounter = 0;
+        }
+    }
 
     // Allow the player to move again after using DownSmashAbility
     private void RestrictPlayerMovement()
@@ -334,11 +362,6 @@ public class PlayerController : MonoBehaviour
     private void DownSmashSound()
     {
         FindObjectOfType<AudioManager>().Play("DownSmashSound");
-    }
-
-    private void DownSmashDamage()
-    {
-        // apply damage to all enemies caught in the down smash ability
     }
 
     // For Passing through enemies

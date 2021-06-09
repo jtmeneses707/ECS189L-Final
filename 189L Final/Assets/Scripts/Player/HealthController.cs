@@ -7,7 +7,7 @@ public class HealthController : MonoBehaviour
 {
     public Animator animator;
 
-    
+    [SerializeField]
     // 3 Hearts for main form, and 1 heart for Slime Form.
     private int Hearts;
     public Image[] UIHearts;
