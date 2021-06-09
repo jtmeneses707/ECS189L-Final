@@ -30,9 +30,14 @@ Here is an example:
 
 You should replay any **bold text** with your relevant information. Liberally use the template when necessary and appropriate.
 
-## User Interface
+## User Interface (Jerrie)
 
-**Describe your user interface and how it relates to gameplay. This can be done via the template.**
+The user interface is designed based on the core game logic and any information we believe is necessary for the player to have when challenging the Demon King. There are four scenes, three of which are for purposes of the user interface only.
+![image](https://user-images.githubusercontent.com/15057519/121341896-b9319600-c8e6-11eb-9904-3bc270f82e10.png)
+
+# Start Screen
+![image](https://user-images.githubusercontent.com/15057519/121342716-88059580-c8e7-11eb-9fd5-898a5781be8d.png)
+- The scene that first appears when the player runs the game. Can go directly into the gameplay, check the controls, or quit the game.
 
 ## Movement/Physics
 
