@@ -117,7 +117,7 @@ Following the command pattern exercise, we made an IPlayerCommand interface for 
 
 [MovePlayerUp](https://github.com/jtmeneses707/ECS189L-Final/blob/main/189L%20Final/Assets/Scripts/Player/MovePlayerUp.cs) - Moves the player up (lets them Jump). There is also a double jump if the input is given twice.
 
-[PlayerAbilityDash](https://github.com/jtmeneses707/ECS189L-Final/blob/main/189L%20Final/Assets/Scripts/Player/PlayerAbilityDash.cs) - The player dashes in the direction that they are facing, dodging all enemies/ obstacles in their way. There is a 1 second cooldown so that mechanic cannot be abused by the player.
+[PlayerAbilityDash](https://github.com/jtmeneses707/ECS189L-Final/blob/main/189L%20Final/Assets/Scripts/Player/PlayerAbilityDash.cs) - The player dashes in the direction that they are facing, dodging all enemies/ obstacles in their way. There is a 1 second cooldown so that the mechanic cannot be abused by the player.
 
 [PlayerAbilityMelee](https://github.com/jtmeneses707/ECS189L-Final/blob/main/189L%20Final/Assets/Scripts/Player/PlayerAbilityMelee.cs) - The player swings their fist, damaging all enemies caught in its range. Doing a medium amount of damage, this ability does a fair blow to whomever it hits.
 
