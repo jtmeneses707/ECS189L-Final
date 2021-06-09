@@ -116,7 +116,9 @@ All the audio that was implemented in the game was attached to a AudioManager pr
 
 ## Gameplay Testing (Jerrie)
 
-Due to the lack of time left, the gameplay testing was conducted with two passes of play with the development team, followed by a group of willing friends to act as playtesters. Some gameplay testing was done asynchronously, with people submitting a thoughtful review, while others played the game more casually and screenshared their gameplay, voicing their thoughts as they came. Some open-ended questions were asked to help develop a general theme of what should be improved in the next iteration of the game. 
+Due to the lack of time left, the gameplay testing was conducted with two passes of play with the development team, followed by a group of willing friends to act as playtesters. With my main role being User Interface, I tried to identify any UI/UX problems early on before asking others to review and critique the game. One thing I kept in mind from class readings was how the UI was part of the gameplay experience, and is one of the key ways that the player interacts with the game. Originally, I had placed the hearts at the top left of the screen, but when playing and experiencing the game myself, I realized how awkward it was to have the player flick their eyes toward the top left of their screen in order to check how many lives they had left.
+
+In the playtesting phase, some gameplay testing was done asynchronously, with people submitting a thoughtful review, while others played the game more casually and screenshared their gameplay, voicing their thoughts as they came. Some open-ended questions were asked to help develop a general theme of what should be improved in the next iteration of the game. 
 
 The full gameplay results have been formatted in Markdown and can be found [here](https://github.com/jtmeneses707/ECS189L-Final/blob/0617f46a998cca9920d101acf5febe4edada251e/GameplayTestingResults.md).
 
