@@ -17,8 +17,8 @@
         - “The mobs should really at least aggro you if they take damage from you. You can just cheese the mobs by shooting projectiles out of range.”
 
 ### Albert ###
-    - **Quote:** "The down smash seems too weak compared to all the other abilities."
-    - **General Points:** 
+- **Quote:** "The down smash seems too weak compared to all the other abilities."
+- **General Points:** 
         - Disliked the movement controls but also found it entertaining to overcome.
         - Noticed the player and enemy sometimes glitches into the background trees.
         - Thought the abilities were cool in theory, but in reality, you only need the dashing to get through the platforming. Interesting in seeing how the boss battle unfolds and hopefully allows for better display of skill.
