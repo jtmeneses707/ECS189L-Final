@@ -39,7 +39,7 @@ Here is an example:
 
 You should replay any **bold text** with your relevant information. Liberally use the template when necessary and appropriate.
 
-## User Interface (Jerrie Kraus-Liang)
+## User Interface - (Jerrie Kraus-Liang)
 
 The user interface is designed based on the core game logic and any information we believe is necessary for the player to have when challenging the Demon King. There are four scenes, three of which are for purposes of the user interface only. Any buttons or interactables in the UI have simple shadows when hovered or clicked to provide feedback to the player, letting them know a button is interactable or that they have successfully clicked the button. All user interfaces were tested for any major discrepancies between differing monitor specs and should display properly for all aspect ratios and resolutions.
 
@@ -121,7 +121,7 @@ All the audio that was implemented in the game was attached to a AudioManager pr
 * [Audio Manager Tutorial](https://www.youtube.com/watch?v=6OT43pvUyfY), 
 * [Switch Music Tracks](https://www.youtube.com/watch?v=XoH8Qyqje1g)
 
-## Gameplay Testing (Jerrie Kraus-Liang)
+## Gameplay Testing - (Jerrie Kraus-Liang)
 
 Due to the lack of time left, the gameplay testing was conducted with two passes of play with the development team, followed by a group of willing friends to act as playtesters. With my main role being User Interface, I tried to identify any UI/UX problems early on before asking others to review and critique the game. One thing I kept in mind from class readings was how the UI was part of the gameplay experience, and is one of the key ways that the player interacts with the game. Originally, I had placed the hearts at the top left of the screen, but when playing and experiencing the game myself, I realized how awkward it was to have the player flick their eyes toward the top left of their screen in order to check how many lives they had left.
 
@@ -137,7 +137,7 @@ The full gameplay results have been formatted in Markdown and can be found [here
 - Consider adjusting or removing the moon animation - a few people thought the moon was actually bugged rather than the animation being a stylistic choice.
 - Might be a bit too complex to figure out in time, but consider buffing the down smash. This could be done by increasing the range of damage, increasing the cast speed, or allowing the player to cast down smash while in the air.
 
-## Narrative Design (Jerrie Kraus-Liang)
+## Narrative Design - (Jerrie Kraus-Liang)
 
 **Document how the narrative is present in the game via assets, gameplay systems, and gameplay.** 
 
