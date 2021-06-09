@@ -60,24 +60,28 @@ The Gameplay UI is a bit more interesting as it has many pop-up menus for the pl
 ## Input (Johnson)
 
 **Default Configuration (as seen in the control menu of the game):**
+
 ![image](https://user-images.githubusercontent.com/50163129/121334293-6350f400-c8ce-11eb-8c1b-2f4360c8ef9c.png)
 
 **Platform and InputStyle**
+
 Our Project supports Unity Game version 2021.1.0f1 for MAC and Windows platforms. The main input style chosen was keyboard and mouse. However, only a keybord is needed to be able to use all inputs as seen above.
 
 **Implementation**
+
 Following the command pattern exercise, we made an IPlayerCommand interface for executing each command. Meanwhile, a PlayerController class script was used to manage all the input for the commands that the player could use. These commands include: MovePlayerLeft, MovePlayerRight, MovePlayerUp, PlayerAbilityDash, PlayerAbilityMelee, PlayerAbilityShoot, PlayerAbilityDownSmash, all of which are executed using the inputs shown above (in the Default Configuration). I implemented the logic and physics for these commands and timed them with JT's animations to give off the overall feel of the player movement/ abilities.
 
 MovePlayerLeft - Moves the player left when given a negative x velocity 
+
 MovePlayerRight- Moves the player Right when given a positve x velocity 
+
 MovePlayerUp - Moves the player up (lets them Jump). I added a IsGrounded check, so that the player can double jump when it is not grounded.
+
 PlayerAbilityMelee - The player swings their fist, damaging all enemies caught in its range. 
+
 PlayerAbilityProjectile - The player shoots a projectile towards the direction that it is facing.
+
 PlaterAbilityDownSmash - The player does a powerful explosive attack underneath it, hurting all enemies in range.
-
-**Describe the default input configuration.**
-
-**Add an entry for each platform or input style your project supports.**
 
 ## Game Logic
 
@@ -88,11 +92,13 @@ PlaterAbilityDownSmash - The player does a powerful explosive attack underneath 
 ## Audio - (Johnson)
 
 **Sound Style**
+
 Following the dark asthetics of our game's visuals and story, the main theme was chosen to convey a constant state of dread and pressure. There is also a win theme and a lose theme. The win theme fittingly conveys a happy and uplifting ending, as you have just slain the evil Demon King that killed your people. Meanwhile, the lose theme is quite sad and dejected, which encourages the player to hit the play again button and have another attempt at the game. Finally, there is a final boss theme. This one is quite upbeat and epic, since we wanted the final part of the game to be as intense as possible.
 
 Furthermore, throughout the game, I added alot of audio cues to give it more depth. I took some inspiration from popular mainstream games. For example, the walking sound is very similar to that of walking on gravel in Minecraft. Another example would be how the damage sound for the player is very similar to alot of 2D action platformers such as Hollow Knight. However, there were a lot of sound effects such as the water and fire SFX, that were chosen because they gave the player a distinct audio queue that something bad happened. I choose these sounds because they were vividly realistic which makes the player take notice of how dangerous the environment can be. This was done in the hopes that they would be encouraged to avoid these obstacles as well as improve their gameplay.
 
 **Implementation**
+
 All the audio that was implemented in the game was attached to a AudioManager prefab in each scene of our game. This prefab held an AudioManager.cs script that could play and stop all the audio that was attached to it, which includes all the themes and sound effects within the game. Along with this is a Sound Script used to allow us to change various properties of the audio while testing. These properties included: volume, pitch, and the ability to loop (which was very handy for playing themes). Lastly, there was a SwitchMusicTrigger.cs file. This was used to change the main theme to the epic boss music, once the player had entered the boss' area.
 
 **Assets:**
