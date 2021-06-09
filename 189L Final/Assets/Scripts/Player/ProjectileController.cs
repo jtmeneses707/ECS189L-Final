@@ -13,21 +13,16 @@ public class ProjectileController : MonoBehaviour
     // Start is called before the first frame update
     public GameObject Player;
 
-
     void Start()
     {
-
         //RB.velocity = transform.right * Speed;
-
     }
 
     void Update()
     {
         // Rotate the projectile to make it more dynamic
         this.transform.Rotate(0, 0, 200 * Time.deltaTime);
-
     }
-
 
     // Whenever projectile hits something
     void OnTriggerEnter2D(Collider2D hitInfo)

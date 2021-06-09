@@ -21,6 +21,3 @@ namespace Player.Command
         }
     }
 }
-
-// Use for later after finding audio clip
-// FindObjectOfType<AudioManager>().Play("PlayerFootSteps");

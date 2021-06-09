@@ -35,8 +35,6 @@ namespace Player.Command
 
         void Update()
         {
-
-
             if (this.Active)
             {
 
@@ -56,13 +54,6 @@ namespace Player.Command
 
         public void Execute(GameObject gameObject)
         {
-            // instantiate projectile, destroy if it hits something
-
-            // Also need to recalibrate the firepoint direction so that it flips when the player moves 
-            // in the oppositive direction
-            //Debug.Log(Firepoint);
-            //Instantiate(ProjectilePrefab, FirePoint.position, FirePoint.rotation);
-
 
             // Resets used if shoot ability is currently not active.
             if (!this.Active)
@@ -86,43 +77,8 @@ namespace Player.Command
 
                 // Destroy the prefab after awhile and it hasnt hit anything
                 Destroy(projectile, 10.0f);
-
-
-                //StartCoroutine(DelayBulletCreation());
-                // Currently projectile script processes damage to enemies with BasicEnemy script attached to them.
             }
 
         }
-        //private IEnumerator DelayBulletCreation()
-        //{
-        //    yield return new WaitForSeconds(BulletCreationDelay);
-
-        //    // Quaternion.identity - for no rotation. Aligned with the game's 2D axis
-        //    var projectile = (GameObject)Instantiate(ProjectilePrefab, FirePoint.position, Quaternion.identity);
-
-        //    // Get New instantiate projectiles rigidbody.
-        //    var RB = projectile.GetComponent<Rigidbody2D>();
-
-        //    // Give it velocity to send it flying.
-        //    RB.velocity = transform.right * Speed;
-
-        //    // Destroy the prefab after awhile and it hasnt hit anything
-        //    Destroy(projectile, 10.0f);
-
-
-        //}
     }
 }
-
-
-
-
-
-//// Quaternion.identity - for no rotation. Aligned with the game's 2D axis
-//var projectile = (GameObject)Instantiate(ProjectilePrefab, FirePoint.position, Quaternion.identity);
-
-//// Get New instantiate projectiles rigidbody.
-//var RB = projectile.GetComponent<Rigidbody2D>();
-
-//// Give it velocity to send it flying.
-//RB.velocity = transform.right * Speed;

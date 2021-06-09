@@ -64,7 +64,6 @@ public class PlayerController : MonoBehaviour
     public float CoolDownTime = 1.0f;
     private float NextDashTime = 0;
 
-
     void OnCollisionEnter2D(Collision2D collision)
         {   
             // Grab the name and compare the name to all of the potential collisions
@@ -105,6 +104,7 @@ public class PlayerController : MonoBehaviour
             //     Debug.Log("Did not collide?");
             // }
         }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -152,14 +152,15 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         // ***Adjust this values for game feel as needed*** // 
+
         this.gameObject.GetComponent<MovePlayerUp>().JumpSpeed = this.JumpSpeed;
         this.gameObject.GetComponent<PlayerAbilityMelee>().MeleeAttackRange = this.MeleeAttackRange;
         this.gameObject.GetComponent<PlayerAbilityDownSmash>().DownSmashRange = this.DownSmashRange;
 
         //this.Left.ChangeSpeed(this.PlayerMovementSpeed);
-
         //this.Left.Speed = this.PlayerMovementSpeed;
         //this.gameObject.GetComponent<MovePlayerRight>().Speed = this.PlayerMovementSpeed;
+
         // ***************            ***************** //
 
 
@@ -280,9 +281,6 @@ public class PlayerController : MonoBehaviour
         if (this.HealthController.GetHearts() == 1 && this.IsSlime == false)
         {
             this.IsSlime = true;
-            Debug.Log("Here!");
-            //this.animator.SetTrigger("IsDeadTrigger");
-            //animator.SetBool("IsDead", true);
             TransformEffectPoint.active = true;
             StartCoroutine(DelayTransformation(0));
         }
@@ -290,19 +288,10 @@ public class PlayerController : MonoBehaviour
         // Change back into OG form once enough damage is done
         else if (this.gameObject.GetComponent<PlayerAbilityMelee>().SlimeHitCounter == 2 && this.IsSlime == true)
         {
-            //Debug.Log("Hello!");
-
-            //this.IsSlime = false;
-            //this.HealthController.ResetForm();
-            //this.gameObject.GetComponent<PlayerAbilityMelee>().SlimeHitCounter = 0; // reset counter
-
             TransformEffectPoint.active = true;
             StartCoroutine(DelayTransformation(1));
         }
-
-
-        //Debug.Log(this.gameObject.GetComponent<PlayerAbilityMelee>().SlimeHitCounter);
-        // animator.SetBool("CanDoubleJump", this.gameObject.GetComponent<MovePlayerUp>().CanDoubleJump);
+        Debug.Log(this.gameObject.GetComponent<PlayerAbilityMelee>().SlimeHitCounter);
     }
 
     // This is added as a function event for the ruddadnning animation
@@ -314,18 +303,6 @@ public class PlayerController : MonoBehaviour
             FindObjectOfType<AudioManager>().Play("PlayerFootSteps");
         }
     }
-
-    //// Add to the animation event frame to transform to slime
-    //private void AnimationEventTransform()
-    //{
-    //    animator.SetBool("IsDead", false);
-    //}
-
-    //// Add to the animation event frame to transform back from slime
-    //private void AnimationEventTransformBack()
-    //{
-    //    animator.SetBool("IsSlimeDead", false);
-    //}
 
     private IEnumerator DelayTransformation(int temp)
     {
@@ -342,6 +319,7 @@ public class PlayerController : MonoBehaviour
         {
             this.IsSlime = false;
             this.HealthController.ResetForm();
+            // Reset Counter
             this.gameObject.GetComponent<PlayerAbilityMelee>().SlimeHitCounter = 0;
         }
     }
@@ -357,7 +335,6 @@ public class PlayerController : MonoBehaviour
     {
         RestrictMovement = false;
     }
-
 
     private void MeleeSound()
     {
@@ -380,54 +357,4 @@ public class PlayerController : MonoBehaviour
         //Debug.Log("Ended!");
         this.gameObject.layer = LayerMask.NameToLayer("Characters");
     }
-
-    //public void SetAllCollidersStatus(bool active)
-    //{
-    //    foreach (Collider c in GetComponents<Collider>())
-    //    {
-    //        c.enabled = active;
-    //    }
-    //}
-
-
-    //public void CollisionDetected(ChildCollider collider)
-    //{
-    //    Debug.Log("child collided");
-    //}
-
-    ////private void OnCollisionEnter2D(Collision2D collision)
-    ////{
-
-    ////    Collider myCollider = collision.contacts[0].thisCollider;
-    ////    Debug.Log(myCollider);
-
-    ////    Debug.Log(this.gameObject.GetComponent<MovePlayerUp>().GetIsGrounded());
-    ////    //Debug.Log(collision.collider.gameObject);
-    ////    //Debug.Log(collision.gameObject);
-    ////    ////collision.collider.name == "groundCheck"
-
-    ////    ////var ground_checker = collision.GetContacts
-    ////    //// Update IsGrounded whenever ground is touched
-    ////    //// Added condition to make sure that the player's feet needs to touch the ground,
-    ////    //// instead of just any part of the body like before
-    ////    if (collision.gameObject.tag == "Ground")
-    ////    {
-    ////        //this.gameObject.GetComponent<MovePlayerUp>().IsGrounded = true;
-    ////        //this.gameObject.GetComponent<MovePlayerUp>().CanDoubleJump = true;
-    ////        //FindObjectOfType<AudioManager>().Play("PlayerFootSteps");
-    ////        Debug.Log("Works1");
-    ////    }
-    ////}
-
-    //private void OnCollisionExit2D(Collision2D collision)
-    //{
-    //    // Update Is Grounded whenever player leaves the ground
-    //    if (collision.gameObject.tag == "Ground")
-    //    {
-    //        FindObjectOfType<AudioManager>().Play("PlayerJumpOffGroundSound");
-    //        //this.gameObject.GetComponent<MovePlayerUp>().IsGrounded = false;
-    //        Debug.Log("Works2");
-    //    }
-    //}
-
 }
