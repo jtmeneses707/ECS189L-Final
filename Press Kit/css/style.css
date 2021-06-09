@@ -7,7 +7,7 @@ body {
 /* Create pseudo element to allow for background image with opacity*/
 body::after {
     content: "";
-    background-image: url("../img/background.jpg");
+    background-image: url("../Press Kit/img/background.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
