@@ -47,6 +47,21 @@ namespace Enemy.Controller
             this.AttackActive = false;
         }
 
+
+        public void Dash()
+        {
+            if (this.AttackActive == true)
+                return;
+            FacePlayer();
+            float speed = EnemyConstants.BasicEnemySpeed * Time.fixedDeltaTime * 10;
+            Rigidbody2D enemyRigidBody = GetComponent<Rigidbody2D>();
+            Vector2 playerPosition = new Vector2(PlayerObject.transform.position.x, PlayerObject.transform.position.y);
+            playerPosition.y = transform.position.y;
+            Vector2 newPosition = Vector2.MoveTowards(enemyRigidBody.position, playerPosition, speed);
+
+            enemyRigidBody.MovePosition(newPosition);
+        }
+
     }
 }
 

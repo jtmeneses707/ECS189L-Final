@@ -86,6 +86,8 @@ namespace Enemy.Controller
 
         public void FollowPlayer()
         {
+            if (this.AttackActive == true)
+                return;
             FacePlayer();
             float speed = EnemyConstants.BasicEnemySpeed * Time.fixedDeltaTime;
             Rigidbody2D enemyRigidBody = GetComponent<Rigidbody2D>();
