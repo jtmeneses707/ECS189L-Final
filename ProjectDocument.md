@@ -81,17 +81,17 @@ Our Project supports Unity Game version 2021.1.0f1 for MAC and Windows platforms
 
 Following the command pattern exercise, we made an IPlayerCommand interface for executing each command. Meanwhile, a PlayerController class script was used to manage all the input for the commands that the player could use. These commands include: MovePlayerLeft, MovePlayerRight, MovePlayerUp, PlayerAbilityDash, PlayerAbilityMelee, PlayerAbilityShoot, PlayerAbilityDownSmash, all of which are executed using the inputs shown above (in the Default Configuration). I implemented the logic and physics for these commands and timed them with JT's animations to give off the overall feel of the player movement/ abilities.
 
-MovePlayerLeft - Moves the player left when given a negative x velocity 
+[MovePlayerLeft](https://github.com/jtmeneses707/ECS189L-Final/blob/main/189L%20Final/Assets/Scripts/Player/MovePlayerLeft.cs) - Moves the player left when given a negative x velocity 
 
-MovePlayerRight- Moves the player Right when given a positve x velocity 
+[MovePlayerRight](https://github.com/jtmeneses707/ECS189L-Final/blob/main/189L%20Final/Assets/Scripts/Player/MovePlayerRight.cs)- Moves the player Right when given a positve x velocity 
 
-MovePlayerUp - Moves the player up (lets them Jump). I added a IsGrounded check, so that the player can double jump when it is not grounded.
+[MovePlayerUp](https://github.com/jtmeneses707/ECS189L-Final/blob/main/189L%20Final/Assets/Scripts/Player/MovePlayerUp.cs) - Moves the player up (lets them Jump). I added a IsGrounded check, so that the player can double jump when it is not grounded.
 
-PlayerAbilityMelee - The player swings their fist, damaging all enemies caught in its range. 
+[PlayerAbilityMelee](https://github.com/jtmeneses707/ECS189L-Final/blob/main/189L%20Final/Assets/Scripts/Player/PlayerAbilityMelee.cs) - The player swings their fist, damaging all enemies caught in its range. 
 
-PlayerAbilityProjectile - The player shoots a projectile towards the direction that it is facing.
+[PlayerAbilityShoot](https://github.com/jtmeneses707/ECS189L-Final/blob/main/189L%20Final/Assets/Scripts/Player/PlayerAbilityShoot.cs) - The player shoots a projectile towards the direction that it is facing.
 
-PlaterAbilityDownSmash - The player does a powerful explosive attack underneath it, hurting all enemies in range.
+[PlaterAbilityDownSmash](https://github.com/jtmeneses707/ECS189L-Final/blob/main/189L%20Final/Assets/Scripts/Player/PlayerAbilityDownSmash.cs) - The player does a powerful explosive attack underneath it, hurting all enemies in range.
 
 ## Game Logic
 
