@@ -114,7 +114,7 @@ All the audio that was implemented in the game was attached to a AudioManager pr
 * [Audio Manager Tutorial](https://www.youtube.com/watch?v=6OT43pvUyfY), 
 * [Switch Music Tracks](https://www.youtube.com/watch?v=XoH8Qyqje1g)
 
-## Gameplay Testing
+## Gameplay Testing (Jerrie)
 
 Due to the lack of time left, the gameplay testing was conducted with two passes of play with the development team, followed by a group of willing friends to act as playtesters. Some gameplay testing was done asynchronously, with people submitting a thoughtful review, while others played the game more casually and screenshared their gameplay, voicing their thoughts as they came. Some open-ended questions were asked to help develop a general theme of what should be improved in the next iteration of the game. 
 
@@ -128,7 +128,7 @@ The full gameplay results have been formatted in Markdown and can be found [here
 - Consider adjusting or removing the moon animation - a few people thought the moon was actually bugged rather than the animation being a stylistic choice.
 - Might be a bit too complex to figure out in time, but consider buffing the down smash. This could be done by increasing the range of damage, increasing the cast speed, or allowing the player to cast down smash while in the air.
 
-## Narrative Design
+## Narrative Design (Jerrie)
 
 **Document how the narrative is present in the game via assets, gameplay systems, and gameplay.** 
 
