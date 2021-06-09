@@ -30,6 +30,13 @@ If a player were to speedrun this game, they would likely want to rush the platf
 - *Damage Indication* - To add to the game feel of the game, I made it so that the player's and enemies briefly shined white whenever they took damage. This approach was inspired by games such as MegaMan and implemented by switching out the material of the game object whenever they took damage, and then reverting back to its original material after a brief delay.
 - *Level Implementation* - Following Jerrie's level design, I created a tile map so that could easily place all the platforms. I then created the level which was then finetuned by Jerrie after gameplay testing.
 
+### Joshua-Troy Meneses ###
+
+- *Hitboxes/Hurtboxes Fine Tuning* - I create hitboxes and hurtboxes for the players and enemies and edited their positioning and sizes to match the animations. 
+- *Animation Events* - I helped with the damage logic for players and enemies by using animation events to check during which frame a hitbox/attack should be active. 
+- *Camera Logic* - I added the camera logic/setup the scene with a specific distance between the camera and scene. This included a parallax scrolling background to add to game feel/immersiveness. This affected the FOV/how much of the scene can be scene during gameplay, further adding to game feel. I also tested the different camera types and found that a push box more to the right of the screen would help create a sense of urgency during gameplay. 
+- *Reworking dash script* - I rebuilt the entire dash script so that it would work smoother with the animation. 
+
 # Main Roles #
 
 Your goal is to relate the work of your role and sub-role in terms of the content of the course. Please look at the role sections below for specific instructions for each role.
@@ -75,15 +82,20 @@ Since our game is a 2D action platformer, we followed the basic movement scheme 
 - We also noted that the player could get stuck on the sides of walls and added a frictionless material to the player's collider so that they would just fall straight down. 
 - The colliders for enemies attack hit boxes were removed when they weren't attacking, so that the player's projectile could hit the enemies' actual body hitbox.
 
-## Animation and Visuals
+## Animation and Visuals (Joshua-Troy)
 
 **List your assets including their sources and licenses.**
 We used many free assets hosted on itch.io. 
-Many of these assets such as both of the main player's forms, the boss, and the environment are using hugueslaborde's sprite art. [itch.io link](https://hugues-laborde.itch.io/)
+Many of these assets such as both of the main player's forms, the boss, and the environment are using [hugueslaborde's](https://hugues-laborde.itch.io/) sprite art.
 The parallax mountains used in the background are from [anismuz](https://ansimuz.itch.io/mountain-dusk-parallax-background).
 The skeleton enemy sprites are created by [Jesse Munguia](https://jesse-m.itch.io/skeleton-pack)
 
 **Describe how your work intersects with game feel, graphic design, and world-building. Include your visual style guide if one exists.**
+***Assets***
+We wanted our game to have a darker, retro style feel to it, creating a game inspired by the dark muted colors of Limbo, and the gothic/fantasy elements from games like Castelvania.  The colors for all of our assets are dark and muted, consisting of mainly shades for black, grey, or deep purples. The game world has a background consisting of cemetery, with gravestones piled high and an eerie mountainside set in the background, further enhancing the fantasy-horror game feel. Moreover, use of props like dilapidated churches or old trees helped to make the level feel less empty. I also took the liberty of editing some sprites, such as adding in lightning during an attack animation to create a sense great power during the wind up phase. In terms of graphic design, I made sure to include only sprites that had the same bit style. For example, some potential sprites were much too detailed, and ended up looking out of place with the rest of the assets.
+
+***Animation*** 
+I created all animations for the props (except for the water, thanks Johnson for the help!), player forms, and enemies. Some notable animation work includes messing with frame times and the spacing between key frames, especially with boss attacks. Animations at first were too fluid, as each key frame was spaced equally apart. Editing frame times and spacing lead to changing how some boss attacks feel, such as having a longer time between the start of an attack and the active attack frame to create a sense of power during the windup of the attack.  
 
 ## Input (Johnson)
 
