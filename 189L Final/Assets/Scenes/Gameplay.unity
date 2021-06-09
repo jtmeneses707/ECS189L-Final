@@ -15471,7 +15471,7 @@ GameObject:
   - component: {fileID: 640143009}
   - component: {fileID: 640143008}
   m_Layer: 8
-  m_Name: GradientSky
+  m_Name: Sky
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
