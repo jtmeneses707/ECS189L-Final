@@ -30,8 +30,6 @@ namespace Enemy.Controller
         private Material MatDefault;
         SpriteRenderer SR;
 
-
-
         // Start is called before the first frame update
         public void Start()
         {
@@ -150,7 +148,7 @@ namespace Enemy.Controller
 
             //Play Die Animation
             animator.SetBool("IsDead", true);
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
 
         void ResetMaterial()

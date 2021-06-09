@@ -1,30 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using Enemy.Behavior;
 using UnityEngine;
+using Enemy.Constants;
 
 namespace Enemy.Controller
 {
-    public class BossController : MonoBehaviour
+    public class BossController : EnemyController
     {
 
-        private enum State{
-        }
+        // Start is called before the first frame update
 
-        [SerializeField]
-        private float TotalHealth = 200f;
-
-        private float CurrentHealth;
-
-        private bool ActiveDamage; 
-
-
-
-
-        // Update is called once per frame
-        void Update()
+        protected override void InitStats()
         {
-
+            SetStats(EnemyConstants.BossHealth, EnemyConstants.BossVisibilityRadius, EnemyConstants.BossAttackRadius, EnemyConstants.BossRoamTimer);
         }
+
     }
 }
 
