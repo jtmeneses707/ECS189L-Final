@@ -41,6 +41,7 @@ The user interface is designed based on the core game logic and any information 
 - *Start Screen UI* - The scene that first appears when the player runs the game. Can go directly into the gameplay, check the controls, or quit the game. [Image of UI](https://user-images.githubusercontent.com/15057519/121342716-88059580-c8e7-11eb-9fd5-898a5781be8d.png).
 - *Controls Scene UI* - The scene that appears when a player wants to check the controls of the game. Tips are also included so the player knows all of the functionalities of the game logic beforehand, something which seemed to be necessary after gameplay testing. Can go back to the main menu or quit the game. [Image of UI](https://user-images.githubusercontent.com/15057519/121343293-2265d900-c8e8-11eb-843c-b563a0d7d7f9.png).
 - *Credits Scene UI* - Credits our groupmates for their hard work in their respective roles! Can go back to the main menu or quit the game. [Image of UI](https://user-images.githubusercontent.com/15057519/121343458-504b1d80-c8e8-11eb-9737-2085e39cab92.png).
+- *Gameplay UI* - See below.
 
 ### Gameplay UI ###
 The Gameplay UI is a bit more interesting as it has many pop-up menus for the player to interact with.
@@ -115,9 +116,17 @@ All the audio that was implemented in the game was attached to a AudioManager pr
 
 ## Gameplay Testing
 
-**Add a link to the full results of your gameplay tests.**
+Due to the lack of time left, the gameplay testing was conducted with two passes of play with the development team, followed by a group of willing friends to act as playtesters. Some gameplay testing was done asynchronously, with people submitting a thoughtful review, while others played the game more casually and screenshared their gameplay, voicing their thoughts as they came. Some open-ended questions were asked to help develop a general theme of what should be improved in the next iteration of the game. 
 
-**Summarize the key findings from your gameplay tests.**
+The full gameplay results have been formatted in markdown can be found [here](https://github.com/jtmeneses707/ECS189L-Final/blob/0617f46a998cca9920d101acf5febe4edada251e/GameplayTestingResults.md).
+
+**Key Findings:**
+    - Players were typically confused about what the controls were, so we should implement a UI with the controls indicated.
+    - Reduce the movement speed of the player to improve the mechanics and game feel.
+    - Increase the enemy aggro range and fix the floating/teleportation issues with the enemy AI.
+    - Add a cooldown (or increase the cooldown) on the dash, as it is overpowering the rest of the mechanics and dissuading players from engaging in any combat during the platforming.
+    - Consider adjusting or removing the moon animation - a few people thought the moon was actually bugged rather than the animation being a stylistic choice.
+    - Might be a bit too complex to figure out in time, but consider buffing the down smash. This could be done by increasing the range of damage, increasing the cast speed, or allowing the player to cast down smash while in the air.
 
 ## Narrative Design
 
