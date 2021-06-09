@@ -101,6 +101,8 @@ Following the command pattern exercise, we made an IPlayerCommand interface for 
 
 [MovePlayerUp](https://github.com/jtmeneses707/ECS189L-Final/blob/main/189L%20Final/Assets/Scripts/Player/MovePlayerUp.cs) - Moves the player up (lets them Jump). There is also a double jump if the input is given twice.
 
+[PlayerAbilityDash](https://github.com/jtmeneses707/ECS189L-Final/blob/main/189L%20Final/Assets/Scripts/Player/PlayerAbilityDash.cs) - The player dashes in the direction that they are facing, dodging all enemies/ obstacles in their way.
+
 [PlayerAbilityMelee](https://github.com/jtmeneses707/ECS189L-Final/blob/main/189L%20Final/Assets/Scripts/Player/PlayerAbilityMelee.cs) - The player swings their fist, damaging all enemies caught in its range. 
 
 [PlayerAbilityShoot](https://github.com/jtmeneses707/ECS189L-Final/blob/main/189L%20Final/Assets/Scripts/Player/PlayerAbilityShoot.cs) - The player shoots a projectile towards the direction that it is facing.
