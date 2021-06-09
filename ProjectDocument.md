@@ -44,7 +44,16 @@ You should replay any **bold text** with your relevant information. Liberally us
 
 **Describe how your work intersects with game feel, graphic design, and world-building. Include your visual style guide if one exists.**
 
-## Input
+## Input (Johnson)
+
+**Default Configuration (as seen in the control menu of the game):**
+![image](https://user-images.githubusercontent.com/50163129/121334293-6350f400-c8ce-11eb-8c1b-2f4360c8ef9c.png)
+
+**Platform and InputStyle**
+Our Project supports Unity Game version 2021.1.0f1 for MAC and Windows platforms. The main input style chosen was keyboard and mouse. However, only a keybord is needed to be able to use all inputs as seen above.
+
+**Implementation**
+Following the command pattern exercise, we made an IPlayerCommand interface for executing each command. Meanwhile, a PlayerController class script was used to manage all the input for the commands that the player could use. These commands included: MovePlayerLeft, MovePlayerRight, MovePlayerUp, PlayerAbilityDash, PlayerAbilityMelee, PlayerAbilityShoot, PlayerAbilityDownSmash, all of which are executed using the inputs shown above (in the Default Configuration).
 
 **Describe the default input configuration.**
 
