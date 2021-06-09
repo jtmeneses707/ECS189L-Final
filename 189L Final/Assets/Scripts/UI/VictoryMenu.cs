@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class VictoryMenu : MonoBehaviour
 {
@@ -12,6 +13,11 @@ public class VictoryMenu : MonoBehaviour
     void Start()
     {
         StartVictoryMusic = false;
+    }
+
+    public void GoToCredits()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
         // Update is called once per frame
         void Update()
