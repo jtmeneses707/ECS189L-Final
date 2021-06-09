@@ -25,6 +25,9 @@ If a player were to speedrun this game, they would likely want to rush the platf
 - *Fire Pits* - While designing the level, coming up with different block arrangements felt repetitive, so I came up with a mechanic based on environmental damage and needing to circumvent it using the dashing ability. This seemed like a good idea as it makes the game more skill-based and provides the player with an additional challenge. The implementation can be found here.
 - *Sky Gradient* - To improve the visuals of the world, I added a gradient sky based on the color palette of the environment.
 
+### Johnson Le ###
+- *Slime Form* - I implemented the logic of the player transforming to the slime and transforming back to its original form, The player transforms to the slime after taking three hits. However, once in slime form they can transform back into their original form once they land two of their attacks. To add to the visuals of the transformation I created an animated object (essentially a brief smoke effect) that is attached to the player that would appear whenever they transformed and then disappear after a short period of time.
+- *Damage Indication* - To add to the game feel of the game, I made it so that the player's and enemies briefly shined white whenever they took damage. This approach was inspired by games such as MegaMan and implemented by switching out the material of the game object whenever they took damage, and then reverting back to its original material after a brief delay.
 
 # Main Roles #
 
@@ -65,7 +68,7 @@ The Gameplay UI is a bit more interesting as it has many pop-up menus for the pl
 
 Since our game is a 2D action platformer, we followed the basic movement scheme of moving left, right, and jumping. These were implemented using the general physics system within Unity by changing the velocity of the player. To add more obstacle and platforming potential we gave the player the ability to double jump. This was done using a ground check 2D box collider positioned at the feet of the player. Along with this we implemented the dash ability so that the player could go through enemies/ obstacles for more gameplay variation. This dash was implemented using a transform position in update to give it a smooth visual. As for the rest of the player's abilities (melee, shoot, down smash), they were implemented using various child objects (with their own colliders and unique positions) that are attached to the player. The melee (positioned in front of the player) uses an overlap circle to detect all the enemies caught within its range and deal damage accordingly. The down smash does the same thing but instead uses a general overlap collider (placed below the player), to better represent range of the attack's shape. The shoot creates a projectile prefab at a transform placed at the player's hand. This projectile prefab has its own [script](https://github.com/jtmeneses707/ECS189L-Final/blob/main/189L%20Final/Assets/Scripts/Audio/ProjectileController.cs) that controls its speed and enemy detection. To always keep these attacks' transforms in the correct position (relative to the player), we used a [IsFacingRight](https://github.com/jtmeneses707/ECS189L-Final/blob/0be3d083f41d95e88a517c3c06da5ba1c717862b/189L%20Final/Assets/Scripts/Player/PlayerController.cs#L54) boolean. With this we rotated the entire player gameobject, which also rotated it's children whenever the player turned around.
 
-** General Physics Adjustment **
+**General Physics Adjustment**
 
 - We modified the colliders of the tile platform so that the top surface would be a little smaller. This was done so that it looked like the player was actually walking inside the path of the game visuals, instead of just being on top. 
 - We also noted that the player could get stuck on the sides of walls and added a frictionless material to the player's collider so that they would just fall straight down. 
@@ -119,7 +122,7 @@ Furthermore, throughout the game, there are alot of audio cues to give it more d
 
 **Implementation**
 
-All the audio that was implemented in the game was attached to a AudioManager prefab in each scene of our game. This prefab held an AudioManager.cs script that could play and stop all the audio that was attached to it, which includes all the themes and sound effects within the game. Along with this is a Sound Script used to allow us to change various properties of the audio while testing. These properties included: volume, pitch, and the ability to loop (which was very handy for playing themes). Lastly, there was a SwitchMusicTrigger.cs file. This was used to change the main theme to the epic boss music, once the player had entered the boss' area.
+All the audio that was implemented in the game was attached to a AudioManager prefab in each scene of our game. This prefab held an AudioManager.cs script that could play and stop all the audio that was attached to it, which includes all the [themes](https://github.com/jtmeneses707/ECS189L-Final/tree/main/189L%20Final/Assets/Resources/Music) and [sound effects](https://github.com/jtmeneses707/ECS189L-Final/tree/main/189L%20Final/Assets/Resources/Sounds) within the game. Along with this is a Sound Script used to allow us to change various properties of the audio while testing. These properties included: volume, pitch, and the ability to loop (which was very handy for playing themes). Lastly, there was a SwitchMusicTrigger.cs file. This was used to change the main theme to the epic boss music, once the player had entered the boss' area.
 
 **Assets:**
 
