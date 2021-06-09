@@ -78,6 +78,10 @@ Since our game is a 2D action platformer, we followed the basic movement scheme 
 ## Animation and Visuals
 
 **List your assets including their sources and licenses.**
+We used many free assets hosted on itch.io. 
+Many of these assets such as both of the main player's forms, the boss, and the environment are using hugueslaborde's sprite art. [itch.io link](https://hugues-laborde.itch.io/)
+The parallax mountains used in the background are from [anismuz](https://ansimuz.itch.io/mountain-dusk-parallax-background).
+The skeleton enemy sprites are created by [Jesse Munguia](https://jesse-m.itch.io/skeleton-pack)
 
 **Describe how your work intersects with game feel, graphic design, and world-building. Include your visual style guide if one exists.**
 
