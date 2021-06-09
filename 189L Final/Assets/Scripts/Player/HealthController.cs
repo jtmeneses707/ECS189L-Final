@@ -15,9 +15,21 @@ public class HealthController : MonoBehaviour
     public Sprite emptyHeart;
 
     private PlayerController PlayerController;
+
+    // Materials for indicating damage
+    private Material MatWhite;
+    private Material MatDefault;
+    SpriteRenderer SR;
+
     // Start is called before the first frame update
     void Start()
     {
+        // Get Sprite Renderer
+        this.SR = GetComponent<SpriteRenderer>();
+        // By default Ressources.Load returns an object, but here we want a material.
+        this.MatWhite = Resources.Load("Materials/WhiteFlash", typeof(Material)) as Material;
+        this.MatDefault = this.SR.material;
+
         this.Hearts = 4;
         this.animator = this.gameObject.GetComponent<Animator>();
         this.PlayerController = this.gameObject.GetComponent<PlayerController>();
@@ -45,10 +57,16 @@ public class HealthController : MonoBehaviour
     {
         FindObjectOfType<AudioManager>().Play("PlayerDamageSound");
 
+        // Change color material briefly
+        this.SR.material = this.MatWhite;
+
         if (this.Hearts > 0)
         {
             this.Hearts--;
-        }
+        
+            Invoke("ResetMaterial", 0.1f);
+           
+        }  
 
         // Set layer weight to change from full form to slime form sprites.
         if (this.Hearts == 1)
@@ -76,5 +94,10 @@ public class HealthController : MonoBehaviour
      public int GetHearts() {
          return this.Hearts;
      }
+
+    void ResetMaterial()
+    {
+        SR.material = this.MatDefault;
+    }
 
 }
