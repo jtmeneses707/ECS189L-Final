@@ -56,7 +56,19 @@ You should replay any **bold text** with your relevant information. Liberally us
 
 # Sub-Roles
 
-## Audio
+## Audio - (Johnson)
+
+Following the dark asthetics of our games visuals and story, the main theme was chosen to convey a constant state of dread and pressure. There is also a win theme and a lose theme. The win theme fittingly conveys a happy and uplifting ending, as you have just slain the evil Demon King that killed your people. Meanwhile the lose theme is quite sad and dejected, which encourages the player to hit the play again button and have another attempt at the game. Finally, there is a final boss theme. This one is quite upbeat and epic, since I the final part of the game to be as intense as possible.
+
+Furthermore, throughout the game, I added alot of audio cues to give it more depth. I took some inspiration from popular mainstream games. For example, the walking sound is very similar to that of walking on gravel in Minecraft. Another example would be how the damage sound for the player is very similar to alot of 2D action platformers such as Hollow Knight. However, there were a lot of sound effects such as the water and fire SFX, that were chosen because they gave the player a distinct audio queue that something bad happened. I choose these sounds because they were vividly realistic which makes the player take notice of how dangerous the environment can be. This was done in the hopes that they would be encouraged to avoid these obstacles as well as improve their gameplay.
+
+All the audio that was implemented in the game was attached to a AudioManager prefab in each scene of our game. This prefab held an AudioManager.cs script that could play and stop the audio that was attached to it, which includes all the themes and sound effects within the game. Along with this is a Sound Script used to allow us to change various properties of the audio while testing. These properties included: volume, pitch, and the ability to loop (which was very handy for playing themes). Lastly, there was a SwitchMusicTrigger.cs file. This was used to change the main theme to the epic boss music, once the player had entered the boss' area.
+
+Assets:
+
+Various License Free Sound Effects from: [Zapsplat](https://www.zapsplat.com/sound-effect-categories/)
+
+Unity Store Licensing: FootSteps(https://assetstore.unity.com/packages/audio/sound-fx/foley/footsteps-essentials-189879), [Main Theme](https://assetstore.unity.com/packages/audio/ambient/platformer-music-pack-lite-178337), [Win Theme](https://assetstore.unity.com/packages/audio/ambient/platformer-music-pack-lite-178337), [Lose Theme](https://assetstore.unity.com/packages/audio/ambient/platformer-music-pack-lite-178337), [Boss Theme(https://assetstore.unity.com/packages/audio/music/electronic/dark-boss-fight-side-scroller-background-78149)
 
 **List your assets including their sources and licenses.**
 
