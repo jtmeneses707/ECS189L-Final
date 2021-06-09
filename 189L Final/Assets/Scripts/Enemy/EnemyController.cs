@@ -89,7 +89,6 @@ namespace Enemy.Controller
             float speed = EnemyConstants.BasicEnemySpeed * Time.fixedDeltaTime;
             Rigidbody2D enemyRigidBody = GetComponent<Rigidbody2D>();
             Vector2 playerPosition = new Vector2(PlayerObject.transform.position.x, PlayerObject.transform.position.y);
-            playerPosition.y = transform.position.y;
             Vector2 newPosition = Vector2.MoveTowards(enemyRigidBody.position, playerPosition, speed);
 
             enemyRigidBody.MovePosition(newPosition);
