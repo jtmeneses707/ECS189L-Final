@@ -1,6 +1,6 @@
-## Gameplay Testing Results ##
+# Gameplay Testing Results #
 
-### Richard ### 
+### Richard ###
 - **Quote:** "Feels like I'm playing with a 3200 DPI mouse - I recognize it but I cannot adjust for it..."
 - **Review:** Game overall was about average. Getting the bad parts out of the way, the controls were not intuitive and hard to manage. The keybinds are not orthodox, and rebinding keys is not allowed. Movement is hard, as it moves the player too far and does not allow for minute adjustments. In terms of aesthetic, the game looks pleasing enough with fitting music and sound effects as well. The design of the level is good and tries to test different skills from the player, but in reality does not allow for much skill expression due to poorly implemented movement/abilities. The aggro range of the mobs is far too low and makes the ranged weapon too powerful, and the invincibility/frequency of the dash makes it the only viable way to traverse the level. Boss fight was pog. Would have enjoyed a more thematic transition into the boss room instead of suddenly appearing in the room. Number of bugs that did not take too much from the overall experience, but would be nice if fixed (getting stuck in terrain, mobs glitching out).
 
@@ -25,19 +25,19 @@
     - Enemies aggro range too small, making them easy to ignore.
 
 ### Tony ###
-    - **Quote:** "Overall, it was a bit entertaining having to learn how to manage the really hard controls. But I still think it should be changed."
-    - **General Points:** 
-        - The sound is a bit delayed when the player drowns.
-        - Sometimes the skeleton will teleport.
-      - Encountered a bug where the player was about to fall into water, but spammed dash into the wall and wall climbed back up, saving his run.
-      - No reason to use down smash.
+- **Quote:** "Overall, it was a bit entertaining having to learn how to manage the really hard controls. But I still think it should be changed."
+- **General Points:** 
+    - The sound is a bit delayed when the player drowns.
+    - Sometimes the skeleton will teleport.
+    - Encountered a bug where the player was about to fall into water, but spammed dash into the wall and wall climbed back up, saving his run.
+    - No reason to use down smash.
 
 ### Jeff ###
-    - **Quote:** "I'm not a platforming god by any means, but I've played platformers before and it's usually not this bad..."
-    - **General Points:** 
-        - The movement is way too fast. Observed that the one left or right move corresponds to more than a block of movement and suggested it be halved.
-        - Quit 5 minutes into gameplay due to hard controls. On top of the movement being too fast, also disliked that the jump was on W and UP. Suggested the dash be changed to be a double-tap A or D control instead.
+- **Quote:** "I'm not a platforming god by any means, but I've played platformers before and it's usually not this bad..."
+- **General Points:** 
+    - The movement is way too fast. Observed that the one left or right move corresponds to more than a block of movement and suggested it be halved.
+    - Quit 5 minutes into gameplay due to hard controls. On top of the movement being too fast, also disliked that the jump was on W and UP. Suggested the dash be changed to be a double-tap A or D control instead.
 
 ### Nessa ###
-    - Likes: Music, graphics are cute, some animations feel smooth 
-    - Dislikes: Jumping is hard, enemies don't aggro so it feels weird
+- **Likes**: Music, graphics are cute, some animations feel smooth 
+- **Dislikes**: Jumping is hard, enemies don't aggro so it feels weird
