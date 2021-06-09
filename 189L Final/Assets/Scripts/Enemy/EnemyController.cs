@@ -54,7 +54,7 @@ namespace Enemy.Controller
         }
 
         void OnCollisionEnter2D(Collision2D collision)
-        {   
+        {
             // Grab the name and compare the name to all of the potential collisions
             var collider = collision.gameObject.name;
 
@@ -92,6 +92,7 @@ namespace Enemy.Controller
             float speed = EnemyConstants.BasicEnemySpeed * Time.fixedDeltaTime;
             Rigidbody2D enemyRigidBody = GetComponent<Rigidbody2D>();
             Vector2 playerPosition = new Vector2(PlayerObject.transform.position.x, PlayerObject.transform.position.y);
+            playerPosition.y = transform.position.y;
             Vector2 newPosition = Vector2.MoveTowards(enemyRigidBody.position, playerPosition, speed);
 
             enemyRigidBody.MovePosition(newPosition);
@@ -111,15 +112,15 @@ namespace Enemy.Controller
         public void TakeDamage(float amount)
         {
 
-            if(this.gameObject.tag == "SkeletonEnemy")
+            if (this.gameObject.tag == "SkeletonEnemy")
             {
                 FindObjectOfType<AudioManager>().Play("SkeletonDamageSound");
             }
-            else if(this.gameObject.tag == "DemonKing")
+            else if (this.gameObject.tag == "DemonKing")
             {
                 FindObjectOfType<AudioManager>().Play("BossDamageSound");
             }
-            
+
             Debug.Log(amount);
 
             Health = Health - amount;
@@ -141,7 +142,7 @@ namespace Enemy.Controller
         public void Die()
         {
             Debug.Log("Skeleton Dead!");
-            
+
 
             //Disable Enemy
             GetComponent<Collider2D>().enabled = false;
@@ -218,12 +219,14 @@ namespace Enemy.Controller
         /// set a specific, frame accurate window to check if any collisions
         /// occur with player.
         /// </Summary>
-        public void SetAttackActive() {
+        public void SetAttackActive()
+        {
             AttackPlayer();
             this.AttackActive = true;
         }
 
-        public void SetAttackInactive() {
+        public void SetAttackInactive()
+        {
             this.AttackActive = false;
         }
 
