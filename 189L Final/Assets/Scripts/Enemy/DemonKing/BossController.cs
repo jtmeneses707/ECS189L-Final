@@ -10,21 +10,21 @@ namespace Enemy.Controller
     {
 
         // Start is called before the first frame update
+        public float dashCooldown;
 
         protected override void InitStats()
         {
             SetStats(EnemyConstants.BossHealth, EnemyConstants.BossVisibilityRadius, EnemyConstants.BossAttackRadius, EnemyConstants.BossRoamTimer);
+            dashCooldown = EnemyConstants.BossDashCooldown;
         }
 
         new public void AttackPlayer()
         {
-            Debug.Log("Die!!!! Boss Attack!");
             GameObject hitboxObject = transform.Find("Hitbox").gameObject;
             BoxCollider2D weaponHitBox = hitboxObject.GetComponent<BoxCollider2D>();
             Collider2D playerCollider = PlayerObject.GetComponent<BoxCollider2D>();
             if (weaponHitBox.IsTouching(playerCollider))
             {
-                Debug.Log("Touching!!!! Boss Attack!");
                 HealthController playerHealthController = playerCollider.GetComponent<HealthController>();
                 playerHealthController.TakeDamage();
             }
@@ -45,6 +45,21 @@ namespace Enemy.Controller
         new public void SetAttackInactive()
         {
             this.AttackActive = false;
+        }
+
+        public void useDashLogic()
+        {
+            dashCooldown = dashCooldown - Time.deltaTime;
+            if (dashCooldown <= 0.0f)
+            {
+                animator.SetInteger("AbilityChoice", 6);
+                dashCooldown = EnemyConstants.BossDashCooldown;
+            }
+        }
+
+        public void resetAbilityChoice()
+        {
+            animator.SetInteger("AbilityChoice", 0);
         }
 
 

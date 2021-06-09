@@ -16,7 +16,7 @@ public class Boss_Attack : StateMachineBehaviour
     //OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        int AbilityChoice = Random.Range(1, 7);
+        int AbilityChoice = Random.Range(1, 6);
         animator.SetInteger("AbilityChoice", AbilityChoice);
     }
 

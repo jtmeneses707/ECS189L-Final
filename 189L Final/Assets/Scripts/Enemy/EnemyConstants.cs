@@ -22,5 +22,7 @@ namespace Enemy.Constants
         public const float BossVisibilityRadius = 2.5f;
         public const float BossAttackRadius = 1.0f;
         public const float BossRoamTimer = 1.0f;
+        public const float BossDashCooldown = 3.0f;
+        
     }
 }
