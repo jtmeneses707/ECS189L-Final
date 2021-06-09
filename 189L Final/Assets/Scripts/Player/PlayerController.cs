@@ -60,6 +60,11 @@ public class PlayerController : MonoBehaviour
     private int SlimeHitCounter = 0;
     private Animator animator;
 
+    // Cool Down for Dash
+    public float CoolDownTime = 1.0f;
+    private float NextDashTime = 0;
+
+
     void OnCollisionEnter2D(Collision2D collision)
         {   
             // Grab the name and compare the name to all of the potential collisions
@@ -232,13 +237,18 @@ public class PlayerController : MonoBehaviour
             // Can only do these special moves when not in slime mode
             if(IsSlime == false)
             {
-                // Dash/ teleport ability
-                if (Input.GetKeyDown("space"))
+                // Cool Down For Dash Ability
+                if(Time.time > NextDashTime)
                 {
-                    // Pass in FacingRight since we are no longer using sprite renderer.flipx
-                    this.gameObject.GetComponent<PlayerAbilityDash>().IsFacingRight = this.IsFacingRight;
-                    //Debug.Log(this.gameObject.GetComponent<PlayerAbilityDash>().IsFacingRight);
-                    this.SpaceBar.Execute(this.gameObject);
+                    // Dash/ teleport ability
+                    if (Input.GetKeyDown("space"))
+                    {
+                        // Pass in FacingRight since we are no longer using sprite renderer.flipx
+                        this.gameObject.GetComponent<PlayerAbilityDash>().IsFacingRight = this.IsFacingRight;
+                        //Debug.Log(this.gameObject.GetComponent<PlayerAbilityDash>().IsFacingRight);
+                        this.SpaceBar.Execute(this.gameObject);
+                        NextDashTime = Time.time + CoolDownTime;
+                    }
                 }
 
                 // Shoot Projectile
