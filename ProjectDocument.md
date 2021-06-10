@@ -199,6 +199,7 @@ The full gameplay results have been formatted in Markdown and can be found [here
 
 **Key Findings:**
 - Players were typically confused about what the controls were, so we should implement a UI with the controls indicated. *(Implemented!)*
+- Allow players to rebind controls.
 - Reduce the movement speed of the player to improve the mechanics and game feel. *(Implemented!)*
 - Increase the enemy aggro range and fix the floating/teleportation issues with the enemy AI.
 - Add a cooldown (or increase the cooldown) on the dash, as it is overpowering the rest of the mechanics and dissuading players from engaging in any combat during the platforming. *(Implemented!)*
@@ -217,7 +218,6 @@ Originally, we had planned on having multiple levels and allowing Urumir to unlo
 - *Character Forms* - The ability to transform is clearly represented in the assets with [two forms](https://github.com/jtmeneses707/ECS189L-Final/tree/main/189L%20Final/Assets/Resources/Characters/Player), as the weak form is a slime, and the strong form is neither human nor beast, representing what has become of Urumir after absorbing his enemies' abilities during his adventure.
 - *Props* - Props such as [graves and crosses](https://github.com/jtmeneses707/ECS189L-Final/tree/main/189L%20Final/Assets/Resources/Backgrounds/Props) represent Urumir's fallen loved ones, to represent the devastation and ruin of the land.
 - *Gameplay* - In Urumir's strong form, he is able to use new abilities he gained from absorbing his enemies' abilities during his adventure, such as the [dashing](https://github.com/jtmeneses707/ECS189L-Final/blob/main/189L%20Final/Assets/Scripts/Player/PlayerAbilityDash.cs), the [down smash](https://github.com/jtmeneses707/ECS189L-Final/blob/main/189L%20Final/Assets/Scripts/Player/PlayerAbilityDownSmash.cs), and the [ranged attack](https://github.com/jtmeneses707/ECS189L-Final/blob/main/189L%20Final/Assets/Scripts/Player/PlayerAbilityShoot.cs).
-*Gameplay System* - The platforming mechanic of this game is supposed to be somewhat challenging in order to represent the physical destruction to the land caused by the Demon King, as Urumir faces this as a legitimate obstacle when making his way to the Demon King.
 - *Gameplay System* - The platforming mechanic of this game is supposed to be somewhat challenging in order to represent the physical destruction to the land caused by the Demon King, as Urumir faces this as a legitimate obstacle when making his way to the Demon King.
 - *Boss Battle* - The boss battle directly correlates with Urumir's face-off against the Demon King in order to exact vegenance, which can be found at the final platforming stage of the game.
 - *Narrative UI* - After seeing all the demos and how other students incorporated the narrative, I wanted to give the backstory of the game in the acutal game, so the [narrative UI](https://user-images.githubusercontent.com/15057519/121477897-0288f080-c98e-11eb-9d88-6520f200a6fb.png) was created to explain the backstory of Urumir.
