@@ -2727,8 +2727,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 11.728198, y: -17.591898}
-  m_SizeDelta: {x: 405.235, y: 194.0226}
+  m_AnchoredPosition: {x: -2.0844, y: 0.0009031296}
+  m_SizeDelta: {x: 402.63, y: 194.81}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &102329132
 MonoBehaviour:
@@ -39040,7 +39040,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 185.27533, y: 16.7996}
+  m_AnchoredPosition: {x: 195.04, y: -0.77568}
   m_SizeDelta: {x: 12.5506, y: 193.2586}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1286384034
@@ -39086,8 +39086,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1532836001}
   m_HandleRect: {fileID: 1532836000}
   m_Direction: 2
-  m_Value: 0.86975205
-  m_Size: 0.6971527
+  m_Value: 1.0000005
+  m_Size: 0.65101045
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -39105,7 +39105,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.122641504, g: 0.122641504, b: 0.122641504, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -39990,7 +39990,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1325211896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41260,8 +41260,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -9.4, y: -31.1644}
-  m_SizeDelta: {x: 344.6414, y: 278.3072}
+  m_AnchoredPosition: {x: -10.1, y: -52.216305}
+  m_SizeDelta: {x: 344.6414, y: 299.2425}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1369318015
 MonoBehaviour:
@@ -41283,30 +41283,32 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Overcoming your inhibitions is difficult for anyone, especially for those
-    who have already given up hope on themselves. An unemployed video game addict,
-    Urumir spends his days browsing online forums and replaying the same old games.
-    His days are bleak and dreary, until one day when he makes his daily trip to
-    the local convenience store. There he meets an untimely end against a speeding
-    Subaru, passing away instantly, his trusty tracksuit failing to protect him.
-    The next thing he knows is opening his eyes in an entirely new world - His body
-    no longer the same, instead composed as an adorable slime. Confused, alone, scared,
-    he tentatively explored the new lands around him, and found a warm welcome from
-    the people of the Isles. In their care he finds the know-how and support he needs
-    to survive in an unfamiliar world.
+  m_text: '
+
+    Overcoming your inhibitions is difficult for anyone, especially
+    for those who have already given up hope on themselves. An unemployed video game
+    addict, Urumir spends his days browsing online forums and replaying the same
+    old games. His days are bleak and dreary, until one day when he makes his daily
+    trip to the local convenience store. There he meets an untimely end against a
+    speeding Subaru, passing away instantly, his trusty tracksuit failing to protect
+    him. The next thing he knows is opening his eyes in an entirely new world - His
+    body no longer the same, instead composed as an adorable slime. Confused, alone,
+    scared, he tentatively explored the new lands around him, and found a warm welcome
+    from the people of the Isles. In their care he finds the know-how and support
+    he needs to survive in an unfamiliar world.
 
 
-    With newfound confidence and desire
-    for exploration, Urumir ventured out farther and farther into the world, accumulating
-    new experiences and abilities, realizing how much time he wasted in his previous
-    life. On and on for years he went, until finally, satisfied he saw all there
-    was to see, Urumir began the journey home to the place he first woke. But there
-    he is met with a bleak sight. Alletas the Demon King had ravaged the Isles, razing
-    down entire villages and towns. With his loved ones mercilessly slaughtered and
-    his home destroyed, Urumir''s story takes a drastic shift. He looks to redeem
-    the wasted years wallowed away on nothing, fully coming into his own as a man
-    of valor and honor. To avenge his friends, he must cleanse the land of demonic
-    creatures and strike the Demon King Atellas down from his throne.'
+    With newfound confidence and
+    desire for exploration, Urumir ventured out farther and farther into the world,
+    accumulating new experiences and abilities, realizing how much time he wasted
+    in his previous life. On and on for years he went, until finally, satisfied he
+    saw all there was to see, Urumir began the journey home to the place he first
+    woke. But there he is met with a bleak sight. Alletas the Demon King had ravaged
+    the Isles, razing down entire villages and towns. With his loved ones mercilessly
+    slaughtered and his home destroyed, Urumir''s story takes a drastic shift. He
+    looks to redeem the wasted years wallowed away on nothing, fully coming into
+    his own as a man of valor and honor. To avenge his friends, he must cleanse the
+    land of demonic creatures and strike the Demon King Atellas down from his throne.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -41315,8 +41317,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4292598747
+  m_fontColor: {r: 0.8584906, g: 0.8584906, b: 0.8584906, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -46225,7 +46227,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.3018868, g: 0.3018868, b: 0.3018868, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -58075,7 +58077,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.53333336}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
