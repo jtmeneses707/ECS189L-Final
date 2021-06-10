@@ -230,8 +230,10 @@ namespace Enemy.Controller
             this.AttackActive = false;
         }
 
-
-
+        public float GetHealth()
+        {
+            return this.Health;
+        }
 
 
 
