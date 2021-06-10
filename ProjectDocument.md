@@ -139,14 +139,19 @@ For the enemy states, I implemented the base states of being able to idle, move 
 
 **Implementing Enemy Abilities**
 
-For the enemy abilities, the state pattern made it very simple to select between the choice of abiltiies at random. For the skeleton, only an melee attack is implemented, however for the boss, the following abilities are implemented:
+For the enemy abilities, the state pattern made it very simple to select between the choice of abiltiies at random. For the skeleton, only an melee attack is implemented, however for the boss, [the following abilities are implemented](https://github.com/jtmeneses707/ECS189L-Final/blob/aa36bec4e2641e196900e0da98389cb2968c2b23/189L%20Final/Assets/Scripts/Enemy/DemonKing/Boss_Attack.cs#L20):
 
 
 Slash Attack - Swings the sword at player slashing him
+
 Stab Attack - Stabs the player with the sword
+
 Single Stab - A faster version of the stab attack
+
 Slash Stab Combo - Combination of both slashing and stabbing the player
+
 Double Slash Combo - Combination of slashing the player twice
+
 Dash - Dashes towards the player
 
 
