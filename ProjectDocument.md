@@ -36,6 +36,7 @@ If a player were to speedrun this game, they would likely want to rush the platf
 - *Animation Events* - I helped with the damage logic for players and enemies by using animation events to check during which frame a hitbox/attack should be active. 
 - *Camera Logic* - I added the camera logic/setup the scene with a specific distance between the camera and scene. This included a parallax scrolling background to add to game feel/immersiveness. This affected the FOV/how much of the scene can be scene during gameplay, further adding to game feel. I also tested the different camera types and found that a push box more to the right of the screen would help create a sense of urgency during gameplay. 
 - *Reworking dash script* - I rebuilt the entire dash script so that it would work smoother with the animation. 
+- *Player Health Controller* - I created the health controller script for the player, which takes account of increasing and decreasing health when appropriate. 
 
 ### Tommy Saechao ###
 - *Enemy Animation State Transitions* - I created state transitions in the Animator tool for enemies to fluidly react to the player based off of certain game conditions. This gives a more dynamic behavior for the enemies making the enemies behave more naturally. In addition to the state transitions, I implemented scripts in the existing state to further support the simplification of the game logic making the software design of the game more maintainable and reusable for further development.
