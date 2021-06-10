@@ -115,21 +115,21 @@ Our Project supports Unity Game version 2021.1.0f1 for MAC and Windows platforms
 
 **Implementation**
 
-Following the command pattern exercise, we made an IPlayerCommand interface for executing each command. Meanwhile, a PlayerController class script was used to manage all the input for the commands that the player could use. These commands include: MovePlayerLeft, MovePlayerRight, MovePlayerUp, PlayerAbilityDash, PlayerAbilityMelee, PlayerAbilityShoot, PlayerAbilityDownSmash, all of which are executed using the inputs shown above (in the Default Configuration). I implemented the logic and physics for these commands and timed them with Joshua's animations to give off the overall feel of the player movement/ abilities.
+Following the command pattern, we made an IPlayerCommand interface for executing each command. Meanwhile, a PlayerController class script was used to manage all the input for the commands that the player could use. These commands include: MovePlayerLeft, MovePlayerRight, MovePlayerUp, PlayerAbilityDash, PlayerAbilityMelee, PlayerAbilityShoot, PlayerAbilityDownSmash, all of which are executed using the inputs shown above (in the Default Configuration). I implemented the logic and physics for these commands and timed them with Joshua's animations to give off the overall feel of the player movement/ abilities.
 
 [MovePlayerLeft](https://github.com/jtmeneses707/ECS189L-Final/blob/main/189L%20Final/Assets/Scripts/Player/MovePlayerLeft.cs) - Moves the player left when given a negative x velocity.
 
-[MovePlayerRight](https://github.com/jtmeneses707/ECS189L-Final/blob/main/189L%20Final/Assets/Scripts/Player/MovePlayerRight.cs)- Moves the player Right when given a positve x velocity.
+[MovePlayerRight](https://github.com/jtmeneses707/ECS189L-Final/blob/main/189L%20Final/Assets/Scripts/Player/MovePlayerRight.cs)- Moves the player Right when given a positive x velocity.
 
 [MovePlayerUp](https://github.com/jtmeneses707/ECS189L-Final/blob/main/189L%20Final/Assets/Scripts/Player/MovePlayerUp.cs) - Moves the player up (lets them Jump). There is also a double jump if the input is given twice.
 
-[PlayerAbilityDash](https://github.com/jtmeneses707/ECS189L-Final/blob/main/189L%20Final/Assets/Scripts/Player/PlayerAbilityDash.cs) - The player dashes in the direction that they are facing, dodging all enemies/ obstacles in their way.
+[PlayerAbilityDash](https://github.com/jtmeneses707/ECS189L-Final/blob/main/189L%20Final/Assets/Scripts/Player/PlayerAbilityDash.cs) - The player dashes in the direction that they are facing, dodging all enemies/ obstacles in their way. This is has a 1 second cooldown so that it can't be abused by the player
 
-[PlayerAbilityMelee](https://github.com/jtmeneses707/ECS189L-Final/blob/main/189L%20Final/Assets/Scripts/Player/PlayerAbilityMelee.cs) - The player swings their fist, damaging all enemies caught in its range. 
+[PlayerAbilityMelee](https://github.com/jtmeneses707/ECS189L-Final/blob/main/189L%20Final/Assets/Scripts/Player/PlayerAbilityMelee.cs) - The player swings their fist, damaging all enemies caught in its range. This ability does medium damage.
 
-[PlayerAbilityShoot](https://github.com/jtmeneses707/ECS189L-Final/blob/main/189L%20Final/Assets/Scripts/Player/PlayerAbilityShoot.cs) - The player shoots a projectile towards the direction that it is facing.
+[PlayerAbilityShoot](https://github.com/jtmeneses707/ECS189L-Final/blob/main/189L%20Final/Assets/Scripts/Player/PlayerAbilityShoot.cs) - The player shoots a projectile towards the direction that it is facing. This ability does the least damage, to encourage the player to have aggressive gameplay through using the other abilities.
 
-[PlaterAbilityDownSmash](https://github.com/jtmeneses707/ECS189L-Final/blob/main/189L%20Final/Assets/Scripts/Player/PlayerAbilityDownSmash.cs) - The player does a powerful explosive attack underneath it, hurting all enemies in range.
+[PlaterAbilityDownSmash](https://github.com/jtmeneses707/ECS189L-Final/blob/main/189L%20Final/Assets/Scripts/Player/PlayerAbilityDownSmash.cs) - The player does a powerful explosive attack underneath it, hurting all enemies in range. Since this ability does the most damage, we made it so that the player is stationary during the attack. As a result if used at the wrong time, they will be susceptible to enemy attacks.
 
 ## Game Logic
 
