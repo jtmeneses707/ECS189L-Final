@@ -74,7 +74,7 @@ namespace Player.Command
                     // Pass deal damage into coroutine to time it with animation
                     //StartCoroutine(DelayForDamage(enemy));
 
-                    if (enemy.GetComponent<EnemyController>() != null)
+                    if (enemy.GetComponent<EnemyController>() != null && enemy.GetComponent<EnemyController>().GetHealth() > 0)
                     {
                         if (this.IsSlime)
                         {
