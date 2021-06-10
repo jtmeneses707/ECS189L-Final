@@ -147,7 +147,7 @@ Furthermore, throughout the game, there are alot of audio cues to give it more d
 
 **Implementation**
 
-All the audio that was implemented in the game was attached to a AudioManager prefab in each scene of our game. This prefab held an AudioManager.cs script that could play and stop all the audio that was attached to it, which includes all the [themes](https://github.com/jtmeneses707/ECS189L-Final/tree/main/189L%20Final/Assets/Resources/Music) and [sound effects](https://github.com/jtmeneses707/ECS189L-Final/tree/main/189L%20Final/Assets/Resources/Sounds) within the game. Along with this is a Sound Script used to allow us to change various properties of the audio while testing. These properties included: volume, pitch, and the ability to loop (which was very handy for playing themes). Lastly, there was a SwitchMusicTrigger.cs file. This was used to change the main theme to the epic boss music, once the player had entered the boss' area.
+All the audio that was implemented in the game was attached to a AudioManager prefab in each scene of our game. This prefab held an [AudioManager.cs script](https://github.com/jtmeneses707/ECS189L-Final/blob/main/189L%20Final/Assets/Scripts/Audio/AudioManager.cs) that could play and stop all the audio that was attached to it, which includes all the [themes](https://github.com/jtmeneses707/ECS189L-Final/tree/main/189L%20Final/Assets/Resources/Music) and [sound effects](https://github.com/jtmeneses707/ECS189L-Final/tree/main/189L%20Final/Assets/Resources/Sounds) within the game. Along with this is a Sound Script used to allow us to change various properties of the audio while testing. These properties included: volume, pitch, and the ability to loop (which was very handy for playing themes). Lastly, there was a [SwitchMusicTrigger.cs file](https://github.com/jtmeneses707/ECS189L-Final/blob/main/189L%20Final/Assets/Scripts/Audio/SwitchMusicTrigger.cs). This was used to change the main theme to the epic boss music, once the player had entered the boss' area.
 
 **Assets:**
 
@@ -156,7 +156,7 @@ All the audio that was implemented in the game was attached to a AudioManager pr
 
 **References:** 
 
-* [Audio Manager Tutorial](https://www.youtube.com/watch?v=6OT43pvUyfY), 
+* [Audio Manager Tutorial](https://www.youtube.com/watch?v=6OT43pvUyfY) 
 * [Switch Music Tracks](https://www.youtube.com/watch?v=XoH8Qyqje1g)
 
 ## Gameplay Testing - (Jerrie Kraus-Liang)
