@@ -37,6 +37,12 @@ If a player were to speedrun this game, they would likely want to rush the platf
 - *Camera Logic* - I added the camera logic/setup the scene with a specific distance between the camera and scene. This included a parallax scrolling background to add to game feel/immersiveness. This affected the FOV/how much of the scene can be scene during gameplay, further adding to game feel. I also tested the different camera types and found that a push box more to the right of the screen would help create a sense of urgency during gameplay. 
 - *Reworking dash script* - I rebuilt the entire dash script so that it would work smoother with the animation. 
 
+### Tommy Saechao ###
+- *Enemy Animation State Transitions* - I created state transitions in the Animator tool for enemies to fluidly react to the player based off of certain game conditions. This gives a more dynamic behavior for the enemies making the enemies behave more naturally. In addition to the state transitions, I implemented scripts in the existing state to further support the simplification of the game logic making the software design of the game more maintainable and reusable for further development.
+- *Enemy Mechanics (Physics/Movement)* - Since we had a missing role, I took part in the enemy portion of implementing the enemy mechanics in the game. I created an abstract controller to be used as a base for the types of enemies in the game. I also used a single file to hold constant values for enemy stats in the game. This robust design choice makes it easier to maintain and expand the code because we are able to build multiple different types of enemies off a single controller and adjust the physics attributes and stats at the same time. Taking a part of this unprescribed role taught me how to bring enemy game mechanics to life. 
+- *Environment Physics and Collider Adjustments* - As I worked on my Game Logic and Game Feel role, many of the game logic work for the AI depended on the mechanics and physics of the enemies to be be completed. I took upon being able to learn and contribute to the adjustments of hitboxes of the enemy and tuning the colliders to make the game feel more accurate. Along with that, one of the most difficult obstacles that I came across was handling collisions among the scene and different components in the game. I overcame this obstacle through great amounts of research along with trial and errors in order to fully get the game feel right with the scripts that supplemented the collider hitboxes.
+- *Enemy Testing* - While implementing the enemy logic, I spent a considerable amount of tiem adjusting and testing the attributes associated with the enemy controller in order to get the game feel with the enemy just right.
+
 # Main Roles #
 
 Your goal is to relate the work of your role and sub-role in terms of the content of the course. Please look at the role sections below for specific instructions for each role.
@@ -113,17 +119,17 @@ Following the command pattern exercise, we made an IPlayerCommand interface for 
 
 [MovePlayerLeft](https://github.com/jtmeneses707/ECS189L-Final/blob/main/189L%20Final/Assets/Scripts/Player/MovePlayerLeft.cs) - Moves the player left when given a negative x velocity.
 
-[MovePlayerRight](https://github.com/jtmeneses707/ECS189L-Final/blob/main/189L%20Final/Assets/Scripts/Player/MovePlayerRight.cs)- Moves the player Right when given a positive x velocity.
+[MovePlayerRight](https://github.com/jtmeneses707/ECS189L-Final/blob/main/189L%20Final/Assets/Scripts/Player/MovePlayerRight.cs)- Moves the player Right when given a positve x velocity.
 
 [MovePlayerUp](https://github.com/jtmeneses707/ECS189L-Final/blob/main/189L%20Final/Assets/Scripts/Player/MovePlayerUp.cs) - Moves the player up (lets them Jump). There is also a double jump if the input is given twice.
 
-[PlayerAbilityDash](https://github.com/jtmeneses707/ECS189L-Final/blob/main/189L%20Final/Assets/Scripts/Player/PlayerAbilityDash.cs) - The player dashes in the direction that they are facing, dodging all enemies/ obstacles in their way. There is a 1 second cooldown so that the mechanic cannot be abused by the player.
+[PlayerAbilityDash](https://github.com/jtmeneses707/ECS189L-Final/blob/main/189L%20Final/Assets/Scripts/Player/PlayerAbilityDash.cs) - The player dashes in the direction that they are facing, dodging all enemies/ obstacles in their way.
 
-[PlayerAbilityMelee](https://github.com/jtmeneses707/ECS189L-Final/blob/main/189L%20Final/Assets/Scripts/Player/PlayerAbilityMelee.cs) - The player swings their fist, damaging all enemies caught in its range. Doing a medium amount of damage, this ability does a fair blow to whomever it hits.
+[PlayerAbilityMelee](https://github.com/jtmeneses707/ECS189L-Final/blob/main/189L%20Final/Assets/Scripts/Player/PlayerAbilityMelee.cs) - The player swings their fist, damaging all enemies caught in its range. 
 
-[PlayerAbilityShoot](https://github.com/jtmeneses707/ECS189L-Final/blob/main/189L%20Final/Assets/Scripts/Player/PlayerAbilityShoot.cs) - The player shoots a projectile towards the direction that it is facing. This is great to pick off opponents from a distance, but does the least damage out of all the abilities.
+[PlayerAbilityShoot](https://github.com/jtmeneses707/ECS189L-Final/blob/main/189L%20Final/Assets/Scripts/Player/PlayerAbilityShoot.cs) - The player shoots a projectile towards the direction that it is facing.
 
-[PlaterAbilityDownSmash](https://github.com/jtmeneses707/ECS189L-Final/blob/main/189L%20Final/Assets/Scripts/Player/PlayerAbilityDownSmash.cs) - The player does a powerful explosive attack underneath them, hurting all enemies in range. However, the tradeoff for this ability is that the player has to stay stuck in their attack animation, making them susceptible to enemy attacks if timed improperly.
+[PlaterAbilityDownSmash](https://github.com/jtmeneses707/ECS189L-Final/blob/main/189L%20Final/Assets/Scripts/Player/PlayerAbilityDownSmash.cs) - The player does a powerful explosive attack underneath it, hurting all enemies in range.
 
 ## Game Logic
 
@@ -141,7 +147,7 @@ Furthermore, throughout the game, there are alot of audio cues to give it more d
 
 **Implementation**
 
-All the audio that was implemented in the game was attached to a AudioManager prefab in each scene of our game. This prefab held an [AudioManager.cs script](https://github.com/jtmeneses707/ECS189L-Final/blob/main/189L%20Final/Assets/Scripts/Audio/AudioManager.cs) that could play and stop all the audio that was attached to it, which includes all the [themes](https://github.com/jtmeneses707/ECS189L-Final/tree/main/189L%20Final/Assets/Resources/Music) and [sound effects](https://github.com/jtmeneses707/ECS189L-Final/tree/main/189L%20Final/Assets/Resources/Sounds) within the game. Along with this is a Sound Script used to allow us to change various properties of the audio while testing. These properties included: volume, pitch, and the ability to loop (which was very handy for playing themes). Lastly, there was a [SwitchMusicTrigger.cs file](https://github.com/jtmeneses707/ECS189L-Final/blob/main/189L%20Final/Assets/Scripts/Audio/SwitchMusicTrigger.cs). This was used to change the main theme to the epic boss music, once the player had entered the boss' area.
+All the audio that was implemented in the game was attached to a AudioManager prefab in each scene of our game. This prefab held an AudioManager.cs script that could play and stop all the audio that was attached to it, which includes all the [themes](https://github.com/jtmeneses707/ECS189L-Final/tree/main/189L%20Final/Assets/Resources/Music) and [sound effects](https://github.com/jtmeneses707/ECS189L-Final/tree/main/189L%20Final/Assets/Resources/Sounds) within the game. Along with this is a Sound Script used to allow us to change various properties of the audio while testing. These properties included: volume, pitch, and the ability to loop (which was very handy for playing themes). Lastly, there was a SwitchMusicTrigger.cs file. This was used to change the main theme to the epic boss music, once the player had entered the boss' area.
 
 **Assets:**
 
@@ -150,7 +156,7 @@ All the audio that was implemented in the game was attached to a AudioManager pr
 
 **References:** 
 
-* [Audio Manager Tutorial](https://www.youtube.com/watch?v=6OT43pvUyfY) 
+* [Audio Manager Tutorial](https://www.youtube.com/watch?v=6OT43pvUyfY), 
 * [Switch Music Tracks](https://www.youtube.com/watch?v=XoH8Qyqje1g)
 
 ## Gameplay Testing - (Jerrie Kraus-Liang)
