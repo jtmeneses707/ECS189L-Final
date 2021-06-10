@@ -76,8 +76,6 @@ The Gameplay UI is a bit more interesting as it has many pop-up menus for the pl
 
 ## Movement/Physics (Johnson)
 
-**Describe the basics of movement and physics in your game. Is it the standard physics model? What did you change or modify? Did you make your movement scripts that do not use the physics system?**
-
 **Player Movement/Physics**
 
 Since our game is a 2D action platformer, we followed the basic movement scheme of moving left, right, and jumping. These were implemented using the general physics system within Unity by changing the velocity of the player. To add more obstacle and platforming potential we gave the player the ability to double jump. This was done using a ground check 2D box collider positioned at the feet of the player. Along with this we implemented the dash ability so that the player could go through enemies/ obstacles for more gameplay variation. This dash was implemented using a transform position in update to give it a smooth visual. As for the rest of the player's abilities (melee, shoot, down smash), they were implemented using various child objects (with their own colliders and unique positions) that are attached to the player. The melee (positioned in front of the player) uses an overlap circle to detect all the enemies caught within its range and deal damage accordingly. The down smash does the same thing but instead uses a general overlap collider (placed below the player), to better represent range of the attack's shape. The shoot creates a projectile prefab at a transform placed at the player's hand. This projectile prefab has its own [script](https://github.com/jtmeneses707/ECS189L-Final/blob/main/189L%20Final/Assets/Scripts/Audio/ProjectileController.cs) that controls its speed and enemy detection. To always keep these attacks' transforms in the correct position (relative to the player), we used a [IsFacingRight](https://github.com/jtmeneses707/ECS189L-Final/blob/0be3d083f41d95e88a517c3c06da5ba1c717862b/189L%20Final/Assets/Scripts/Player/PlayerController.cs#L54) boolean. With this we rotated the entire player gameobject, which also rotated it's children whenever the player turned around.
@@ -119,17 +117,17 @@ Following the command pattern exercise, we made an IPlayerCommand interface for 
 
 [MovePlayerLeft](https://github.com/jtmeneses707/ECS189L-Final/blob/main/189L%20Final/Assets/Scripts/Player/MovePlayerLeft.cs) - Moves the player left when given a negative x velocity.
 
-[MovePlayerRight](https://github.com/jtmeneses707/ECS189L-Final/blob/main/189L%20Final/Assets/Scripts/Player/MovePlayerRight.cs)- Moves the player Right when given a positve x velocity.
+[MovePlayerRight](https://github.com/jtmeneses707/ECS189L-Final/blob/main/189L%20Final/Assets/Scripts/Player/MovePlayerRight.cs)- Moves the player Right when given a positive x velocity.
 
 [MovePlayerUp](https://github.com/jtmeneses707/ECS189L-Final/blob/main/189L%20Final/Assets/Scripts/Player/MovePlayerUp.cs) - Moves the player up (lets them Jump). There is also a double jump if the input is given twice.
 
 [PlayerAbilityDash](https://github.com/jtmeneses707/ECS189L-Final/blob/main/189L%20Final/Assets/Scripts/Player/PlayerAbilityDash.cs) - The player dashes in the direction that they are facing, dodging all enemies/ obstacles in their way.
 
-[PlayerAbilityMelee](https://github.com/jtmeneses707/ECS189L-Final/blob/main/189L%20Final/Assets/Scripts/Player/PlayerAbilityMelee.cs) - The player swings their fist, damaging all enemies caught in its range. 
+[PlayerAbilityMelee](https://github.com/jtmeneses707/ECS189L-Final/blob/main/189L%20Final/Assets/Scripts/Player/PlayerAbilityMelee.cs) - The player swings their fist, damaging all enemies caught in its range. This ability does a medium amount of damage.
 
-[PlayerAbilityShoot](https://github.com/jtmeneses707/ECS189L-Final/blob/main/189L%20Final/Assets/Scripts/Player/PlayerAbilityShoot.cs) - The player shoots a projectile towards the direction that it is facing.
+[PlayerAbilityShoot](https://github.com/jtmeneses707/ECS189L-Final/blob/main/189L%20Final/Assets/Scripts/Player/PlayerAbilityShoot.cs) - The player shoots a projectile towards the direction that it is facing. This move does the least amount of damage to encourage more aggressive gameplay with the other moves.
 
-[PlaterAbilityDownSmash](https://github.com/jtmeneses707/ECS189L-Final/blob/main/189L%20Final/Assets/Scripts/Player/PlayerAbilityDownSmash.cs) - The player does a powerful explosive attack underneath it, hurting all enemies in range.
+[PlaterAbilityDownSmash](https://github.com/jtmeneses707/ECS189L-Final/blob/main/189L%20Final/Assets/Scripts/Player/PlayerAbilityDownSmash.cs) - The player does a powerful explosive attack underneath it, hurting all enemies in range. To balance this move, the player has to stand still during the entire attack which makes theme susceptible to enemy damage if timed improperly.
 
 ## Game Logic (Tommy Saechao)
 
@@ -177,7 +175,7 @@ Furthermore, throughout the game, there are alot of audio cues to give it more d
 
 **Implementation**
 
-All the audio that was implemented in the game was attached to a AudioManager prefab in each scene of our game. This prefab held an AudioManager.cs script that could play and stop all the audio that was attached to it, which includes all the [themes](https://github.com/jtmeneses707/ECS189L-Final/tree/main/189L%20Final/Assets/Resources/Music) and [sound effects](https://github.com/jtmeneses707/ECS189L-Final/tree/main/189L%20Final/Assets/Resources/Sounds) within the game. Along with this is a Sound Script used to allow us to change various properties of the audio while testing. These properties included: volume, pitch, and the ability to loop (which was very handy for playing themes). Lastly, there was a SwitchMusicTrigger.cs file. This was used to change the main theme to the epic boss music, once the player had entered the boss' area.
+All the audio that was implemented in the game was attached to a AudioManager prefab in each scene of our game. This prefab held an [AudioManager.cs script](https://github.com/jtmeneses707/ECS189L-Final/blob/main/189L%20Final/Assets/Scripts/Audio/AudioManager.cs) that could play and stop all the audio that was attached to it, which includes all the [themes](https://github.com/jtmeneses707/ECS189L-Final/tree/main/189L%20Final/Assets/Resources/Music) and [sound effects](https://github.com/jtmeneses707/ECS189L-Final/blob/main/189L%20Final/Assets/Scripts/Audio/Sound.cs) within the game. Along with this is a Sound Script used to allow us to change various properties of the audio while testing. These properties included: volume, pitch, and the ability to loop (which was very handy for playing themes). Lastly, there was a [SwitchMusicTrigger.cs](https://github.com/jtmeneses707/ECS189L-Final/blob/main/189L%20Final/Assets/Scripts/Audio/SwitchMusicTrigger.cs) file. This was used to change the main theme to the epic boss music, once the player had entered the boss' area.
 
 **Assets:**
 
