@@ -131,14 +131,16 @@ Following the command pattern exercise, we made an IPlayerCommand interface for 
 
 [PlaterAbilityDownSmash](https://github.com/jtmeneses707/ECS189L-Final/blob/main/189L%20Final/Assets/Scripts/Player/PlayerAbilityDownSmash.cs) - The player does a powerful explosive attack underneath it, hurting all enemies in range.
 
-## Game Logic
+## Game Logic (Tommy Saechao)
 
-**Document what game states and game data you managed and what design patterns you used to complete your task.**
 **Game States and Design Patterns**
+
 For the enemy states, I implemented the base states of being able to idle, move towards the player, and attack the player. When implementing the skeleton, the state logic was simple, as there are not many transitions to select from. However, for the boss, the states became extremely intricate due to the amount of different abilities and behaviors that the boss logic had. To make an intricate problem more simple, I used the state pattern in order to handle the transitioning of the multiple different types of boss abilities. 
 
 **Implementing Enemy Abilities**
+
 For the enemy abilities, the state pattern made it very simple to select between the choice of abiltiies at random. For the skeleton, only an melee attack is implemented, however for the boss, the following abilities are implemented:
+
 
 Slash Attack - Swings the sword at player slashing him
 Stab Attack - Stabs the player with the sword
@@ -149,9 +151,11 @@ Dash - Dashes towards the player
 
 
 **More Design Patterns**
+
 I used the factory and command pattern as a combination in order to make integration of enemy movement as a controller more manageable and simple. This improves the ease of refactoring, modifying, and building on top of existing code without having to worry about breaking enemy features in the game. 
 
 **Game Data**
+
 I managed all of the data for the enemies by implementing the attributes of the data inside each controller. I took into account of making the code as clean as possible for maintenance by creating a global constants file holding attributes such as the enemy health, visibility radius, attack radius, cooldowns of abilities, movement and movement speeds. This allows for easy refactoring in further processes as these constants are often used and reassigned in the controller. It saves the developer from having to dig through the entire source code of the scripts just to make a single adjustment to an enemy attribute such as the maximum health.
 
 
@@ -229,9 +233,10 @@ I chose a 4 screenshots that varied with intensity with each of them. This follo
 
 
 
-## Game Feel
+## Game Feel (Tommy Saechao)
 
 **Document what you added to and how you tweaked your game to improve its game feel.**
 In order to improve the game feel, I made modifications based on the congruency of the player and enemy mechanics. If the enemy chases the player at too fast of a speed or had too muc health, it would make the game feel as if the player was less powerful than the weakest enemy in the game. This would discourage the player from playing the game as it becomes too difficult. While testing the game, I made adjustments to the attributes of the enemy to make the game seem difficult, but beatable. This creates a more rewarding system of playing the game and getting closer to the final boss. Along with that, I tested the player movements on how it interacts with the game obstacles and made suggestions for what would improve the feel of the game. The suggestion that stood out the most was the player's movement speed. It was very difficult to navigate and move through obstacles in the scene as the player would move too fast and miss a platform causing the player to often fall to their deaths. 
+
 
 Apart from the enemy and player mechanics, I had to make decisions with how the enemy and player would interact when they collide with each other. One difficult debate was whether to allow the enemy and player to push each other around as they collide with one another, or to allow them to simply phase through. After several amounts of testing, it was made that the collision between enemies and players could be overabused as the player could simply push the boss off of the edge of the map and vice-versa. Therefore, I made the implementation for the player to be able to phase through the enemy, but not the enemy being able to phase through the player. 
