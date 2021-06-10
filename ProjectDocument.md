@@ -240,7 +240,6 @@ I chose a 4 screenshots that varied with intensity with each of them. This follo
 
 ## Game Feel (Tommy Saechao)
 
-**Document what you added to and how you tweaked your game to improve its game feel.**
 In order to improve the game feel, I made modifications based on the congruency of the player and enemy mechanics. If the enemy chases the player at too fast of a speed or had too muc health, it would make the game feel as if the player was less powerful than the weakest enemy in the game. This would discourage the player from playing the game as it becomes too difficult. While testing the game, I made adjustments to the attributes of the enemy to make the game seem difficult, but beatable. This creates a more rewarding system of playing the game and getting closer to the final boss. Along with that, I tested the player movements on how it interacts with the game obstacles and made suggestions for what would improve the feel of the game. The suggestion that stood out the most was the player's movement speed. It was very difficult to navigate and move through obstacles in the scene as the player would move too fast and miss a platform causing the player to often fall to their deaths. 
 
 
